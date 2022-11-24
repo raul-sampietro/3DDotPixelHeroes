@@ -47,7 +47,7 @@ public class PlayerMove : MonoBehaviour
         if (axis.y < 0.0f) angle = -angle;
         transform.Rotate(new Vector3(0,1,0), angle, Space.World);
         // Translate
-        transform.Translate(Speed * Time.deltaTime * direction, Space.World);
+        transform.Translate(Speed * Time.deltaTime * Vector3.Normalize(direction), Space.World);
         prevDirection = direction;
     }
 }
