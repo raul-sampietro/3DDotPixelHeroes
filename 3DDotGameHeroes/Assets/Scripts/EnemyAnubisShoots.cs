@@ -21,11 +21,16 @@ public class EnemyAnubisShoots : MonoBehaviour
         timeToShoot -= Time.deltaTime;
         if (timeToShoot < 0.0f)
         {
+            // Create the shot
             timeToShoot = 1.0f / shootingFreq;
             GameObject obj = Instantiate(shot, transform.position - new Vector3(1.5f, 0.0f, 0.0f), transform.rotation);
+
+            // Set the direction of the shot
             Vector3 direction = GameObject.Find("knight").transform.position - transform.position;
             direction = Vector3.Normalize(direction) * shotSpeed;
             obj.GetComponent<Rigidbody>().velocity = direction;
+            
+            // Start the animation of the shot
             obj.GetComponent<Animator>().Play("Idle");
         }
     }

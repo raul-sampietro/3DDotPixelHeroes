@@ -8,6 +8,7 @@ public class EnemyAnubisMove : MonoBehaviour
     public float Speed = 40;
     Vector3 prevDirection = Vector3.forward;
     Vector3 direction = Vector3.forward;
+    public float maxRotationSpeed = 180.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -18,36 +19,15 @@ public class EnemyAnubisMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Compose direction
-        Vector3 direction = new(0, 0, 0);
-        if (Input.GetKey(KeyCode.T))
-        {
-            direction += Vector3.forward;
-        }
-        if (Input.GetKey(KeyCode.G))
-        {
-            direction += -Vector3.forward;
-        }
-        if (Input.GetKey(KeyCode.F))
-        {
-            direction += Vector3.left;
-        }
-        if (Input.GetKey(KeyCode.H))
-        {
-            direction += Vector3.right;
-        }
-        if (direction != new Vector3(0, 0, 0))
-        {
-            gameObject.GetComponent<Animator>().Play("walking");
-        }
-        else gameObject.GetComponent<Animator>().Play("Idle");
-        // Rotate to face direction
+        // Locate the direction to reach  the player
+        Vector3 direction = GameObject.Find("knight").transform.position - transform.position;
+        direction = Vector3.Normalize(direction);
+
+        // Rotate the enemy to face the player
         Quaternion rotation = Quaternion.FromToRotation(transform.forward, direction);
         rotation.ToAngleAxis(out float angle, out Vector3 axis);
+        if (angle > maxRotationSpeed * Time.deltaTime) angle = maxRotationSpeed * Time.deltaTime;
         if (axis.y < 0.0f) angle = -angle;
         transform.Rotate(new Vector3(0, 1, 0), angle, Space.World);
-        // Translate
-        transform.Translate(Speed * Time.deltaTime * Vector3.Normalize(direction), Space.World);
-        prevDirection = direction;
     }
 }
