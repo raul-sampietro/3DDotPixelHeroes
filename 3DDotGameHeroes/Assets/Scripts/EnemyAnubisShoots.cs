@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class EnemyAnubisShoots : MonoBehaviour
 {
-    public float shootingFreq = 1f;
+    public float shootingFreq = 0.25f;
     float timeToShoot;
     public GameObject shot;
-    public float shotSpeed = 40.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -23,15 +22,7 @@ public class EnemyAnubisShoots : MonoBehaviour
         {
             // Create the shot
             timeToShoot = 1.0f / shootingFreq;
-            GameObject obj = Instantiate(shot, transform.position - new Vector3(1.5f, 0.0f, 0.0f), transform.rotation);
-
-            // Set the direction of the shot
-            Vector3 direction = GameObject.Find("knight").transform.position - transform.position;
-            direction = Vector3.Normalize(direction) * shotSpeed;
-            obj.GetComponent<Rigidbody>().velocity = direction;
-            
-            // Start the animation of the shot
-            obj.GetComponent<Animator>().Play("Idle");
+            Instantiate(shot, transform.position + new Vector3(0.0f, 10.0f, 0.0f), transform.rotation);
         }
     }
 }
