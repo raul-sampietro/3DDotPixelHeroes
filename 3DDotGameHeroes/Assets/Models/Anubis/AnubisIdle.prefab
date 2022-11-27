@@ -727,7 +727,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootingFreq: 0.25
-  shot: {fileID: 8895319443224035906, guid: 377504f4b21b7984d88341b8964c9687, type: 3}
+  shot: {fileID: 7778649997117238036, guid: 71b433c9e00c68c47a510a7c02092bbc, type: 3}
 --- !u!136 &259305144726493184
 CapsuleCollider:
   m_ObjectHideFlags: 0

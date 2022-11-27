@@ -5,13 +5,9 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
 
-    public float Speed = 15;
-
-    Animator animator;
-
-    Vector3 prevLookDirection = Vector3.forward;
-    Vector3 lookDirection = Vector3.forward;
-    Vector3 moveDirection;
+    public float Speed = 80;
+    Vector3 prevDirection = Vector3.forward;
+    Vector3 direction = Vector3.forward;
 
     // Start is called before the first frame update
     void Start()

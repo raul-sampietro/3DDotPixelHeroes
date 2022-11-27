@@ -5,7 +5,6 @@ using UnityEngine;
 public class EnemyAnubisMove : MonoBehaviour
 {
 
-    public float Speed = 40;
     Vector3 prevDirection = Vector3.forward;
     Vector3 direction = Vector3.forward;
     public float maxRotationSpeed = 180.0f;
