@@ -23,6 +23,13 @@ public class EnemyAnubisShoot : MonoBehaviour
             // Create the shot
             timeToShoot = 1.0f / shootingFreq;
             Instantiate(shot, transform.position + transform.forward * 20 + new Vector3(0.0f, 20.0f, 0.0f), transform.rotation);
+            
         }
+        if (timeToShoot < 0.5f)
+        {
+            // Start the shooting animation
+            gameObject.GetComponent<Animator>().Play("shoot");
+        }
+
     }
 }
