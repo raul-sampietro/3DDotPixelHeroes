@@ -22,7 +22,7 @@ public class EnemyAnubisShoots : MonoBehaviour
         {
             // Create the shot
             timeToShoot = 1.0f / shootingFreq;
-            Instantiate(shot, transform.position + new Vector3(0.0f, 10.0f, 0.0f), transform.rotation);
+            Instantiate(shot, transform.position + transform.forward*20 + new Vector3(0.0f, 8.0f, 0.0f), transform.rotation);
         }
     }
 }
