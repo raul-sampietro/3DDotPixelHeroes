@@ -5,16 +5,17 @@ using UnityEngine;
 public class LevelGenerator : MonoBehaviour
 {
     public Texture2D[] levels;
-
     public ColorToPrefab[] colorMappings;
+
+    private Vector2 sizeOfImage = new(16, 12);
     // Start is called before the first frame update
     void Start()
     {
-        int count = 1;
+        int count = 0;
         foreach (Texture2D level in levels)
         {
             GameObject levelObject = new();
-            levelObject.name = "Room" + count;
+            levelObject.name = "Room" + (count + 1);
             for (int x = 0; x < level.width; ++x)
             {
                 for (int z = 0; z < level.height; ++z)
@@ -23,13 +24,19 @@ public class LevelGenerator : MonoBehaviour
                     // If the color corresponds to a wall make sure that the orientation is correct
                     // If the color corresponds to a light that has to be attached to a wall, consider its rotation
 
-                    if (pixelColor.a != 0) // Pixel not transparent
+                    if (pixelColor.a >= 0) // Pixel not transparent
                     {
                         foreach (ColorToPrefab colorPrefab in colorMappings)
                         {
+                            Debug.Log("PixelColor: " + pixelColor);
+                            Debug.Log("colorPrefab: " + colorPrefab.color);
+
                             if (colorPrefab.color.Equals(pixelColor))
                             {
-                                Vector3 position = new(x*16, 8, z*16);
+                                Vector3 offset = new(16 * count * sizeOfImage.x, 0, 16 * count * sizeOfImage.y);
+                                // Configure offset to fill a 3x4 matrix (now just linear)
+                                Vector3 position = new(x * 16, 8, z * 16);
+                                position += offset;
                                 GameObject obj = Instantiate(colorPrefab.prefab, position, Quaternion.identity, transform);
                                 obj.transform.parent = levelObject.transform;
                             }
