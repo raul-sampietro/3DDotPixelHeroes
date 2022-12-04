@@ -28,13 +28,12 @@ public class LevelGenerator : MonoBehaviour
                     {
                         foreach (ColorToPrefab colorPrefab in colorMappings)
                         {
-                            Debug.Log("PixelColor: " + pixelColor);
-                            Debug.Log("colorPrefab: " + colorPrefab.color);
+                            //Debug.Log("PixelColor: " + pixelColor);
+                            //Debug.Log("colorPrefab: " + colorPrefab.color);
 
                             if (colorPrefab.color.Equals(pixelColor))
                             {
-                                Vector3 offset = new(16 * count * sizeOfImage.x, 0, 16 * count * sizeOfImage.y);
-                                // Configure offset to fill a 3x4 matrix (now just linear)
+                                Vector3 offset = new(16 * (count%3) * sizeOfImage.x, 0, 16 * (int)(count/3) * sizeOfImage.y);
                                 Vector3 position = new(x * 16, 8, z * 16);
                                 position += offset;
                                 GameObject obj = Instantiate(colorPrefab.prefab, position, Quaternion.identity, transform);
