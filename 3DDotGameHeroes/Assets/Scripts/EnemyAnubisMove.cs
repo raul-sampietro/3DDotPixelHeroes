@@ -19,7 +19,7 @@ public class EnemyAnubisMove : MonoBehaviour
     void Update()
     {
         // Locate the direction to reach  the player
-        Vector3 direction = GameObject.Find("knight").transform.position - transform.position;
+        Vector3 direction = GameObject.Find("Knight").transform.position - transform.position;
         direction = Vector3.Normalize(direction);
 
         // Rotate the enemy to face the player

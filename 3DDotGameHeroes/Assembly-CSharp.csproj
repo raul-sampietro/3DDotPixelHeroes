@@ -58,6 +58,8 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\FixedRotationY.cs" />
     <Compile Include="Assets\Scripts\TimedDestroy.cs" />
+    <Compile Include="Assets\Scripts\ColorToPrefab.cs" />
+    <Compile Include="Assets\Scripts\LevelGenerator.cs" />
     <Compile Include="Assets\Scripts\EnemyAnubisShoot.cs" />
     <Compile Include="Assets\Scripts\PlayerMove.cs" />
     <Compile Include="Assets\Scripts\FollowPlayer.cs" />

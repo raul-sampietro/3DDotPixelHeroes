@@ -41,8 +41,8 @@ public class LevelGenerator : MonoBehaviour
                                 !(x == level.width - 1 & z == level.height - 1)) // Top-right corner
                             {
                                 // Calcualte relative position
-                                Vector3 offset = new(16 * (count%3) * sizeOfImage.x, 0, 16 * (int)(count/3) * sizeOfImage.y);
-                                Vector3 position = new(x * 16, 0, z * 16);
+                                Vector3 offset = new(sizeOfImage.x * (count%3) * sizeOfImage.x, 0, sizeOfImage.x * (int)(count/3) * sizeOfImage.y);
+                                Vector3 position = new(x * sizeOfImage.x, 0, z * sizeOfImage.x);
                                 position += offset;
                                 GameObject obj = Instantiate(colorPrefab.prefab, position, Quaternion.identity, transform);
                                 

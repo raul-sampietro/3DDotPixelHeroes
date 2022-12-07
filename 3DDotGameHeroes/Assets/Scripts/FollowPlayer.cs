@@ -16,7 +16,7 @@ public class FollowPlayer : MonoBehaviour
     void Update()
     {
         // Set the direction
-        Vector3 direction = GameObject.Find("knight").transform.position - transform.position;
+        Vector3 direction = GameObject.Find("Knight").transform.position - transform.position;
         direction = Vector3.Normalize(direction) * shotSpeed;
         direction = new Vector3(direction.x, 0, direction.z);
         GetComponent<Rigidbody>().velocity = direction;
