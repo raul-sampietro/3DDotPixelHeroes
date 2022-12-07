@@ -312,6 +312,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: knight
       objectReference: {fileID: 0}
+    - target: {fileID: 704673193374742274, guid: 51f6f52c00a85264e90ed7d14cfbb39b, type: 3}
+      propertyPath: Speed
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 1030543610472945241, guid: 51f6f52c00a85264e90ed7d14cfbb39b, type: 3}
       propertyPath: m_RootOrder
       value: 3
