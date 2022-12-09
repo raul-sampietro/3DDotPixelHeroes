@@ -6,6 +6,7 @@ public class LevelGenerator : MonoBehaviour
 {
     public Texture2D[] levels;
     public ColorToPrefab[] colorMappings;
+    public GameObject floor;
 
     private Vector2 sizeOfImage = new(16, 12);
     // Start is called before the first frame update
@@ -23,8 +24,8 @@ public class LevelGenerator : MonoBehaviour
                     Color pixelColor = level.GetPixel(x, z);
                     // If the color corresponds to a wall make sure that the orientation is correct
                     // If the color corresponds to a light that has to be attached to a wall, consider its rotation
-
-                    if (pixelColor.a >= 0) // Pixel not transparent
+                    
+                    if (pixelColor.a > 0) // Pixel not transparent
                     {
                         foreach (ColorToPrefab colorPrefab in colorMappings)
                         {
