@@ -24,7 +24,12 @@ public class LevelGenerator : MonoBehaviour
                     Color pixelColor = level.GetPixel(x, z);
                     // If the color corresponds to a wall make sure that the orientation is correct
                     // If the color corresponds to a light that has to be attached to a wall, consider its rotation
-                    
+
+                    // Calcualte relative position
+                    Vector3 offset = new(sizeOfImage.x * (count % 3) * sizeOfImage.x, 0, sizeOfImage.x * (int)(count / 3) * sizeOfImage.y);
+                    Vector3 position = new(x * sizeOfImage.x, 0, z * sizeOfImage.x);
+                    position += offset;
+
                     if (pixelColor.a > 0) // Pixel not transparent
                     {
                         foreach (ColorToPrefab colorPrefab in colorMappings)
@@ -41,12 +46,7 @@ public class LevelGenerator : MonoBehaviour
                                 !(x == level.width - 1 & z == 0) & // Bottom-right corner
                                 !(x == level.width - 1 & z == level.height - 1)) // Top-right corner
                             {
-                                // Calcualte relative position
-                                Vector3 offset = new(sizeOfImage.x * (count%3) * sizeOfImage.x, 0, sizeOfImage.x * (int)(count/3) * sizeOfImage.y);
-                                Vector3 position = new(x * sizeOfImage.x, 0, z * sizeOfImage.x);
-                                position += offset;
-                                GameObject obj = Instantiate(colorPrefab.prefab, position, Quaternion.identity, transform);
-                                
+                                GameObject obj = Instantiate(colorPrefab.prefab, position, Quaternion.identity, transform);   
                                 
                                 // Scale, rotate and move the asset
                                 switch (colorPrefab.prefab.name)
@@ -74,6 +74,10 @@ public class LevelGenerator : MonoBehaviour
                                 obj.transform.parent = levelObject.transform;
                             }
                         }
+                    }
+                    else
+                    {
+                        Instantiate(floor, position, Quaternion.identity, transform);
                     }
                 }
             }
