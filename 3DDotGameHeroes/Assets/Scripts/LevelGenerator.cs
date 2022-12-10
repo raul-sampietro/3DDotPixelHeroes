@@ -73,7 +73,8 @@ public class LevelGenerator : MonoBehaviour
                     }
                     else
                     {
-                        Instantiate(floor, position, Quaternion.identity, transform);
+                        GameObject floorObject = Instantiate(floor, position, Quaternion.identity, transform);
+                        floorObject.transform.parent = levelObject.transform;
                     }
                 }
             }
