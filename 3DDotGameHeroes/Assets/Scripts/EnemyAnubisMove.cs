@@ -11,7 +11,6 @@ public class EnemyAnubisMove : MonoBehaviour
 
     private GameObject knight = null;
 
-
     // Start is called before the first frame update
     void Start()
     {

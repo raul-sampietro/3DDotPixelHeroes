@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3724471841322785837}
   - component: {fileID: 3724471841322785836}
   - component: {fileID: -8738590211584762920}
+  - component: {fileID: -7812877432392246312}
   m_Layer: 0
   m_Name: OverviewCamera
   m_TagString: MainCamera
@@ -210,3 +211,15 @@ MonoBehaviour:
       enableFptlForForwardOpaque: 0
       enableBigTilePrepass: 0
       isFptlEnabled: 0
+--- !u!114 &-7812877432392246312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3724471841322785839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de19648232ea8d14192f42fbfcc8530b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
