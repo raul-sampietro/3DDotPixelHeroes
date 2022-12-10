@@ -15,9 +15,11 @@ public class CameraMover : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Update the camera according to two states, follow the player or fixed to the room
+
         if (cam == null)
             cam = GameObject.Find("OverviewCamera").GetComponent<Camera>();
 
-        cam.transform.Translate(new Vector3(1, 0, 0));
+        //cam.transform.Translate(new Vector3(1, 0, 0));
     }
 }

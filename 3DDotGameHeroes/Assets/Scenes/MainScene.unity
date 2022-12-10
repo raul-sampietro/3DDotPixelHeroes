@@ -307,11 +307,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3724471841322785834, guid: 36831509357b432499519247ef17dba1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 366.2
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 3724471841322785834, guid: 36831509357b432499519247ef17dba1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 500
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 3724471841322785834, guid: 36831509357b432499519247ef17dba1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -319,11 +319,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3724471841322785834, guid: 36831509357b432499519247ef17dba1, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.8660254
+      value: 0.9135455
       objectReference: {fileID: 0}
     - target: {fileID: 3724471841322785834, guid: 36831509357b432499519247ef17dba1, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.5
+      value: 0.40673664
       objectReference: {fileID: 0}
     - target: {fileID: 3724471841322785834, guid: 36831509357b432499519247ef17dba1, type: 3}
       propertyPath: m_LocalRotation.y
@@ -335,7 +335,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3724471841322785834, guid: 36831509357b432499519247ef17dba1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 60
+      value: 48
       objectReference: {fileID: 0}
     - target: {fileID: 3724471841322785834, guid: 36831509357b432499519247ef17dba1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -343,10 +343,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3724471841322785834, guid: 36831509357b432499519247ef17dba1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3724471841322785837, guid: 36831509357b432499519247ef17dba1, type: 3}
-      propertyPath: m_AllowMSAA
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3724471841322785839, guid: 36831509357b432499519247ef17dba1, type: 3}
