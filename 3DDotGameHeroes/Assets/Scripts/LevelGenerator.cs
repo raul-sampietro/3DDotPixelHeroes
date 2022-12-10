@@ -52,10 +52,6 @@ public class LevelGenerator : MonoBehaviour
                                 switch (colorPrefab.prefab.name)
                                 {
                                     case "wall":
-                                        Vector3 scale = new(10, 10, 10);
-                                        obj.transform.localScale += scale;
-                                        //obj.transform.Translate(0, 0, 0);
-
                                         // Rotate according to position X in the level
                                         if (x == 0) obj.transform.Rotate(0.0f, 90.0f, 0.0f, Space.World); // Left side
                                         else if (x == level.width - 1) obj.transform.Rotate(0.0f, -90.0f, 0.0f, Space.World); // Right side
