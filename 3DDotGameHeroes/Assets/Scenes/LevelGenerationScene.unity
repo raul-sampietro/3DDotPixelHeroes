@@ -641,25 +641,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: ReflectiveFloor
       objectReference: {fileID: 0}
-    - target: {fileID: 3414179095646146435, guid: 7fbcbd359ce727f409ac8e8debc6a0e5, type: 3}
-      propertyPath: m_LightProbeUsage
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7531925755410289641, guid: 7fbcbd359ce727f409ac8e8debc6a0e5, type: 3}
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7531925755410289641, guid: 7fbcbd359ce727f409ac8e8debc6a0e5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 7.4101725
-      objectReference: {fileID: 0}
-    - target: {fileID: 7531925755410289641, guid: 7fbcbd359ce727f409ac8e8debc6a0e5, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 9.085873
-      objectReference: {fileID: 0}
-    - target: {fileID: 7531925755410289641, guid: 7fbcbd359ce727f409ac8e8debc6a0e5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 35.7
+      value: 20.7
       objectReference: {fileID: 0}
     - target: {fileID: 7531925755410289641, guid: 7fbcbd359ce727f409ac8e8debc6a0e5, type: 3}
       propertyPath: m_LocalPosition.y
@@ -667,7 +655,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7531925755410289641, guid: 7fbcbd359ce727f409ac8e8debc6a0e5, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.5
+      value: 0.0145
       objectReference: {fileID: 0}
     - target: {fileID: 7531925755410289641, guid: 7fbcbd359ce727f409ac8e8debc6a0e5, type: 3}
       propertyPath: m_LocalRotation.w
