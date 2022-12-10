@@ -68,11 +68,20 @@ public class LevelGenerator : MonoBehaviour
 
                                 // Set parent object
                                 obj.transform.parent = levelObject.transform;
+
+                                if (colorPrefab.prefab.name != "wall" &
+                                    colorPrefab.prefab.name != "BigBox")
+                                {
+                                    // Instanciate the floor
+                                    GameObject floorObject = Instantiate(floor, position, Quaternion.identity, transform);
+                                    floorObject.transform.parent = levelObject.transform;
+                                }
                             }
                         }
                     }
                     else
                     {
+                        // Instanciate the floor wherever there is a blank pixel
                         GameObject floorObject = Instantiate(floor, position, Quaternion.identity, transform);
                         floorObject.transform.parent = levelObject.transform;
                     }

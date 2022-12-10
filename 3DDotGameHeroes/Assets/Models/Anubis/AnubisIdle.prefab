@@ -656,7 +656,6 @@ GameObject:
   - component: {fileID: 7121806099732909730}
   - component: {fileID: 7121806099732909759}
   - component: {fileID: 7121806099732909757}
-  - component: {fileID: 259305144726493184}
   m_Layer: 0
   m_Name: AnubisIdle
   m_TagString: Untagged
@@ -671,15 +670,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7932199297264305723}
-  m_LocalRotation: {x: -0.00000004371139, y: 2.6765506e-24, z: 1, w: 6.123234e-17}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 33.58}
-  m_LocalScale: {x: 0.8, y: -0.8, z: 0.8}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6585766213574665893}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!95 &7121806099732909730
 Animator:
   serializedVersion: 4
@@ -713,6 +712,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxRotationSpeed: 180
+  knight: {fileID: 362233387328048355, guid: 51f6f52c00a85264e90ed7d14cfbb39b, type: 3}
 --- !u!114 &7121806099732909757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -727,20 +727,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootingFreq: 0.25
   shot: {fileID: 7778649997117238036, guid: 71b433c9e00c68c47a510a7c02092bbc, type: 3}
---- !u!136 &259305144726493184
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7932199297264305723}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 5.801631
-  m_Height: 33.791016
-  m_Direction: 1
-  m_Center: {x: 0.548048, y: 16.395506, z: -1.5741932}
 --- !u!1 &8798004201417319912
 GameObject:
   m_ObjectHideFlags: 0
