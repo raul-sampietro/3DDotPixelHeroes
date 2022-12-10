@@ -13,6 +13,8 @@ public class PlayerMove : MonoBehaviour
     Vector3 lookDirection = Vector3.forward;
     Vector3 moveDirection;
 
+    int roomNumber = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -80,6 +82,33 @@ public class PlayerMove : MonoBehaviour
         // Translate
         transform.Translate(Speed * Time.deltaTime * Vector3.Normalize(moveDirection), Space.World);
         prevLookDirection = lookDirection;
+
+
+        // Check if the room has been changed TODO change value to check use result of division x/240
+        if (transform.position.x > 240)
+        {
+            if (roomNumber == 0)
+            {
+                roomNumber += 1;
+                GameObject.Find("OverviewCamera").BroadcastMessage("ChangeCurrentRoom", roomNumber);
+            }
+        }
+        else if (transform.position.x > 480)
+        {
+            if (roomNumber == 1)
+            {
+                roomNumber += 1;
+                GameObject.Find("OverviewCamera").BroadcastMessage("ChangeCurrentRoom", roomNumber);
+            }
+        }
+        else if (transform.position.x < 240)
+        {
+            if (roomNumber == 1)
+            {
+                roomNumber -= 1;
+                GameObject.Find("OverviewCamera").BroadcastMessage("ChangeCurrentRoom", roomNumber);
+            }
+        }
 
     }
 }

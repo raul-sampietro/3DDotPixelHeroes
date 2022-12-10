@@ -4,27 +4,26 @@ using UnityEngine;
 
 public class CameraMover : MonoBehaviour
 {
-    private Camera cam = null;
     private GameObject knight = null;
+
+    private Vector3 initialCamPosition = new(128, 100, -20);
+    private Vector3 camOffset = new(0, 0, 0);
+    private Vector2 sizeOfRoom = new(265, 176);
 
     // 0 -> fixed to the actual level
     // 1 -> attached to the player
     private int cameraState = 0;
 
-    // Start is called before the first frame update
-    void Start()
+    public void ChangeCurrentRoom(int roomNumber)
     {
-        
+        camOffset.x = (int)initialCamPosition.x + (sizeOfRoom.x/2 * (int)(roomNumber % 3));
+        camOffset.z = (int)initialCamPosition.z + (sizeOfRoom.y/2 * (int)(roomNumber / 3));
     }
 
     // Update is called once per frame
     void Update()
     {
         // Update the camera according to two states, follow the player or fixed to the room
-
-        // Find the camera
-        if (cam == null)
-            cam = GameObject.Find("OverviewCamera").GetComponent<Camera>();
 
         // Find the player
         if (knight == null)
@@ -44,8 +43,7 @@ public class CameraMover : MonoBehaviour
         {
             // Fixed to the level
             case 0:
-                Vector3 levelPos = new(120, 100, -20);
-                cam.transform.position = Vector3.MoveTowards(cam.transform.position, levelPos, 1);
+                transform.position = Vector3.MoveTowards(transform.position, initialCamPosition + camOffset, 10);
 
                 break;
 
@@ -53,15 +51,15 @@ public class CameraMover : MonoBehaviour
             case 1:
                 Vector3 newPos = knight.transform.position;
                 // Preserve the height and set an offset
-                newPos.y = cam.transform.position.y;
+                newPos.y = transform.position.y;
                 newPos.z -= 50;
-                Vector3 smoothFollow = Vector3.Lerp(cam.transform.position, newPos, 0.1f);
-                cam.transform.position = smoothFollow;
+                Vector3 smoothFollow = Vector3.Lerp(transform.position, newPos, 0.1f);
+                transform.position = smoothFollow;
                 break;
 
             default:
                 break;
         }
-        //cam.transform.Translate(new Vector3(1, 0, 0));
+        //transform.Translate(new Vector3(1, 0, 0));
     }
 }
