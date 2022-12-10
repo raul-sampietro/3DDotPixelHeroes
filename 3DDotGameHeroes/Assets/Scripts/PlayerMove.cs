@@ -13,7 +13,8 @@ public class PlayerMove : MonoBehaviour
     Vector3 lookDirection = Vector3.forward;
     Vector3 moveDirection;
 
-    int roomNumber = 0;
+    private Vector2 actualRoomCoordinates, prevRoomCoordinates = new(0,0);
+    private Vector2 sizeOfRoom = new(265, 192);
 
     // Start is called before the first frame update
     void Start()
@@ -83,32 +84,14 @@ public class PlayerMove : MonoBehaviour
         transform.Translate(Speed * Time.deltaTime * Vector3.Normalize(moveDirection), Space.World);
         prevLookDirection = lookDirection;
 
+        // Update the position of the camera if needed
+        actualRoomCoordinates.x = (int)(transform.position.x / sizeOfRoom.x);
+        actualRoomCoordinates.y = (int)(transform.position.z / sizeOfRoom.y);
 
-        // Check if the room has been changed TODO change value to check use result of division x/240
-        if (transform.position.x > 240)
+        if (actualRoomCoordinates != prevRoomCoordinates)
         {
-            if (roomNumber == 0)
-            {
-                roomNumber += 1;
-                GameObject.Find("OverviewCamera").BroadcastMessage("ChangeCurrentRoom", roomNumber);
-            }
+            GameObject.Find("OverviewCamera").BroadcastMessage("ChangeCurrentRoom", actualRoomCoordinates);
+            prevRoomCoordinates = actualRoomCoordinates;
         }
-        else if (transform.position.x > 480)
-        {
-            if (roomNumber == 1)
-            {
-                roomNumber += 1;
-                GameObject.Find("OverviewCamera").BroadcastMessage("ChangeCurrentRoom", roomNumber);
-            }
-        }
-        else if (transform.position.x < 240)
-        {
-            if (roomNumber == 1)
-            {
-                roomNumber -= 1;
-                GameObject.Find("OverviewCamera").BroadcastMessage("ChangeCurrentRoom", roomNumber);
-            }
-        }
-
     }
 }
