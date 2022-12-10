@@ -80,5 +80,6 @@ public class PlayerMove : MonoBehaviour
         // Translate
         transform.Translate(Speed * Time.deltaTime * Vector3.Normalize(moveDirection), Space.World);
         prevLookDirection = lookDirection;
+
     }
 }

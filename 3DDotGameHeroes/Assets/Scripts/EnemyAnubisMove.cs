@@ -9,6 +9,9 @@ public class EnemyAnubisMove : MonoBehaviour
     Vector3 direction = Vector3.forward;
     public float maxRotationSpeed = 180.0f;
 
+    private GameObject knight = null;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,8 +21,12 @@ public class EnemyAnubisMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Find the player
+        if (knight == null)
+            knight = GameObject.Find("Knight");
+
         // Locate the direction to reach  the player
-        Vector3 direction = GameObject.Find("Knight").transform.position - transform.position;
+        Vector3 direction = knight.transform.position - transform.position;
         direction = Vector3.Normalize(direction);
 
         // Rotate the enemy to face the player
