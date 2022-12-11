@@ -64,7 +64,13 @@ public class LevelGenerator : MonoBehaviour
 
                                     default:
                                         break;
-                                }                           
+                                }
+
+                                // Check for special options
+                                //colorPrefab.dropCoin
+                                //colorPrefab.dropLife
+                                //colorPrefab.movementPattern
+
 
                                 // Set parent object
                                 obj.transform.parent = levelObject.transform;
