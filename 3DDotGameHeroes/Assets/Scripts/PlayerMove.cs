@@ -13,6 +13,9 @@ public class PlayerMove : MonoBehaviour
     Vector3 lookDirection = Vector3.forward;
     Vector3 moveDirection;
 
+    private Vector2 actualRoomCoordinates, prevRoomCoordinates = new(0,0);
+    private Vector2 sizeOfRoom = new(265, 192);
+
     // Start is called before the first frame update
     void Start()
     {
@@ -80,5 +83,15 @@ public class PlayerMove : MonoBehaviour
         // Translate
         transform.Translate(Speed * Time.deltaTime * Vector3.Normalize(moveDirection), Space.World);
         prevLookDirection = lookDirection;
+
+        // Update the position of the camera if needed
+        actualRoomCoordinates.x = (int)(transform.position.x / sizeOfRoom.x);
+        actualRoomCoordinates.y = (int)(transform.position.z / sizeOfRoom.y);
+
+        if (actualRoomCoordinates != prevRoomCoordinates)
+        {
+            GameObject.Find("OverviewCamera").BroadcastMessage("ChangeCurrentRoom", actualRoomCoordinates);
+            prevRoomCoordinates = actualRoomCoordinates;
+        }
     }
 }
