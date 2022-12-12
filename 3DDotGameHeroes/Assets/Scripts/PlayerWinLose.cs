@@ -20,7 +20,7 @@ public class PlayerWinLose : MonoBehaviour
         float distance = Vector3.Distance(Vector3.zero, transform.position);
         if (distance > WinningDistance)
         {
-            SceneManager.LoadScene("MainMenuScene");
+            SceneManager.LoadScene("GameOverScene");
         }
     }
 }
