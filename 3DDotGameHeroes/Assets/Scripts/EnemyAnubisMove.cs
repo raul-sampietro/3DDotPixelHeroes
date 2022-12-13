@@ -8,6 +8,7 @@ public class EnemyAnubisMove : MonoBehaviour
     Vector3 prevDirection = Vector3.forward;
     Vector3 direction = Vector3.forward;
     public float maxRotationSpeed = 180.0f;
+    private string movementPattern;
 
     private GameObject knight = null;
 
@@ -17,6 +18,11 @@ public class EnemyAnubisMove : MonoBehaviour
         
     }
 
+    public void SetMovementPattern(string movementPatter)
+    {
+        this.movementPattern = movementPatter;
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -24,6 +30,7 @@ public class EnemyAnubisMove : MonoBehaviour
         if (knight == null)
             knight = GameObject.Find("Knight");
 
+        // Stop moving and shoot the player
         if (!Physics.Linecast(transform.position, knight.transform.position))
         {
             // Locate the direction to reach  the player
@@ -37,9 +44,21 @@ public class EnemyAnubisMove : MonoBehaviour
             if (axis.y < 0.0f) angle = -angle;
             transform.Rotate(new Vector3(0, 1, 0), angle, Space.World);
         }
-        else
+        else // Move according to the pattern
         {
+            switch (movementPattern)
+            {
+                case "Vertically":
 
+                    break;
+
+                case "Horizontally":
+
+                    break;
+
+                default:
+                    break;
+            }
         }
     }
 }

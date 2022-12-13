@@ -67,10 +67,33 @@ public class LevelGenerator : MonoBehaviour
                                 }
 
                                 // Check for special options
-                                //colorPrefab.dropCoin
-                                //colorPrefab.dropLife
-                                //colorPrefab.movementPattern
+                                if (colorPrefab.dropCoin)
+                                {
+                                    // Assing this property to the gameObject
 
+                                }
+
+                                if (colorPrefab.dropLife) 
+                                {
+                                    // Assing this property to the gameObject
+
+                                }
+
+                                if (colorPrefab.movementPattern != null)
+                                {
+                                    // Assing this property to the gameObject depending on its type
+                                    // The gameObject movement script should implement this
+                                    // TODO establecer capas y comprobar que esta en la capa que toca (enemies, obstacles, etc...)
+                                    switch (obj.name)
+                                    {
+                                        case "AnubisIdle(Clone)":
+                                            obj.BroadcastMessage("SetMovementPattern", colorPrefab.movementPattern);
+                                            break;
+
+                                        default:
+                                            break;
+                                    }
+                                }
 
                                 // Set parent object
                                 obj.transform.parent = levelObject.transform;
