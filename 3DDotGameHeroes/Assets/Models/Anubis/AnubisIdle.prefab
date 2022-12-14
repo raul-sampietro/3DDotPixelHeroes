@@ -656,6 +656,7 @@ GameObject:
   - component: {fileID: 7121806099732909730}
   - component: {fileID: 7121806099732909759}
   - component: {fileID: 7121806099732909757}
+  - component: {fileID: 407001783}
   m_Layer: 0
   m_Name: AnubisIdle
   m_TagString: Untagged
@@ -712,7 +713,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxRotationSpeed: 180
-  knight: {fileID: 362233387328048355, guid: 51f6f52c00a85264e90ed7d14cfbb39b, type: 3}
 --- !u!114 &7121806099732909757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -726,7 +726,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootingFreq: 0.25
+  timeToShoot: 0
   shot: {fileID: 7778649997117238036, guid: 71b433c9e00c68c47a510a7c02092bbc, type: 3}
+--- !u!136 &407001783
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7932199297264305723}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 9.088936
+  m_Height: 36.795815
+  m_Direction: 1
+  m_Center: {x: 0, y: 17.660213, z: -0.04322529}
 --- !u!1 &8798004201417319912
 GameObject:
   m_ObjectHideFlags: 0

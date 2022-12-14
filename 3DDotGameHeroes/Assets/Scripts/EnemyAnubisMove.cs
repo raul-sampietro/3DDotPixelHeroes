@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class EnemyAnubisMove : MonoBehaviour
 {
-
-    Vector3 prevDirection = Vector3.forward;
-    Vector3 direction = Vector3.forward;
+    Vector3 direction = new(0,0,0);
+    private float speed = 15;
     public float maxRotationSpeed = 180.0f;
     private string movementPattern;
 
@@ -16,6 +15,16 @@ public class EnemyAnubisMove : MonoBehaviour
     void Start()
     {
         
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log("Collision produced");
+        if (collision.gameObject.layer == LayerMask.GetMask("Obstacle"))
+        {
+            Debug.Log(collision.gameObject.layer);
+            direction *= -1;
+        }
     }
 
     public void SetMovementPattern(string movementPatter)
@@ -46,19 +55,15 @@ public class EnemyAnubisMove : MonoBehaviour
         }
         else // Move according to the pattern
         {
-            switch (movementPattern)
+            if (direction == new Vector3(0, 0, 0))
             {
-                case "Vertically":
-
-                    break;
-
-                case "Horizontally":
-
-                    break;
-
-                default:
-                    break;
+                if (movementPattern == "Vertically")
+                    direction = Vector3.forward;
+                else if (movementPattern == "Horizontally")
+                    direction = Vector3.right;
             }
+            // Translate
+            transform.Translate(speed * Time.deltaTime * Vector3.Normalize(direction), Space.World);
         }
     }
 }
