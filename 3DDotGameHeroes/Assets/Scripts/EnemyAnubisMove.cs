@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyAnubisMove : MonoBehaviour
 {
-    Vector3 direction = new(0,0,0);
+    Vector3 movDirection = new(0,0,0);
     private float speed = 15;
     public float maxRotationSpeed = 180.0f;
     private string movementPattern;
@@ -19,11 +19,10 @@ public class EnemyAnubisMove : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Collision produced");
-        if (collision.gameObject.layer == LayerMask.GetMask("Obstacle"))
+        // 3 is the obstable layer number
+        if (collision.gameObject.layer == 3)
         {
-            Debug.Log(collision.gameObject.layer);
-            direction *= -1;
+            movDirection *= -1;
         }
     }
 
@@ -42,6 +41,7 @@ public class EnemyAnubisMove : MonoBehaviour
         // Stop moving and shoot the player
         if (!Physics.Linecast(transform.position, knight.transform.position))
         {
+            GetComponent<Rigidbody>().velocity = new(0,0,0);
             // Locate the direction to reach  the player
             Vector3 direction = knight.transform.position - transform.position;
             direction = Vector3.Normalize(direction);
@@ -55,15 +55,22 @@ public class EnemyAnubisMove : MonoBehaviour
         }
         else // Move according to the pattern
         {
-            if (direction == new Vector3(0, 0, 0))
+            if (movDirection == new Vector3(0, 0, 0))
             {
                 if (movementPattern == "Vertically")
-                    direction = Vector3.forward;
+                    movDirection = Vector3.forward;
                 else if (movementPattern == "Horizontally")
-                    direction = Vector3.right;
+                    movDirection = Vector3.right;
             }
-            // Translate
-            transform.Translate(speed * Time.deltaTime * Vector3.Normalize(direction), Space.World);
+            // Rotate the enemy to face the movement direction 
+            Quaternion rotation = Quaternion.FromToRotation(transform.forward, movDirection);
+            rotation.ToAngleAxis(out float angle, out Vector3 axis);
+            if (angle > maxRotationSpeed * Time.deltaTime) angle = maxRotationSpeed * Time.deltaTime;
+            if (axis.y < 0.0f) angle = -angle;
+            transform.Rotate(new Vector3(0, 1, 0), angle, Space.World);
+
+            // Move the enemy
+            GetComponent<Rigidbody>().velocity = movDirection * speed;
         }
     }
 }
