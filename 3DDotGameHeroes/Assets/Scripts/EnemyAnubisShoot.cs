@@ -9,11 +9,13 @@ public class EnemyAnubisShoot : MonoBehaviour
     public GameObject shot;
 
     private GameObject knight = null;
+    private LayerMask playerLayer; 
 
     // Start is called before the first frame update
     void Start()
     {
         timeToShoot = 1.0f / shootingFreq;
+        playerLayer = LayerMask.GetMask("Player");
     }
 
     // Update is called once per frame
@@ -26,18 +28,22 @@ public class EnemyAnubisShoot : MonoBehaviour
         timeToShoot -= Time.deltaTime;
 
         // A valorar: hacerlo con pase de mensajes desde move hacia shoot
-        if (!Physics.Linecast(transform.position, knight.transform.position, 7)) // Ignore the player layer
+        Physics.Linecast(transform.position, knight.transform.position, out RaycastHit hit);
+        if (Physics.Linecast(transform.position, knight.transform.position, out hit))
         {
-            if (timeToShoot < 0.0f)
+            if (hit.collider.gameObject == knight)
             {
-                // Create the shot
-                timeToShoot = 1.0f / shootingFreq;
-                Instantiate(shot, transform.position + transform.forward + new Vector3(0.0f, 5.0f, 0.0f), transform.rotation);
-            }
-            if (timeToShoot < 0.5f)
-            {
-                // Start the shooting animation
-                //gameObject.GetComponent<Animation>().Play("anubis_shoot");
+                if (timeToShoot < 0.0f)
+                {
+                    // Create the shot
+                    timeToShoot = 1.0f / shootingFreq;
+                    Instantiate(shot, transform.position + transform.forward + new Vector3(0.0f, 5.0f, 0.0f), transform.rotation);
+                }
+                if (timeToShoot < 0.5f)
+                {
+                    // Start the shooting animation
+                    //gameObject.GetComponent<Animation>().Play("anubis_shoot");
+                }
             }
         }
         else

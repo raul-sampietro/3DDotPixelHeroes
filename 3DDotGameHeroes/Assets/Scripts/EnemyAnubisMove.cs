@@ -10,11 +10,12 @@ public class EnemyAnubisMove : MonoBehaviour
     private string movementPattern;
 
     private GameObject knight = null;
+    private LayerMask playerLayer;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        playerLayer  = LayerMask.GetMask("Player");
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -31,45 +32,57 @@ public class EnemyAnubisMove : MonoBehaviour
         this.movementPattern = movementPatter;
     }
 
+    private void MoveEnemy()
+    {
+        if (movDirection == new Vector3(0, 0, 0))
+        {
+            if (movementPattern == "Vertically")
+                movDirection = Vector3.forward;
+            else if (movementPattern == "Horizontally")
+                movDirection = Vector3.right;
+        }
+        // Rotate the enemy to face the movement direction 
+        Quaternion rotation = Quaternion.FromToRotation(transform.forward, movDirection);
+        rotation.ToAngleAxis(out float angle, out Vector3 axis);
+        if (angle > maxRotationSpeed * Time.deltaTime) angle = maxRotationSpeed * Time.deltaTime;
+        if (axis.y < 0.0f) angle = -angle;
+        transform.Rotate(new Vector3(0, 1, 0), angle, Space.World);
+
+        // Move the enemy
+        transform.Translate(speed * Time.deltaTime * Vector3.Normalize(movDirection), Space.World);
+    }
+
     // Update is called once per frame
     void Update()
     {
         // Find the player
         if (knight == null)
+        {
             knight = GameObject.Find("Knight");
+        }
+
 
         // Stop moving and prepare to shoot the player
-        if (!Physics.Linecast(transform.position, knight.transform.position, 7)) // Ignore the player layer
+        Physics.Linecast(transform.position, knight.transform.position, out RaycastHit hit);
+        if (Physics.Linecast(transform.position, knight.transform.position, out hit))
         {
-            // Locate the direction to reach  the player
-            Vector3 direction = knight.transform.position - transform.position;
-            direction = Vector3.Normalize(direction);
+            if (hit.collider.gameObject == knight)
+            {
+                // Locate the direction to reach  the player
+                Vector3 direction = knight.transform.position - transform.position;
+                direction = Vector3.Normalize(direction);
 
-            // Rotate the enemy to face the player
-            Quaternion rotation = Quaternion.FromToRotation(transform.forward, direction);
-            rotation.ToAngleAxis(out float angle, out Vector3 axis);
-            if (angle > maxRotationSpeed * Time.deltaTime) angle = maxRotationSpeed * Time.deltaTime;
-            if (axis.y < 0.0f) angle = -angle;
-            transform.Rotate(new Vector3(0, 1, 0), angle, Space.World);
+                // Rotate the enemy to face the player
+                Quaternion rotation = Quaternion.FromToRotation(transform.forward, direction);
+                rotation.ToAngleAxis(out float angle, out Vector3 axis);
+                if (angle > maxRotationSpeed * Time.deltaTime) angle = maxRotationSpeed * Time.deltaTime;
+                if (axis.y < 0.0f) angle = -angle;
+                transform.Rotate(new Vector3(0, 1, 0), angle, Space.World);
+            }
+            else
+                MoveEnemy();
         }
         else // Move according to the pattern
-        {
-            if (movDirection == new Vector3(0, 0, 0))
-            {
-                if (movementPattern == "Vertically")
-                    movDirection = Vector3.forward;
-                else if (movementPattern == "Horizontally")
-                    movDirection = Vector3.right;
-            }
-            // Rotate the enemy to face the movement direction 
-            Quaternion rotation = Quaternion.FromToRotation(transform.forward, movDirection);
-            rotation.ToAngleAxis(out float angle, out Vector3 axis);
-            if (angle > maxRotationSpeed * Time.deltaTime) angle = maxRotationSpeed * Time.deltaTime;
-            if (axis.y < 0.0f) angle = -angle;
-            transform.Rotate(new Vector3(0, 1, 0), angle, Space.World);
-
-            // Move the enemy
-            transform.Translate(speed * Time.deltaTime * Vector3.Normalize(movDirection), Space.World);
-        }
+            MoveEnemy();
     }
 }
