@@ -26,13 +26,13 @@ public class EnemyAnubisShoot : MonoBehaviour
         timeToShoot -= Time.deltaTime;
 
         // A valorar: hacerlo con pase de mensajes desde move hacia shoot
-        if (!Physics.Linecast(transform.position, knight.transform.position))
+        if (!Physics.Linecast(transform.position, knight.transform.position, 7)) // Ignore the player layer
         {
             if (timeToShoot < 0.0f)
             {
                 // Create the shot
                 timeToShoot = 1.0f / shootingFreq;
-                Instantiate(shot, transform.position + transform.forward + new Vector3(0.0f, 20.0f, 0.0f), transform.rotation);
+                Instantiate(shot, transform.position + transform.forward + new Vector3(0.0f, 5.0f, 0.0f), transform.rotation);
             }
             if (timeToShoot < 0.5f)
             {

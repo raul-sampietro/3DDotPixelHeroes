@@ -39,9 +39,8 @@ public class EnemyAnubisMove : MonoBehaviour
             knight = GameObject.Find("Knight");
 
         // Stop moving and prepare to shoot the player
-        if (!Physics.Linecast(transform.position, knight.transform.position))
+        if (!Physics.Linecast(transform.position, knight.transform.position, 7)) // Ignore the player layer
         {
-            GetComponent<Rigidbody>().velocity = new(0,0,0);
             // Locate the direction to reach  the player
             Vector3 direction = knight.transform.position - transform.position;
             direction = Vector3.Normalize(direction);
@@ -70,7 +69,7 @@ public class EnemyAnubisMove : MonoBehaviour
             transform.Rotate(new Vector3(0, 1, 0), angle, Space.World);
 
             // Move the enemy
-            GetComponent<Rigidbody>().velocity = movDirection * speed;
+            transform.Translate(speed * Time.deltaTime * Vector3.Normalize(movDirection), Space.World);
         }
     }
 }
