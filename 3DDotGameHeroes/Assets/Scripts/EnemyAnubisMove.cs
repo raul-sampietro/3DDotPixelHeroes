@@ -38,7 +38,7 @@ public class EnemyAnubisMove : MonoBehaviour
         if (knight == null)
             knight = GameObject.Find("Knight");
 
-        // Stop moving and shoot the player
+        // Stop moving and prepare to shoot the player
         if (!Physics.Linecast(transform.position, knight.transform.position))
         {
             GetComponent<Rigidbody>().velocity = new(0,0,0);

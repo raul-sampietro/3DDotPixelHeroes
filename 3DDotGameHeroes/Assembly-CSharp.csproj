@@ -58,15 +58,15 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\TimedDestroy.cs" />
     <Compile Include="Assets\Scripts\CameraMover.cs" />
+    <Compile Include="Assets\Scripts\PlayerWinLose.cs" />
     <Compile Include="Assets\Scripts\EnemyAnubisShoot.cs" />
     <Compile Include="Assets\Scripts\PlayerMove.cs" />
     <Compile Include="Assets\Scripts\FollowPlayer.cs" />
     <Compile Include="Assets\Scripts\EnemyAnubisMove.cs" />
     <Compile Include="Assets\Scripts\FixedRotationY.cs" />
     <Compile Include="Assets\Scripts\ColorToPrefab.cs" />
-    <Compile Include="Assets\Scripts\LevelGenerator.cs" />
     <Compile Include="Assets\Scripts\MenuManager.cs" />
-    <Compile Include="Assets\Scripts\PlayerWinLose.cs" />
+    <Compile Include="Assets\Scripts\LevelGenerator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
