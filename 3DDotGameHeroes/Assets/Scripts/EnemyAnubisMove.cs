@@ -11,11 +11,14 @@ public class EnemyAnubisMove : MonoBehaviour
 
     private GameObject knight = null;
     private LayerMask playerLayer;
+    Animator animator;
+
 
     // Start is called before the first frame update
     void Start()
     {
         playerLayer  = LayerMask.GetMask("Player");
+        animator = gameObject.GetComponent<Animator>();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -34,6 +37,7 @@ public class EnemyAnubisMove : MonoBehaviour
 
     private void MoveEnemy()
     {
+        animator.SetBool("isMoving", true);
         if (movDirection == new Vector3(0, 0, 0))
         {
             if (movementPattern == "Vertically")
@@ -63,11 +67,12 @@ public class EnemyAnubisMove : MonoBehaviour
 
 
         // Stop moving and prepare to shoot the player
-        Physics.Linecast(transform.position, knight.transform.position, out RaycastHit hit);
-        if (Physics.Linecast(transform.position, knight.transform.position, out hit))
+        //Physics.Linecast(transform.position, knight.transform.position, out RaycastHit hit);
+        if (Physics.Linecast(transform.position, knight.transform.position, out RaycastHit hit))
         {
             if (hit.collider.gameObject == knight)
             {
+                animator.SetBool("isMoving", false);
                 // Locate the direction to reach  the player
                 Vector3 direction = knight.transform.position - transform.position;
                 direction = Vector3.Normalize(direction);

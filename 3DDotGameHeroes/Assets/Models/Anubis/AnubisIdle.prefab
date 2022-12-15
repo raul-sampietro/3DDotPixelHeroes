@@ -653,10 +653,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7304563268389608577}
+  - component: {fileID: 7121806099732909730}
   - component: {fileID: 7121806099732909759}
   - component: {fileID: 7121806099732909757}
-  - component: {fileID: 407001783}
-  - component: {fileID: 6574746787174580925}
+  - component: {fileID: -257678686952057258}
+  - component: {fileID: 5662884647437801996}
   m_Layer: 0
   m_Name: AnubisIdle
   m_TagString: Untagged
@@ -680,6 +681,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
+--- !u!95 &7121806099732909730
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7932199297264305723}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1be38be065a154b4ea2536a2c16fc6cb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &7121806099732909759
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -708,21 +729,7 @@ MonoBehaviour:
   shootingFreq: 0.25
   timeToShoot: 0
   shot: {fileID: 7778649997117238036, guid: 71b433c9e00c68c47a510a7c02092bbc, type: 3}
---- !u!136 &407001783
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7932199297264305723}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 9.088936
-  m_Height: 36.795815
-  m_Direction: 1
-  m_Center: {x: 0, y: 17.660213, z: -0.04322529}
---- !u!54 &6574746787174580925
+--- !u!54 &-257678686952057258
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -738,6 +745,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!136 &5662884647437801996
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7932199297264305723}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 11.01883
+  m_Height: 35.150646
+  m_Direction: 1
+  m_Center: {x: 0.3306222, y: 17.075321, z: 1.5527308}
 --- !u!1 &8798004201417319912
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,13 +9,15 @@ public class EnemyAnubisShoot : MonoBehaviour
     public GameObject shot;
 
     private GameObject knight = null;
-    private LayerMask playerLayer; 
+    private LayerMask playerLayer;
+    Animator animator;
 
     // Start is called before the first frame update
     void Start()
     {
         timeToShoot = 1.0f / shootingFreq;
         playerLayer = LayerMask.GetMask("Player");
+        animator = gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -28,28 +30,25 @@ public class EnemyAnubisShoot : MonoBehaviour
         timeToShoot -= Time.deltaTime;
 
         // A valorar: hacerlo con pase de mensajes desde move hacia shoot
-        Physics.Linecast(transform.position, knight.transform.position, out RaycastHit hit);
-        if (Physics.Linecast(transform.position, knight.transform.position, out hit))
+        //Physics.Linecast(transform.position, knight.transform.position, out RaycastHit hit);
+        if (Physics.Linecast(transform.position, knight.transform.position, out RaycastHit hit))
         {
             if (hit.collider.gameObject == knight)
             {
                 if (timeToShoot < 0.0f)
                 {
+                    // Trigger the shooting animation
+                    animator.SetBool("isShooting", true);
+
                     // Create the shot
                     timeToShoot = 1.0f / shootingFreq;
                     Instantiate(shot, transform.position + transform.forward + new Vector3(0.0f, 5.0f, 0.0f), transform.rotation);
                 }
-                if (timeToShoot < 0.5f)
-                {
-                    // Start the shooting animation
-                    //gameObject.GetComponent<Animation>().Play("anubis_shoot");
+                else {
+                    // TODO: wait for the shooting animation to finish
+                    animator.SetBool("isShooting", false);
                 }
             }
-        }
-        else
-        {
-            // Trigger the walking animation
-           //gameObject.GetComponent<Animation>().Play("anubis_walking");
         }
     }
 }
