@@ -34,8 +34,8 @@ public class LevelGenerator : MonoBehaviour
                     {
                         foreach (ColorToPrefab colorPrefab in colorMappings)
                         {
-                            //Debug.Log("PixelColor: " + pixelColor);
-                            //Debug.Log("colorPrefab: " + colorPrefab.color);
+                            Debug.Log("PixelColor: " + pixelColor);
+                            Debug.Log("colorPrefab: " + colorPrefab.color);
                             //Debug.Log("X: " + x);
                             //Debug.Log("Z: " + z);
 
@@ -52,13 +52,26 @@ public class LevelGenerator : MonoBehaviour
                                 switch (colorPrefab.prefab.name)
                                 {
                                     case "wall":
+                                        
+                                        Vector3 rotationX = new(0,0,0);
                                         // Rotate according to position X in the level
-                                        if (x == 0) obj.transform.Rotate(0.0f, 90.0f, 0.0f, Space.World); // Left side
-                                        else if (x == level.width - 1) obj.transform.Rotate(0.0f, -90.0f, 0.0f, Space.World); // Right side
+                                        if (x == 0) rotationX = new(0.0f, 90.0f, 0.0f); // Left side
+                                        else if (x == level.width - 1) rotationX = new(0.0f, -90.0f, 0.0f); // Right side
+                                        obj.transform.Rotate(rotationX, Space.World);  
 
+                                        Vector3 rotationZ = new(0, 0, 0);
                                         // Rotate according to position Y in the level
-                                        if (z == 0) obj.transform.Rotate(0.0f, 0.0f, 0.0f, Space.World); // Bottom side (no rotation needed)
-                                        else if (z == level.height - 1) obj.transform.Rotate(0.0f, -180.0f, 0.0f, Space.World); // Top side
+                                        if (z == 0) rotationZ = new(0.0f, 0.0f, 0.0f); // Bottom side (no rotation needed)
+                                        else if (z == level.height - 1) rotationZ = new(0.0f, -180.0f, 0.0f); // Top side
+                                        obj.transform.Rotate(rotationZ, Space.World);
+
+                                        // Check if a torch has to be added
+                                        if (colorPrefab.torch != null)
+                                        {
+                                            GameObject torch = Instantiate(colorPrefab.torch, position + new Vector3(0, 10, 0), Quaternion.identity, transform);
+                                            torch.transform.Rotate(rotationX, Space.World);
+                                            torch.transform.Rotate(rotationX, Space.World);
+                                        }
 
                                         break;
 
@@ -72,6 +85,8 @@ public class LevelGenerator : MonoBehaviour
                                     // Assing this property to the gameObject
 
                                 }
+
+                                
 
                                 if (colorPrefab.dropLife) 
                                 {

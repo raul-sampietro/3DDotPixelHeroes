@@ -15,6 +15,8 @@ public class ColorToPrefab
     public bool dropCoin;
     public bool dropLife;
 
+    public GameObject torch;
+
     // Type of movement
     public System.String movementPattern;
 }
