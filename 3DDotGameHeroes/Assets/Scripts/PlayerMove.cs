@@ -44,41 +44,53 @@ public class PlayerMove : MonoBehaviour
             moveDirection += Vector3.right;
         }
 
-        // Set animation
+        // Set isMoving animator input
         if (moveDirection != Vector3.zero) animator.SetBool("isMoving", true);
         else animator.SetBool("isMoving", false);
 
-        // Compose lookDirection
-        Vector3 lookDirection = Vector3.zero;
+        // Compose attackDirection
+        Vector3 attackDirection = Vector3.zero;
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            lookDirection += Vector3.forward;
+            attackDirection += Vector3.forward;
         }
         if (Input.GetKey(KeyCode.DownArrow))
         {
-            lookDirection += -Vector3.forward;
+            attackDirection += -Vector3.forward;
         }
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            lookDirection += Vector3.left;
+            attackDirection += Vector3.left;
         }
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            lookDirection += Vector3.right;
+            attackDirection += Vector3.right;
         }
 
         // Set lookDirection
-        if (lookDirection == Vector3.zero) lookDirection = moveDirection;
+        Vector3 lookDirection;
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("AttackStart") ||
+            animator.GetCurrentAnimatorStateInfo(0).IsName("AttackEnd"))
+        {
+            lookDirection = prevLookDirection;
+        }
+        else if (attackDirection == Vector3.zero)
+        {
+            lookDirection = moveDirection;
+        }
+        else {
+            lookDirection = attackDirection;
+        }
+
+        // Set isAttacking animator input
+        if (attackDirection != Vector3.zero) animator.SetBool("isAttacking", true);
+        else animator.SetBool("isAttacking", false);
 
         // Rotate to face lookDirection
-        if (lookDirection != Vector3.zero)
-        {
-            Quaternion rotation = Quaternion.FromToRotation(transform.forward, lookDirection);
-            rotation.ToAngleAxis(out float angle, out Vector3 axis);
-            if (axis.y < 0.0f) angle = -angle;
-            transform.Rotate(new Vector3(0, 1, 0), angle, Space.World);
-        }
-        else lookDirection = prevLookDirection;
+        Quaternion rotation = Quaternion.FromToRotation(transform.forward, lookDirection);
+        rotation.ToAngleAxis(out float angle, out Vector3 axis);
+        if (axis.y < 0.0f) angle = -angle;
+        transform.Rotate(new Vector3(0, 1, 0), angle, Space.World);
 
         // Translate
         transform.Translate(Speed * Time.deltaTime * Vector3.Normalize(moveDirection), Space.World);
