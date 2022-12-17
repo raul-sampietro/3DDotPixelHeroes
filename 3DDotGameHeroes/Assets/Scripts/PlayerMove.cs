@@ -105,7 +105,7 @@ public class PlayerMove : MonoBehaviour
             if (!swordInstantiated)
             {
                 swordInstantiated = true;
-                Vector3 forward = transform.forward * 20;
+                Vector3 forward = transform.forward * 5;
                 Vector3 up = -transform.up * 5;
                 Vector3 swordRelPos = forward + up;
                 Debug.Log(swordRelPos);
