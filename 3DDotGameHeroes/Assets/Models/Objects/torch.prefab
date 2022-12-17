@@ -25,14 +25,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1248103218}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0.593, z: -0.186}
+  m_LocalRotation: {x: -0, y: 0.9979021, z: 0.0647412, w: 0}
+  m_LocalPosition: {x: 0, y: 0.59300005, z: -0.186}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1310105469527233848}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: -7.424, y: 180, z: 0}
 --- !u!108 &1248103221
 Light:
   m_ObjectHideFlags: 0
@@ -48,7 +48,7 @@ Light:
   m_Intensity: 75497470
   m_Range: 28.84
   m_SpotAngle: 179
-  m_InnerSpotAngle: 21.80208
+  m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
     m_Type: 0
@@ -88,7 +88,7 @@ Light:
   m_LightShadowCasterMode: 2
   m_AreaSize: {x: 2, y: 2}
   m_BounceIntensity: 1
-  m_ColorTemperature: 6570
+  m_ColorTemperature: 3458
   m_UseColorTemperature: 1
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 28.84}
   m_UseBoundingSphereOverride: 0
@@ -107,14 +107,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a68c43fe1f2a47cfa234b5eeaa98012, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Intensity: 8388608
+  m_Intensity: 470225060
   m_EnableSpotReflector: 1
   m_LuxAtDistance: 3
-  m_InnerSpotPercent: 0
+  m_InnerSpotPercent: 100
   m_SpotIESCutoffPercent: 100
   m_LightDimmer: 1
   m_VolumetricDimmer: 1
-  m_LightUnit: 2
+  m_LightUnit: 0
   m_FadeDistance: 10000
   m_VolumetricFadeDistance: 10000
   m_AffectDiffuse: 1
@@ -126,7 +126,7 @@ MonoBehaviour:
   m_ShapeRadius: 0.025
   m_SoftnessScale: 1
   m_UseCustomSpotLightShadowCone: 0
-  m_CustomSpotLightShadowCone: 30
+  m_CustomSpotLightShadowCone: 1
   m_MaxSmoothness: 0.99
   m_ApplyRangeAttenuation: 1
   m_DisplayAreaLightEmissiveMesh: 0
@@ -226,6 +226,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1310105469527233848}
+  - component: {fileID: -7800664320564281129}
   m_Layer: 0
   m_Name: torch
   m_TagString: Untagged
@@ -250,6 +251,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-7800664320564281129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1830077005556076418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 044f06f44486b524d811e5e73ea127e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minIntensity: 370225100
+  maxIntesity: 470225100
+  minRange: 26.84
+  maxRange: 28.84
 --- !u!1 &7271192128521549659
 GameObject:
   m_ObjectHideFlags: 0
