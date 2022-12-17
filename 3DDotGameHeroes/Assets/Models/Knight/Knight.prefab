@@ -752,9 +752,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8958718431463006957}
-  m_LocalRotation: {x: -0.00000004371139, y: 2.6765506e-24, z: 1, w: 6.123234e-17}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -19.95408, y: 0, z: -32.591022}
-  m_LocalScale: {x: 1, y: -1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 751189633032713797}
@@ -794,4 +794,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 70
-  sword: {fileID: 4964710315046344737, guid: 5fa7ca1d330a33d4f91c0f940ae9363e, type: 3}
+  sword: {fileID: 7622455505207124268, guid: 5fa7ca1d330a33d4f91c0f940ae9363e, type: 3}

@@ -52,7 +52,6 @@ public class KnightSwordSpawn : MonoBehaviour
         {
             if (transform.localScale.z - disappearRate < 0)
             {
-                transform.localScale -= new Vector3(0, 0, disappearRate - (disappearRate - transform.localScale.z));
                 Destroy(this.gameObject);
             }
             else {

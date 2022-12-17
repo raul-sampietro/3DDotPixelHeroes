@@ -106,7 +106,7 @@ public class PlayerMove : MonoBehaviour
             {
                 swordInstantiated = true;
                 Vector3 forward = transform.forward * 5;
-                Vector3 up = -transform.up * 5;
+                Vector3 up = transform.up * 5;
                 Vector3 swordRelPos = forward + up;
                 swordObj = Instantiate(sword, transform.position + swordRelPos, transform.rotation);
             }

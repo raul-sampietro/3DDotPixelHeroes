@@ -1,0 +1,503 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <created>2022-12-18T00:38:46Z</created>
+    <modified>2022-12-18T00:38:46Z</modified>
+    <revision>1.0</revision>
+  </asset>
+  <library_images>
+    <image id="Handle-diffuse-tex" name="Handle-diffuse-tex">
+      <init_from>KnightSword_res/Handle_diffuse.png</init_from>
+    </image>
+    <image id="Handle-emissive-tex" name="Handle-emissive-tex">
+      <init_from>KnightSword_res/Handle_emissive.png</init_from>
+    </image>
+    <image id="Blade-diffuse-tex" name="Blade-diffuse-tex">
+      <init_from>KnightSword_res/Blade_diffuse.png</init_from>
+    </image>
+    <image id="Blade-emissive-tex" name="Blade-emissive-tex">
+      <init_from>KnightSword_res/Blade_emissive.png</init_from>
+    </image>
+  </library_images>
+  <library_effects>
+    <effect id="Handle-Effect">
+      <profile_COMMON>
+        <newparam sid="Handle-diffuse-surface">
+          <surface type="2D">
+            <init_from>Handle-diffuse-tex</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="Handle-emissive-surface">
+          <surface type="2D">
+            <init_from>Handle-emissive-tex</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="Handle-diffuse-sampler">
+          <sampler2D>
+            <source>Handle-diffuse-surface</source>
+            <wrap_s>CLAMP</wrap_s>
+            <wrap_t>CLAMP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <newparam sid="Handle-emissive-sampler">
+          <sampler2D>
+            <source>Handle-emissive-surface</source>
+            <wrap_s>CLAMP</wrap_s>
+            <wrap_t>CLAMP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="phong1">
+          <phong>
+            <emission>
+              <texture texcoord="Handle-tex-bind" texture="Handle-emissive-sampler"/>
+            </emission>
+            <ambient>
+              <color>1.0 1.0 1.0 1.0</color>
+            </ambient>
+            <diffuse>
+              <texture texcoord="Handle-tex-bind" texture="Handle-diffuse-sampler"/>
+            </diffuse>
+            <specular>
+              <color>0.0 0.0 0.0 1.0</color>
+            </specular>
+            <shininess>
+              <float>5.0</float>
+            </shininess>
+            <reflective>
+              <color>1.0 1.0 1.0 1.0</color>
+            </reflective>
+            <reflectivity>
+              <float>0.2</float>
+            </reflectivity>
+            <transparent>
+              <color>1.0 1.0 1.0 1.0</color>
+            </transparent>
+            <transparency>
+              <float>1.0</float>
+            </transparency>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="Blade-Effect">
+      <profile_COMMON>
+        <newparam sid="Blade-diffuse-surface">
+          <surface type="2D">
+            <init_from>Blade-diffuse-tex</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="Blade-emissive-surface">
+          <surface type="2D">
+            <init_from>Blade-emissive-tex</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="Blade-diffuse-sampler">
+          <sampler2D>
+            <source>Blade-diffuse-surface</source>
+            <wrap_s>CLAMP</wrap_s>
+            <wrap_t>CLAMP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <newparam sid="Blade-emissive-sampler">
+          <sampler2D>
+            <source>Blade-emissive-surface</source>
+            <wrap_s>CLAMP</wrap_s>
+            <wrap_t>CLAMP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="phong1">
+          <phong>
+            <emission>
+              <texture texcoord="Blade-tex-bind" texture="Blade-emissive-sampler"/>
+            </emission>
+            <ambient>
+              <color>1.0 1.0 1.0 1.0</color>
+            </ambient>
+            <diffuse>
+              <texture texcoord="Blade-tex-bind" texture="Blade-diffuse-sampler"/>
+            </diffuse>
+            <specular>
+              <color>0.0 0.0 0.0 1.0</color>
+            </specular>
+            <shininess>
+              <float>5.0</float>
+            </shininess>
+            <reflective>
+              <color>1.0 1.0 1.0 1.0</color>
+            </reflective>
+            <reflectivity>
+              <float>0.2</float>
+            </reflectivity>
+            <transparent>
+              <color>1.0 1.0 1.0 1.0</color>
+            </transparent>
+            <transparency>
+              <float>1.0</float>
+            </transparency>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_materials>
+    <material id="Handle-Material">
+      <instance_effect url="#Handle-Effect"/>
+    </material>
+    <material id="Blade-Material">
+      <instance_effect url="#Blade-Effect"/>
+    </material>
+  </library_materials>
+  <library_geometries>
+    <geometry id="Handle-Geom" name="Handle-Geom">
+      <mesh>
+        <source id="Handle-Pos">
+          <float_array count="888" id="Handle-Pos-array">-3.5 -0.5 3.0 -3.5 0.5 3.0 -3.5 0.5 2.0 -3.5 -0.5 2.0 -2.5 -0.5 2.0 -2.5 0.5 2.0 -2.5 0.5 1.0 -2.5 -0.5 1.0 -1.5 -1.5 3.0 -1.5 -0.5 3.0 -1.5 -0.5 1.0 -1.5 -1.5 1.0 -1.5 0.5 3.0 -1.5 1.5 3.0 -1.5 1.5 1.0 -1.5 0.5 1.0 -1.5 -0.5 -2.0 -1.5 0.5 -2.0 -1.5 0.5 -3.0 -1.5 -0.5 -3.0 -1.5 -0.5 1.0 -1.5 0.5 1.0 -1.5 0.5 0.0 -1.5 -0.5 0.0 -0.5 -0.5 0.0 -0.5 0.5 0.0 -0.5 0.5 -2.0 -0.5 -0.5 -2.0 -0.5 -0.5 -3.0 -0.5 0.5 -3.0 -0.5 0.5 -4.0 -0.5 -0.5 -4.0 -0.5 -1.5 1.0 -0.5 -0.5 1.0 -0.5 -0.5 0.0 -0.5 -1.5 0.0 -0.5 0.5 1.0 -0.5 1.5 1.0 -0.5 1.5 0.0 -0.5 0.5 0.0 -0.5 -1.5 4.0 -0.5 -0.5 4.0 -0.5 -0.5 3.0 -0.5 -1.5 3.0 -0.5 0.5 4.0 -0.5 1.5 4.0 -0.5 1.5 3.0 -0.5 0.5 3.0 0.5 -0.5 -2.0 0.5 0.5 -2.0 0.5 0.5 0.0 0.5 -0.5 0.0 0.5 -0.5 -4.0 0.5 0.5 -4.0 0.5 0.5 -3.0 0.5 -0.5 -3.0 0.5 -1.5 0.0 0.5 -0.5 0.0 0.5 -0.5 1.0 0.5 -1.5 1.0 0.5 0.5 0.0 0.5 1.5 0.0 0.5 1.5 1.0 0.5 0.5 1.0 0.5 -1.5 3.0 0.5 -0.5 3.0 0.5 -0.5 4.0 0.5 -1.5 4.0 0.5 0.5 3.0 0.5 1.5 3.0 0.5 1.5 4.0 0.5 0.5 4.0 1.5 -1.5 1.0 1.5 -0.5 1.0 1.5 -0.5 3.0 1.5 -1.5 3.0 1.5 0.5 1.0 1.5 1.5 1.0 1.5 1.5 3.0 1.5 0.5 3.0 1.5 -0.5 -3.0 1.5 0.5 -3.0 1.5 0.5 -2.0 1.5 -0.5 -2.0 1.5 -0.5 0.0 1.5 0.5 0.0 1.5 0.5 1.0 1.5 -0.5 1.0 2.5 -0.5 1.0 2.5 0.5 1.0 2.5 0.5 2.0 2.5 -0.5 2.0 3.5 -0.5 2.0 3.5 0.5 2.0 3.5 0.5 3.0 3.5 -0.5 3.0 -1.5 -1.5 1.0 1.5 -1.5 1.0 1.5 -1.5 3.0 -1.5 -1.5 3.0 -0.5 -1.5 0.0 0.5 -1.5 0.0 0.5 -1.5 1.0 -0.5 -1.5 1.0 -0.5 -1.5 3.0 0.5 -1.5 3.0 0.5 -1.5 4.0 -0.5 -1.5 4.0 -0.5 -0.5 -4.0 0.5 -0.5 -4.0 0.5 -0.5 0.0 -0.5 -0.5 0.0 -2.5 -0.5 1.0 -1.5 -0.5 1.0 -1.5 -0.5 3.0 -2.5 -0.5 3.0 1.5 -0.5 1.0 2.5 -0.5 1.0 2.5 -0.5 3.0 1.5 -0.5 3.0 -1.5 -0.5 -3.0 -0.5 -0.5 -3.0 -0.5 -0.5 -2.0 -1.5 -0.5 -2.0 0.5 -0.5 -3.0 1.5 -0.5 -3.0 1.5 -0.5 -2.0 0.5 -0.5 -2.0 -1.5 -0.5 0.0 -0.5 -0.5 0.0 -0.5 -0.5 1.0 -1.5 -0.5 1.0 0.5 -0.5 0.0 1.5 -0.5 0.0 1.5 -0.5 1.0 0.5 -0.5 1.0 -3.5 -0.5 2.0 -2.5 -0.5 2.0 -2.5 -0.5 3.0 -3.5 -0.5 3.0 2.5 -0.5 2.0 3.5 -0.5 2.0 3.5 -0.5 3.0 2.5 -0.5 3.0 -0.5 0.5 3.0 0.5 0.5 3.0 0.5 0.5 4.0 -0.5 0.5 4.0 -0.5 -0.5 4.0 0.5 -0.5 4.0 0.5 -0.5 3.0 -0.5 -0.5 3.0 -0.5 0.5 0.0 0.5 0.5 0.0 0.5 0.5 -4.0 -0.5 0.5 -4.0 -2.5 0.5 3.0 -1.5 0.5 3.0 -1.5 0.5 1.0 -2.5 0.5 1.0 1.5 0.5 3.0 2.5 0.5 3.0 2.5 0.5 1.0 1.5 0.5 1.0 -1.5 0.5 -2.0 -0.5 0.5 -2.0 -0.5 0.5 -3.0 -1.5 0.5 -3.0 0.5 0.5 -2.0 1.5 0.5 -2.0 1.5 0.5 -3.0 0.5 0.5 -3.0 -1.5 0.5 1.0 -0.5 0.5 1.0 -0.5 0.5 0.0 -1.5 0.5 0.0 0.5 0.5 1.0 1.5 0.5 1.0 1.5 0.5 0.0 0.5 0.5 0.0 -3.5 0.5 3.0 -2.5 0.5 3.0 -2.5 0.5 2.0 -3.5 0.5 2.0 2.5 0.5 3.0 3.5 0.5 3.0 3.5 0.5 2.0 2.5 0.5 2.0 -1.5 1.5 3.0 1.5 1.5 3.0 1.5 1.5 1.0 -1.5 1.5 1.0 -0.5 1.5 1.0 0.5 1.5 1.0 0.5 1.5 0.0 -0.5 1.5 0.0 -0.5 1.5 4.0 0.5 1.5 4.0 0.5 1.5 3.0 -0.5 1.5 3.0 -0.5 0.5 -4.0 0.5 0.5 -4.0 0.5 -0.5 -4.0 -0.5 -0.5 -4.0 -1.5 0.5 -3.0 -0.5 0.5 -3.0 -0.5 -0.5 -3.0 -1.5 -0.5 -3.0 0.5 0.5 -3.0 1.5 0.5 -3.0 1.5 -0.5 -3.0 0.5 -0.5 -3.0 -0.5 -0.5 0.0 0.5 -0.5 0.0 0.5 -1.5 0.0 -0.5 -1.5 0.0 -1.5 0.5 0.0 -0.5 0.5 0.0 -0.5 -0.5 0.0 -1.5 -0.5 0.0 0.5 0.5 0.0 1.5 0.5 0.0 1.5 -0.5 0.0 0.5 -0.5 0.0 -0.5 1.5 0.0 0.5 1.5 0.0 0.5 0.5 0.0 -0.5 0.5 0.0 -1.5 -0.5 1.0 -0.5 -0.5 1.0 -0.5 -1.5 1.0 -1.5 -1.5 1.0 0.5 -0.5 1.0 1.5 -0.5 1.0 1.5 -1.5 1.0 0.5 -1.5 1.0 -2.5 0.5 1.0 -1.5 0.5 1.0 -1.5 -0.5 1.0 -2.5 -0.5 1.0 1.5 0.5 1.0 2.5 0.5 1.0 2.5 -0.5 1.0 1.5 -0.5 1.0 -1.5 1.5 1.0 -0.5 1.5 1.0 -0.5 0.5 1.0 -1.5 0.5 1.0 0.5 1.5 1.0 1.5 1.5 1.0 1.5 0.5 1.0 0.5 0.5 1.0 -3.5 0.5 2.0 -2.5 0.5 2.0 -2.5 -0.5 2.0 -3.5 -0.5 2.0 2.5 0.5 2.0 3.5 0.5 2.0 3.5 -0.5 2.0 2.5 -0.5 2.0 -1.5 -0.5 -2.0 -0.5 -0.5 -2.0 -0.5 0.5 -2.0 -1.5 0.5 -2.0 0.5 -0.5 -2.0 1.5 -0.5 -2.0 1.5 0.5 -2.0 0.5 0.5 -2.0 -3.5 -0.5 3.0 3.5 -0.5 3.0 3.5 0.5 3.0 -3.5 0.5 3.0 -1.5 -1.5 3.0 -0.5 -1.5 3.0 -0.5 -0.5 3.0 -1.5 -0.5 3.0 0.5 -1.5 3.0 1.5 -1.5 3.0 1.5 -0.5 3.0 0.5 -0.5 3.0 -1.5 0.5 3.0 -0.5 0.5 3.0 -0.5 1.5 3.0 -1.5 1.5 3.0 0.5 0.5 3.0 1.5 0.5 3.0 1.5 1.5 3.0 0.5 1.5 3.0 -0.5 -1.5 4.0 0.5 -1.5 4.0 0.5 -0.5 4.0 -0.5 -0.5 4.0 -0.5 0.5 4.0 0.5 0.5 4.0 0.5 1.5 4.0 -0.5 1.5 4.0 </float_array>
+          <technique_common>
+            <accessor count="296" source="#Handle-Pos-array" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Handle-UV">
+          <float_array count="592" id="Handle-UV-array">0.0 0.9375 0.03125 0.9375 0.03125 1.0 0.0 1.0 0.0 0.9375 0.03125 0.9375 0.03125 1.0 0.0 1.0 0.3125 0.875 0.34375 0.875 0.34375 1.0 0.3125 1.0 0.3125 0.875 0.34375 0.875 0.34375 1.0 0.3125 1.0 0.0 0.9375 0.03125 0.9375 0.03125 1.0 0.0 1.0 0.0 0.9375 0.03125 0.9375 0.03125 1.0 0.0 1.0 0.53125 0.5 0.5625 0.5 0.5625 0.625 0.53125 0.625 0.0 0.9375 0.03125 0.9375 0.03125 1.0 0.0 1.0 0.0 0.9375 0.03125 0.9375 0.03125 1.0 0.0 1.0 0.0 0.9375 0.03125 0.9375 0.03125 1.0 0.0 1.0 0.0 0.9375 0.03125 0.9375 0.03125 1.0 0.0 1.0 0.0 0.9375 0.03125 0.9375 0.03125 1.0 0.0 1.0 0.3125 0.6875 0.34375 0.6875 0.34375 0.5625 0.3125 0.5625 0.0 1.0 0.03125 1.0 0.03125 0.9375 0.0 0.9375 0.0 1.0 0.03125 1.0 0.03125 0.9375 0.0 0.9375 0.0 1.0 0.03125 1.0 0.03125 0.9375 0.0 0.9375 0.0 1.0 0.03125 1.0 0.03125 0.9375 0.0 0.9375 0.0 1.0 0.03125 1.0 0.03125 0.9375 0.0 0.9375 0.3125 1.0 0.34375 1.0 0.34375 0.875 0.3125 0.875 0.3125 1.0 0.34375 1.0 0.34375 0.875 0.3125 0.875 0.0 1.0 0.03125 1.0 0.03125 0.9375 0.0 0.9375 0.0 1.0 0.03125 1.0 0.03125 0.9375 0.0 0.9375 0.0 1.0 0.03125 1.0 0.03125 0.9375 0.0 0.9375 0.0 1.0 0.03125 1.0 0.03125 0.9375 0.0 0.9375 0.3125 0.8125 0.3125 1.0 0.375 1.0 0.375 0.8125 0.0 1.0 0.03125 1.0 0.03125 0.9375 0.0 0.9375 0.0 1.0 0.03125 1.0 0.03125 0.9375 0.0 0.9375 0.53125 1.0 0.5625 1.0 0.5625 0.75 0.53125 0.75 0.3125 1.0 0.34375 1.0 0.34375 0.875 0.3125 0.875 0.3125 1.0 0.34375 1.0 0.34375 0.875 0.3125 0.875 0.0 1.0 0.03125 1.0 0.03125 0.9375 0.0 0.9375 0.0 1.0 0.03125 1.0 0.03125 0.9375 0.0 0.9375 0.0 1.0 0.03125 1.0 0.03125 0.9375 0.0 0.9375 0.0 1.0 0.03125 1.0 0.03125 0.9375 0.0 0.9375 0.0 1.0 0.03125 1.0 0.03125 0.9375 0.0 0.9375 0.0 1.0 0.03125 1.0 0.03125 0.9375 0.0 0.9375 0.0 1.0 0.03125 1.0 0.03125 0.9375 0.0 0.9375 0.0 0.9375 0.03125 0.9375 0.03125 1.0 0.0 1.0 0.0 0.5625 0.03125 0.5625 0.03125 0.8125 0.0 0.8125 0.09375 0.6875 0.125 0.6875 0.125 0.8125 0.09375 0.8125 0.1875 0.6875 0.21875 0.6875 0.21875 0.8125 0.1875 0.8125 0.0 0.9375 0.03125 0.9375 0.03125 1.0 0.0 1.0 0.0 0.9375 0.03125 0.9375 0.03125 1.0 0.0 1.0 0.0 0.9375 0.03125 0.9375 0.03125 1.0 0.0 1.0 0.0 0.9375 0.03125 0.9375 0.03125 1.0 0.0 1.0 0.0 0.9375 0.03125 0.9375 0.03125 1.0 0.0 1.0 0.0 0.9375 0.03125 0.9375 0.03125 1.0 0.0 1.0 0.375 0.8125 0.375 1.0 0.3125 1.0 0.3125 0.8125 0.0 0.9375 0.03125 0.9375 0.03125 1.0 0.0 1.0 0.0 0.9375 0.03125 0.9375 0.03125 1.0 0.0 1.0 0.0 0.9375 0.03125 0.9375 0.03125 1.0 0.0 1.0 0.0 0.9375 0.03125 0.9375 0.03125 1.0 0.0 1.0 0.0 0.9375 0.03125 0.9375 0.03125 1.0 0.0 1.0 0.0 0.9375 0.03125 0.9375 0.03125 1.0 0.0 1.0 0.0 0.9375 0.03125 0.9375 0.03125 1.0 0.0 1.0 0.0 0.9375 0.03125 0.9375 0.03125 1.0 0.0 1.0 0.0 0.9375 0.03125 0.9375 0.03125 1.0 0.0 1.0 0.0 0.9375 0.03125 0.9375 0.03125 1.0 0.0 1.0 0.0 0.9375 0.03125 0.9375 0.03125 1.0 0.0 1.0 0.0 0.9375 0.03125 0.9375 0.03125 1.0 0.0 1.0 0.0 0.9375 0.03125 0.9375 0.03125 1.0 0.0 1.0 0.0 0.9375 0.03125 0.9375 0.03125 1.0 0.0 1.0 0.0 0.9375 0.03125 0.9375 0.03125 1.0 0.0 1.0 0.0 0.9375 0.03125 0.9375 0.03125 1.0 0.0 1.0 0.0 0.9375 0.03125 0.9375 0.03125 1.0 0.0 1.0 0.0 1.0 0.03125 1.0 0.03125 0.9375 0.0 0.9375 0.0 1.0 0.03125 1.0 0.03125 0.9375 0.0 0.9375 0.4375 0.5625 0.4375 1.0 0.46875 1.0 0.46875 0.5625 0.0 1.0 0.03125 1.0 0.03125 0.9375 0.0 0.9375 0.0 1.0 0.03125 1.0 0.03125 0.9375 0.0 0.9375 0.0 1.0 0.03125 1.0 0.03125 0.9375 0.0 0.9375 0.0 1.0 0.03125 1.0 0.03125 0.9375 0.0 0.9375 0.0 1.0 0.03125 1.0 0.03125 0.9375 0.0 0.9375 0.0 1.0 0.03125 1.0 0.03125 0.9375 0.0 0.9375 </float_array>
+          <technique_common>
+            <accessor count="296" source="#Handle-UV-array" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Handle-Normal">
+          <float_array count="18" id="Handle-Normal-array">-1.0 0.0 0.0 1.0 0.0 0.0 0.0 -1.0 0.0 0.0 1.0 0.0 0.0 0.0 -1.0 0.0 0.0 1.0</float_array>
+          <technique_common>
+            <accessor count="6" source="#Handle-Normal-array" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Handle-Vertices">
+          <input semantic="POSITION" source="#Handle-Pos"/>
+        </vertices>
+        <polylist count="74" material="Handle-Material">
+          <input offset="0" semantic="VERTEX" source="#Handle-Vertices"/>
+          <input offset="1" semantic="TEXCOORD" set="0" source="#Handle-UV"/>
+          <input offset="2" semantic="NORMAL" source="#Handle-Normal"/>
+          <vcount>4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 </vcount>
+          <p>0 0 0 1 1 0 2 2 0 3 3 0 4 4 0 5 5 0 6 6 0 7 7 0 8 8 0 9 9 0 10 10 0 11 11 0 12 12 0 13 13 0 14 14 0 15 15 0 16 16 0 17 17 0 18 18 0 19 19 0 20 20 0 21 21 0 22 22 0 23 23 0 24 24 0 25 25 0 26 26 0 27 27 0 28 28 0 29 29 0 30 30 0 31 31 0 32 32 0 33 33 0 34 34 0 35 35 0 36 36 0 37 37 0 38 38 0 39 39 0 40 40 0 41 41 0 42 42 0 43 43 0 44 44 0 45 45 0 46 46 0 47 47 0 48 48 1 49 49 1 50 50 1 51 51 1 52 52 1 53 53 1 54 54 1 55 55 1 56 56 1 57 57 1 58 58 1 59 59 1 60 60 1 61 61 1 62 62 1 63 63 1 64 64 1 65 65 1 66 66 1 67 67 1 68 68 1 69 69 1 70 70 1 71 71 1 72 72 1 73 73 1 74 74 1 75 75 1 76 76 1 77 77 1 78 78 1 79 79 1 80 80 1 81 81 1 82 82 1 83 83 1 84 84 1 85 85 1 86 86 1 87 87 1 88 88 1 89 89 1 90 90 1 91 91 1 92 92 1 93 93 1 94 94 1 95 95 1 96 96 2 97 97 2 98 98 2 99 99 2 100 100 2 101 101 2 102 102 2 103 103 2 104 104 2 105 105 2 106 106 2 107 107 2 108 108 2 109 109 2 110 110 2 111 111 2 112 112 2 113 113 2 114 114 2 115 115 2 116 116 2 117 117 2 118 118 2 119 119 2 120 120 2 121 121 2 122 122 2 123 123 2 124 124 2 125 125 2 126 126 2 127 127 2 128 128 2 129 129 2 130 130 2 131 131 2 132 132 2 133 133 2 134 134 2 135 135 2 136 136 2 137 137 2 138 138 2 139 139 2 140 140 2 141 141 2 142 142 2 143 143 2 144 144 2 145 145 2 146 146 2 147 147 2 148 148 3 149 149 3 150 150 3 151 151 3 152 152 3 153 153 3 154 154 3 155 155 3 156 156 3 157 157 3 158 158 3 159 159 3 160 160 3 161 161 3 162 162 3 163 163 3 164 164 3 165 165 3 166 166 3 167 167 3 168 168 3 169 169 3 170 170 3 171 171 3 172 172 3 173 173 3 174 174 3 175 175 3 176 176 3 177 177 3 178 178 3 179 179 3 180 180 3 181 181 3 182 182 3 183 183 3 184 184 3 185 185 3 186 186 3 187 187 3 188 188 3 189 189 3 190 190 3 191 191 3 192 192 3 193 193 3 194 194 3 195 195 3 196 196 3 197 197 3 198 198 3 199 199 3 200 200 4 201 201 4 202 202 4 203 203 4 204 204 4 205 205 4 206 206 4 207 207 4 208 208 4 209 209 4 210 210 4 211 211 4 212 212 4 213 213 4 214 214 4 215 215 4 216 216 4 217 217 4 218 218 4 219 219 4 220 220 4 221 221 4 222 222 4 223 223 4 224 224 4 225 225 4 226 226 4 227 227 4 228 228 4 229 229 4 230 230 4 231 231 4 232 232 4 233 233 4 234 234 4 235 235 4 236 236 4 237 237 4 238 238 4 239 239 4 240 240 4 241 241 4 242 242 4 243 243 4 244 244 4 245 245 4 246 246 4 247 247 4 248 248 4 249 249 4 250 250 4 251 251 4 252 252 4 253 253 4 254 254 4 255 255 4 256 256 4 257 257 4 258 258 4 259 259 4 260 260 5 261 261 5 262 262 5 263 263 5 264 264 5 265 265 5 266 266 5 267 267 5 268 268 5 269 269 5 270 270 5 271 271 5 272 272 5 273 273 5 274 274 5 275 275 5 276 276 5 277 277 5 278 278 5 279 279 5 280 280 5 281 281 5 282 282 5 283 283 5 284 284 5 285 285 5 286 286 5 287 287 5 288 288 5 289 289 5 290 290 5 291 291 5 292 292 5 293 293 5 294 294 5 295 295 5 </p>
+        </polylist>
+      </mesh>
+    </geometry>
+    <geometry id="Blade-Geom" name="Blade-Geom">
+      <mesh>
+        <source id="Blade-Pos">
+          <float_array count="144" id="Blade-Pos-array">-1.4999999 -0.5 7.5 -1.4999999 0.5 7.5 -1.4999999 0.5 -8.5 -1.4999999 -0.5 -8.5 -0.49999997 -0.5 8.5 -0.49999997 0.5 8.5 -0.49999997 0.5 7.5 -0.49999997 -0.5 7.5 0.4999999 -0.5 7.5 0.4999999 0.5 7.5 0.4999999 0.5 8.5 0.4999999 -0.5 8.5 1.4999999 -0.5 -8.5 1.4999999 0.5 -8.5 1.4999999 0.5 7.5 1.4999999 -0.5 7.5 -1.4999999 -0.5 -8.5 1.4999999 -0.5 -8.5 1.4999999 -0.5 7.5 -1.4999999 -0.5 7.5 -0.49999997 -0.5 7.5 0.4999999 -0.5 7.5 0.4999999 -0.5 8.5 -0.49999997 -0.5 8.5 -1.4999999 0.5 7.5 1.4999999 0.5 7.5 1.4999999 0.5 -8.5 -1.4999999 0.5 -8.5 -0.49999997 0.5 8.5 0.4999999 0.5 8.5 0.4999999 0.5 7.5 -0.49999997 0.5 7.5 -1.4999999 0.5 -8.5 1.4999999 0.5 -8.5 1.4999999 -0.5 -8.5 -1.4999999 -0.5 -8.5 -1.4999999 -0.5 7.5 -0.49999997 -0.5 7.5 -0.49999997 0.5 7.5 -1.4999999 0.5 7.5 0.4999999 -0.5 7.5 1.4999999 -0.5 7.5 1.4999999 0.5 7.5 0.4999999 0.5 7.5 -0.49999997 -0.5 8.5 0.4999999 -0.5 8.5 0.4999999 0.5 8.5 -0.49999997 0.5 8.5 </float_array>
+          <technique_common>
+            <accessor count="48" source="#Blade-Pos-array" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Blade-UV">
+          <float_array count="96" id="Blade-UV-array">0.0 0.5 0.03125 0.5 0.03125 1.0 0.0 1.0 0.0 0.96875 0.03125 0.96875 0.03125 1.0 0.0 1.0 0.0 1.0 0.03125 1.0 0.03125 0.96875 0.0 0.96875 0.0 1.0 0.03125 1.0 0.03125 0.5 0.0 0.5 0.0 1.0 0.09375 1.0 0.09375 0.5 0.0 0.5 0.0 1.0 0.03125 1.0 0.03125 0.96875 0.0 0.96875 0.0 0.5 0.09375 0.5 0.09375 1.0 0.0 1.0 0.0 0.96875 0.03125 0.96875 0.03125 1.0 0.0 1.0 0.03125 0.90625 0.03125 1.0 0.0 1.0 0.0 0.90625 0.0 1.0 0.03125 1.0 0.03125 0.96875 0.0 0.96875 0.0 1.0 0.03125 1.0 0.03125 0.96875 0.0 0.96875 0.0 1.0 0.03125 1.0 0.03125 0.96875 0.0 0.96875 </float_array>
+          <technique_common>
+            <accessor count="48" source="#Blade-UV-array" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Blade-Normal">
+          <float_array count="18" id="Blade-Normal-array">-1.0 0.0 0.0 1.0 0.0 0.0 0.0 -1.0 0.0 0.0 1.0 0.0 0.0 0.0 -1.0 0.0 0.0 1.0</float_array>
+          <technique_common>
+            <accessor count="6" source="#Blade-Normal-array" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Blade-Vertices">
+          <input semantic="POSITION" source="#Blade-Pos"/>
+        </vertices>
+        <polylist count="12" material="Blade-Material">
+          <input offset="0" semantic="VERTEX" source="#Blade-Vertices"/>
+          <input offset="1" semantic="TEXCOORD" set="0" source="#Blade-UV"/>
+          <input offset="2" semantic="NORMAL" source="#Blade-Normal"/>
+          <vcount>4 4 4 4 4 4 4 4 4 4 4 4 </vcount>
+          <p>0 0 0 1 1 0 2 2 0 3 3 0 4 4 0 5 5 0 6 6 0 7 7 0 8 8 1 9 9 1 10 10 1 11 11 1 12 12 1 13 13 1 14 14 1 15 15 1 16 16 2 17 17 2 18 18 2 19 19 2 20 20 2 21 21 2 22 22 2 23 23 2 24 24 3 25 25 3 26 26 3 27 27 3 28 28 3 29 29 3 30 30 3 31 31 3 32 32 4 33 33 4 34 34 4 35 35 4 36 36 5 37 37 5 38 38 5 39 39 5 40 40 5 41 41 5 42 42 5 43 43 5 44 44 5 45 45 5 46 46 5 47 47 5 </p>
+        </polylist>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_animations>
+    <animation id="playerKnightSword-global-anim" name="playerKnightSword-global-anim">
+      <animation>
+        <source id="playerKnightSword-global-anim-inSource-TIME">
+          <float_array count="1" id="playerKnightSword-global-anim-inSource-TIME-array">0.0 </float_array>
+          <technique_common>
+            <accessor count="1" source="#playerKnightSword-global-anim-inSource-TIME-array">
+              <param name="TIME" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="playerKnightSword-global-anim-interpolation">
+          <Name_array count="1" id="playerKnightSword-global-anim-interpolation-array">LINEAR </Name_array>
+          <technique_common>
+            <accessor count="1" source="#playerKnightSword-global-anim-interpolation-array">
+              <param type="name"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="playerKnightSword-global-anim-outSource-global">
+          <float_array count="16" id="playerKnightSword-global-anim-outSource-global-array">1.0 0.0 0.0 -0.49914634 0.0 1.0 0.0 -0.50208735 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 </float_array>
+          <technique_common>
+            <accessor count="1" source="#playerKnightSword-global-anim-outSource-global-array" stride="16">
+              <param type="float4x4"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <sampler id="playerKnightSword-global-anim-globalSampler">
+          <input semantic="INPUT" source="#playerKnightSword-global-anim-inSource-TIME"/>
+          <input semantic="OUTPUT" source="#playerKnightSword-global-anim-outSource-global"/>
+          <input semantic="INTERPOLATION" source="#playerKnightSword-global-anim-interpolation"/>
+        </sampler>
+        <channel source="#playerKnightSword-global-anim-globalSampler" target="playerKnightSword-global/matrix"/>
+      </animation>
+    </animation>
+    <animation id="playerKnightSword-local-anim" name="playerKnightSword-local-anim">
+      <animation>
+        <source id="playerKnightSword-local-anim-inSource-TIME">
+          <float_array count="1" id="playerKnightSword-local-anim-inSource-TIME-array">0.0 </float_array>
+          <technique_common>
+            <accessor count="1" source="#playerKnightSword-local-anim-inSource-TIME-array">
+              <param name="TIME" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="playerKnightSword-local-anim-interpolation">
+          <Name_array count="1" id="playerKnightSword-local-anim-interpolation-array">LINEAR </Name_array>
+          <technique_common>
+            <accessor count="1" source="#playerKnightSword-local-anim-interpolation-array">
+              <param type="name"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="playerKnightSword-local-anim-outSource-local">
+          <float_array count="16" id="playerKnightSword-local-anim-outSource-local-array">1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 </float_array>
+          <technique_common>
+            <accessor count="1" source="#playerKnightSword-local-anim-outSource-local-array" stride="16">
+              <param type="float4x4"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <sampler id="playerKnightSword-local-anim-localSampler">
+          <input semantic="INPUT" source="#playerKnightSword-local-anim-inSource-TIME"/>
+          <input semantic="OUTPUT" source="#playerKnightSword-local-anim-outSource-local"/>
+          <input semantic="INTERPOLATION" source="#playerKnightSword-local-anim-interpolation"/>
+        </sampler>
+        <channel source="#playerKnightSword-local-anim-localSampler" target="playerKnightSword-local/matrix"/>
+      </animation>
+    </animation>
+    <animation id="Handle-global-anim" name="Handle-global-anim">
+      <animation>
+        <source id="Handle-global-anim-inSource-TIME">
+          <float_array count="1" id="Handle-global-anim-inSource-TIME-array">0.0 </float_array>
+          <technique_common>
+            <accessor count="1" source="#Handle-global-anim-inSource-TIME-array">
+              <param name="TIME" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Handle-global-anim-interpolation">
+          <Name_array count="1" id="Handle-global-anim-interpolation-array">LINEAR </Name_array>
+          <technique_common>
+            <accessor count="1" source="#Handle-global-anim-interpolation-array">
+              <param type="name"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Handle-global-anim-outSource-global">
+          <float_array count="16" id="Handle-global-anim-outSource-global-array">1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 </float_array>
+          <technique_common>
+            <accessor count="1" source="#Handle-global-anim-outSource-global-array" stride="16">
+              <param type="float4x4"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <sampler id="Handle-global-anim-globalSampler">
+          <input semantic="INPUT" source="#Handle-global-anim-inSource-TIME"/>
+          <input semantic="OUTPUT" source="#Handle-global-anim-outSource-global"/>
+          <input semantic="INTERPOLATION" source="#Handle-global-anim-interpolation"/>
+        </sampler>
+        <channel source="#Handle-global-anim-globalSampler" target="Handle-global/matrix"/>
+      </animation>
+    </animation>
+    <animation id="Handle-local-anim" name="Handle-local-anim">
+      <animation>
+        <source id="Handle-local-anim-inSource-TIME">
+          <float_array count="1" id="Handle-local-anim-inSource-TIME-array">0.0 </float_array>
+          <technique_common>
+            <accessor count="1" source="#Handle-local-anim-inSource-TIME-array">
+              <param name="TIME" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Handle-local-anim-interpolation">
+          <Name_array count="1" id="Handle-local-anim-interpolation-array">LINEAR </Name_array>
+          <technique_common>
+            <accessor count="1" source="#Handle-local-anim-interpolation-array">
+              <param type="name"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Handle-local-anim-outSource-local">
+          <float_array count="16" id="Handle-local-anim-outSource-local-array">1.0 0.0 0.0 0.49999997 0.0 1.0 0.0 0.49999997 0.0 0.0 1.0 4.0 0.0 0.0 0.0 1.0 </float_array>
+          <technique_common>
+            <accessor count="1" source="#Handle-local-anim-outSource-local-array" stride="16">
+              <param type="float4x4"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <sampler id="Handle-local-anim-localSampler">
+          <input semantic="INPUT" source="#Handle-local-anim-inSource-TIME"/>
+          <input semantic="OUTPUT" source="#Handle-local-anim-outSource-local"/>
+          <input semantic="INTERPOLATION" source="#Handle-local-anim-interpolation"/>
+        </sampler>
+        <channel source="#Handle-local-anim-localSampler" target="Handle-local/matrix"/>
+      </animation>
+    </animation>
+    <animation id="Blade-global-anim" name="Blade-global-anim">
+      <animation>
+        <source id="Blade-global-anim-inSource-TIME">
+          <float_array count="1" id="Blade-global-anim-inSource-TIME-array">0.0 </float_array>
+          <technique_common>
+            <accessor count="1" source="#Blade-global-anim-inSource-TIME-array">
+              <param name="TIME" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Blade-global-anim-interpolation">
+          <Name_array count="1" id="Blade-global-anim-interpolation-array">LINEAR </Name_array>
+          <technique_common>
+            <accessor count="1" source="#Blade-global-anim-interpolation-array">
+              <param type="name"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Blade-global-anim-outSource-global">
+          <float_array count="16" id="Blade-global-anim-outSource-global-array">1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 7.0 0.0 0.0 0.0 1.0 </float_array>
+          <technique_common>
+            <accessor count="1" source="#Blade-global-anim-outSource-global-array" stride="16">
+              <param type="float4x4"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <sampler id="Blade-global-anim-globalSampler">
+          <input semantic="INPUT" source="#Blade-global-anim-inSource-TIME"/>
+          <input semantic="OUTPUT" source="#Blade-global-anim-outSource-global"/>
+          <input semantic="INTERPOLATION" source="#Blade-global-anim-interpolation"/>
+        </sampler>
+        <channel source="#Blade-global-anim-globalSampler" target="Blade-global/matrix"/>
+      </animation>
+    </animation>
+    <animation id="Blade-local-anim" name="Blade-local-anim">
+      <animation>
+        <source id="Blade-local-anim-inSource-TIME">
+          <float_array count="1" id="Blade-local-anim-inSource-TIME-array">0.0 </float_array>
+          <technique_common>
+            <accessor count="1" source="#Blade-local-anim-inSource-TIME-array">
+              <param name="TIME" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Blade-local-anim-interpolation">
+          <Name_array count="1" id="Blade-local-anim-interpolation-array">LINEAR </Name_array>
+          <technique_common>
+            <accessor count="1" source="#Blade-local-anim-interpolation-array">
+              <param type="name"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Blade-local-anim-outSource-local">
+          <float_array count="16" id="Blade-local-anim-outSource-local-array">1.0 0.0 0.0 0.49999997 0.0 1.0 0.0 0.5 0.0 0.0 1.0 8.5 0.0 0.0 0.0 1.0 </float_array>
+          <technique_common>
+            <accessor count="1" source="#Blade-local-anim-outSource-local-array" stride="16">
+              <param type="float4x4"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <sampler id="Blade-local-anim-localSampler">
+          <input semantic="INPUT" source="#Blade-local-anim-inSource-TIME"/>
+          <input semantic="OUTPUT" source="#Blade-local-anim-outSource-local"/>
+          <input semantic="INTERPOLATION" source="#Blade-local-anim-interpolation"/>
+        </sampler>
+        <channel source="#Blade-local-anim-localSampler" target="Blade-local/matrix"/>
+      </animation>
+    </animation>
+  </library_animations>
+  <library_visual_scenes>
+    <visual_scene id="DefaultScene">
+      <node id="Root-global" name="Root-global" sid="Root-global">
+        <matrix sid="matrix">1.0 0.0 -8.742278E-8 0.0 0.0 1.0 0.0 0.0 -8.742278E-8 0.0 -1.0 0.0 0.0 0.0 0.0 1.0 </matrix>
+        <node id="playerKnightSword-global" name="playerKnightSword-global" sid="playerKnightSword-global">
+          <matrix sid="matrix">1.0 0.0 0.0 -0.49914634 0.0 1.0 0.0 -0.50208735 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 </matrix>
+          <node id="Handle-global" name="Handle-global" sid="Handle-global">
+            <matrix sid="matrix">1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 </matrix>
+            <node id="Handle-local" name="Handle-local" sid="Handle-local">
+              <matrix sid="matrix">1.0 0.0 0.0 0.49999997 0.0 1.0 0.0 0.49999997 0.0 0.0 1.0 4.0 0.0 0.0 0.0 1.0 </matrix>
+              <instance_geometry url="#Handle-Geom">
+                <bind_material>
+                  <technique_common>
+                    <instance_material symbol="Handle-Material" target="#Handle-Material">
+                      <bind_vertex_input input_semantic="TEXCOORD" input_set="0" semantic="Handle-tex-bind"/>
+                    </instance_material>
+                  </technique_common>
+                </bind_material>
+              </instance_geometry>
+            </node>
+            <node id="Blade-global" name="Blade-global" sid="Blade-global">
+              <matrix sid="matrix">1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 7.0 0.0 0.0 0.0 1.0 </matrix>
+              <node id="Blade-local" name="Blade-local" sid="Blade-local">
+                <matrix sid="matrix">1.0 0.0 0.0 0.49999997 0.0 1.0 0.0 0.5 0.0 0.0 1.0 8.5 0.0 0.0 0.0 1.0 </matrix>
+                <instance_geometry url="#Blade-Geom">
+                  <bind_material>
+                    <technique_common>
+                      <instance_material symbol="Blade-Material" target="#Blade-Material">
+                        <bind_vertex_input input_semantic="TEXCOORD" input_set="0" semantic="Blade-tex-bind"/>
+                      </instance_material>
+                    </technique_common>
+                  </bind_material>
+                </instance_geometry>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#DefaultScene"/>
+  </scene>
+</COLLADA>
