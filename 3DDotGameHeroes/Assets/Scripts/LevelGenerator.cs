@@ -22,8 +22,6 @@ public class LevelGenerator : MonoBehaviour
                 for (int z = 0; z < level.height; ++z)
                 {
                     Color pixelColor = level.GetPixel(x, z);
-                    // If the color corresponds to a wall make sure that the orientation is correct
-                    // If the color corresponds to a light that has to be attached to a wall, consider its rotation
 
                     // Calcualte relative position
                     Vector3 offset = new(sizeOfImage.x * (count % 3) * sizeOfImage.x, 0, sizeOfImage.x * (int)(count / 3) * sizeOfImage.y);
@@ -34,8 +32,8 @@ public class LevelGenerator : MonoBehaviour
                     {
                         foreach (ColorToPrefab colorPrefab in colorMappings)
                         {
-                            Debug.Log("PixelColor: " + pixelColor);
-                            Debug.Log("colorPrefab: " + colorPrefab.color);
+                            //Debug.Log("PixelColor: " + pixelColor);
+                            //Debug.Log("colorPrefab: " + colorPrefab.color);
                             //Debug.Log("X: " + x);
                             //Debug.Log("Z: " + z);
 
@@ -54,23 +52,43 @@ public class LevelGenerator : MonoBehaviour
                                     case "wall":
                                         
                                         Vector3 rotationX = new(0,0,0);
+                                        Vector3 torchOffset = new(0, 0, 0);
                                         // Rotate according to position X in the level
-                                        if (x == 0) rotationX = new(0.0f, 90.0f, 0.0f); // Left side
-                                        else if (x == level.width - 1) rotationX = new(0.0f, -90.0f, 0.0f); // Right side
+                                        if (x == 0) // Left side
+                                        {
+                                            rotationX = new(0.0f, 90.0f, 0.0f); 
+                                            torchOffset = new(13, 0, 0);
+                                        } 
+                                        else if (x == level.width - 1) // Right side
+                                        {
+                                            rotationX = new(0.0f, -90.0f, 0.0f); 
+                                            torchOffset = new(-13, 0, 0);
+                                        } 
                                         obj.transform.Rotate(rotationX, Space.World);  
 
                                         Vector3 rotationZ = new(0, 0, 0);
                                         // Rotate according to position Y in the level
-                                        if (z == 0) rotationZ = new(0.0f, 0.0f, 0.0f); // Bottom side (no rotation needed)
-                                        else if (z == level.height - 1) rotationZ = new(0.0f, -180.0f, 0.0f); // Top side
+                                        if (z == 0) // Bottom side (no rotation needed)
+                                        {
+                                            rotationZ = new(0.0f, 0.0f, 0.0f); 
+                                            torchOffset = new(0, 0, 13);
+                                        }
+                                        else if (z == level.height - 1) // Top side
+                                        {
+                                            rotationZ = new(0.0f, -180.0f, 0.0f);
+                                            torchOffset = new(0, 0, -13);
+                                        } 
                                         obj.transform.Rotate(rotationZ, Space.World);
 
-                                        // Check if a torch has to be added
+                                        // Check if a torch has to be added, if so, apply the transformations
                                         if (colorPrefab.torch != null)
                                         {
-                                            GameObject torch = Instantiate(colorPrefab.torch, position + new Vector3(0, 10, 0), Quaternion.identity, transform);
+                                            GameObject torch = Instantiate(colorPrefab.torch, position + new Vector3(0, 15, 0) + torchOffset, Quaternion.identity, transform);
                                             torch.transform.Rotate(rotationX, Space.World);
-                                            torch.transform.Rotate(rotationX, Space.World);
+                                            torch.transform.Rotate(rotationZ, Space.World);
+                                            
+                                            // Set parent object
+                                            torch.transform.parent = levelObject.transform;
                                         }
 
                                         break;
@@ -97,7 +115,7 @@ public class LevelGenerator : MonoBehaviour
                                 if (colorPrefab.movementPattern != null)
                                 {
                                     // Assing this property to the gameObject depending on its type
-                                    // The gameObject movement script should implement this
+                                    // The gameObject movement script should implement the method
                                     // TODO establecer capas y comprobar que esta en la capa que toca (enemies, obstacles, etc...)
                                     switch (obj.name)
                                     {
