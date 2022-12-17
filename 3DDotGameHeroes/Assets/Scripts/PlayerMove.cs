@@ -96,7 +96,7 @@ public class PlayerMove : MonoBehaviour
             if (swordInstantiated)
             {
                 swordInstantiated = false;
-                Destroy(swordObj);
+                swordObj.gameObject.GetComponent<KnightSwordSpawn>().Disappear();
             }
                 
         }
@@ -108,9 +108,7 @@ public class PlayerMove : MonoBehaviour
                 Vector3 forward = transform.forward * 5;
                 Vector3 up = -transform.up * 5;
                 Vector3 swordRelPos = forward + up;
-                Debug.Log(swordRelPos);
                 swordObj = Instantiate(sword, transform.position + swordRelPos, transform.rotation);
-                
             }
         }
         else

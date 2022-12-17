@@ -794,3 +794,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 70
+  sword: {fileID: 4964710315046344737, guid: 5fa7ca1d330a33d4f91c0f940ae9363e, type: 3}

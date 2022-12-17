@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5741492587521262235}
+  - component: {fileID: 3248574922865914173}
   m_Layer: 0
   m_Name: KnightSword
   m_TagString: Untagged
@@ -32,6 +33,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3248574922865914173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4964710315046344737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e057c9f3f872584f9b7ff12e4510ea6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Scale: 1
+  FramesToAppear: 3
+  FramesToDisappear: 5
 --- !u!1 &4978153127101000042
 GameObject:
   m_ObjectHideFlags: 0
