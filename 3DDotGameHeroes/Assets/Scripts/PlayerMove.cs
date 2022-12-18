@@ -6,12 +6,14 @@ public class PlayerMove : MonoBehaviour
 {
 
     public float Speed = 15;
+    public GameObject sword;
 
     Animator animator;
 
     Vector3 prevLookDirection = Vector3.forward;
-    Vector3 lookDirection = Vector3.forward;
-    Vector3 moveDirection;
+
+    bool swordInstantiated = false;
+    GameObject swordObj;
 
     private Vector2 actualRoomCoordinates, prevRoomCoordinates = new(0,0);
     private Vector2 sizeOfRoom = new(265, 192);
@@ -44,54 +46,93 @@ public class PlayerMove : MonoBehaviour
             moveDirection += Vector3.right;
         }
 
-        // Set animation
+        // Set isMoving animator input
         if (moveDirection != Vector3.zero) animator.SetBool("isMoving", true);
         else animator.SetBool("isMoving", false);
 
-        // Compose lookDirection
-        Vector3 lookDirection = Vector3.zero;
+        // Compose attackDirection
+        Vector3 attackDirection = Vector3.zero;
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            lookDirection += Vector3.forward;
+            attackDirection += Vector3.forward;
         }
         if (Input.GetKey(KeyCode.DownArrow))
         {
-            lookDirection += -Vector3.forward;
+            attackDirection += -Vector3.forward;
         }
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            lookDirection += Vector3.left;
+            attackDirection += Vector3.left;
         }
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            lookDirection += Vector3.right;
+            attackDirection += Vector3.right;
         }
 
-        // Set lookDirection
-        if (lookDirection == Vector3.zero) lookDirection = moveDirection;
+        bool isOnAttackStart = animator.GetCurrentAnimatorStateInfo(0).IsName("AttackStart");
+        bool isOnAttackEnd = animator.GetCurrentAnimatorStateInfo(0).IsName("AttackEnd");
 
-        // Rotate to face lookDirection
-        if (lookDirection != Vector3.zero)
+        // Set lookDirection
+        Vector3 lookDirection;
+        if (isOnAttackStart || isOnAttackEnd)
         {
+            lookDirection = prevLookDirection;
+        }
+        else if (attackDirection == Vector3.zero)
+        {
+            lookDirection = moveDirection;
+        }
+        else {
+            lookDirection = attackDirection;
+        }
+
+        // Set isAttacking animator input
+        if (attackDirection != Vector3.zero) animator.SetBool("isAttacking", true);
+        else animator.SetBool("isAttacking", false);
+
+        // Apply the inputs to the player
+        if (isOnAttackEnd)
+        {
+            if (swordInstantiated)
+            {
+                swordInstantiated = false;
+                swordObj.gameObject.GetComponent<KnightSwordSpawn>().Disappear();
+            }
+                
+        }
+        else if (isOnAttackStart)
+        {
+            if (!swordInstantiated)
+            {
+                swordInstantiated = true;
+                Vector3 forward = transform.forward * 5;
+                Vector3 up = transform.up * 5;
+                Vector3 swordRelPos = forward + up;
+                swordObj = Instantiate(sword, transform.position + swordRelPos, transform.rotation);
+            }
+        }
+        else
+        {
+            // Rotate to face lookDirection
             Quaternion rotation = Quaternion.FromToRotation(transform.forward, lookDirection);
             rotation.ToAngleAxis(out float angle, out Vector3 axis);
             if (axis.y < 0.0f) angle = -angle;
             transform.Rotate(new Vector3(0, 1, 0), angle, Space.World);
+
+            // Translate
+            transform.Translate(Speed * Time.deltaTime * Vector3.Normalize(moveDirection), Space.World);
+            prevLookDirection = lookDirection;
+
+            // Update the position of the camera if needed
+            actualRoomCoordinates.x = (int)(transform.position.x / sizeOfRoom.x);
+            actualRoomCoordinates.y = (int)(transform.position.z / sizeOfRoom.y);
+
+            if (actualRoomCoordinates != prevRoomCoordinates)
+            {
+                GameObject.Find("OverviewCamera").BroadcastMessage("ChangeCurrentRoom", actualRoomCoordinates);
+                prevRoomCoordinates = actualRoomCoordinates;
+            }
         }
-        else lookDirection = prevLookDirection;
-
-        // Translate
-        transform.Translate(Speed * Time.deltaTime * Vector3.Normalize(moveDirection), Space.World);
-        prevLookDirection = lookDirection;
-
-        // Update the position of the camera if needed
-        actualRoomCoordinates.x = (int)(transform.position.x / sizeOfRoom.x);
-        actualRoomCoordinates.y = (int)(transform.position.z / sizeOfRoom.y);
-
-        if (actualRoomCoordinates != prevRoomCoordinates)
-        {
-            GameObject.Find("OverviewCamera").BroadcastMessage("ChangeCurrentRoom", actualRoomCoordinates);
-            prevRoomCoordinates = actualRoomCoordinates;
-        }
+        
     }
 }
