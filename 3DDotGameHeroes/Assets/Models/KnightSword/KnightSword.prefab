@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2139897282810409440}
   m_Layer: 0
-  m_Name: playerKnightSword-global
+  m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -126,7 +126,7 @@ GameObject:
   - component: {fileID: 7544329476346465809}
   m_Layer: 0
   m_Name: Blade-global
-  m_TagString: Untagged
+  m_TagString: SwordBlade
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -308,6 +308,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e057c9f3f872584f9b7ff12e4510ea6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Scale: 1
+  Scale: 2
   FramesToAppear: 3
   FramesToDisappear: 5

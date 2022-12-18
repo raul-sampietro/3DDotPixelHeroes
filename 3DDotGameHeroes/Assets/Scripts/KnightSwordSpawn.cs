@@ -8,28 +8,32 @@ public class KnightSwordSpawn : MonoBehaviour
     public int FramesToAppear = 30;
     public int FramesToDisappear = 30;
 
-    bool appearing;
-    bool disappearing;
+    Transform bladeTransform;
 
-    float appearRate; 
+    bool appearing, appearingParent, appearingBlade;
+    bool disappearing, disappearingParent, disappearingBlade;
+
+    float appearRate;
     float disappearRate;
 
     // Start is called before the first frame update
     void Start()
     {
-        appearing = true;
-        disappearing = false;
-        disappearing = false;
+        appearing = appearingParent = appearingBlade = true;
+        disappearing = disappearingParent = disappearingBlade = false;
 
         appearRate = Scale / (float)FramesToAppear;
         disappearRate = Scale / (float)FramesToDisappear;
 
         transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y, 0);
+
+        bladeTransform = transform.GetChild(0).GetChild(0).GetChild(0);
+        bladeTransform.localScale = new Vector3(bladeTransform.localScale.x, bladeTransform.localScale.y, 0);
     }
 
     public void Disappear()
     {
-        disappearing = true;
+        disappearing = disappearingParent = disappearingBlade = true;
     }
 
     // Update is called once per frame
@@ -37,26 +41,49 @@ public class KnightSwordSpawn : MonoBehaviour
     {
         if (appearing)
         {
-            if (transform.localScale.z + appearRate > Scale)
+            // Scale parent
+            if (transform.localScale.z + appearRate > 1.0f)
             {
-
-                transform.localScale += new Vector3(0, 0, appearRate - (transform.localScale.z + appearRate - Scale));
-                appearing = false;
+                transform.localScale += new Vector3(0, 0, appearRate - (transform.localScale.z + appearRate - 1.0f));
+                appearingParent = false;
             }
-            else {
+            else
+            {
                 transform.localScale += new Vector3(0, 0, appearRate);
             }
 
+            // Scale blade
+            if (bladeTransform.localScale.z + appearRate > Scale)
+            {
+                bladeTransform.localScale += new Vector3(0, 0, appearRate - (transform.localScale.z + appearRate - Scale));
+                appearingBlade = false;
+            }
+            else {
+                bladeTransform.localScale += new Vector3(0, 0, appearRate);
+            }
+
+            if (!appearingBlade && !appearingParent) appearing = false;
         }
         else if (disappearing)
         {
+            // Scale parent
             if (transform.localScale.z - disappearRate < 0)
             {
-                Destroy(this.gameObject);
+                disappearingParent = false;
             }
-            else {
+            else
+            {
                 transform.localScale -= new Vector3(0, 0, disappearRate);
             }
+
+            // Scale blade
+            if (bladeTransform.localScale.z - disappearRate > 0)
+            {
+                bladeTransform.localScale -= new Vector3(0, 0, disappearRate);
+            }
+            else disappearingBlade = false;
+
+            if (!disappearingBlade && !disappearingParent) Destroy(this.gameObject);
         }
     }
 }
