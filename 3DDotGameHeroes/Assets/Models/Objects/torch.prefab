@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1248103221}
   - component: {fileID: 1248103220}
   m_Layer: 0
-  m_Name: Spot Light
+  m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42,11 +42,11 @@ Light:
   m_GameObject: {fileID: 1248103218}
   m_Enabled: 1
   serializedVersion: 10
-  m_Type: 0
+  m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 75497470
-  m_Range: 28.84
+  m_Intensity: 37419320
+  m_Range: 111.1
   m_SpotAngle: 179
   m_InnerSpotAngle: 1
   m_CookieSize: 10
@@ -86,11 +86,11 @@ Light:
   m_RenderingLayerMask: 1
   m_Lightmapping: 4
   m_LightShadowCasterMode: 2
-  m_AreaSize: {x: 2, y: 2}
+  m_AreaSize: {x: 20.16, y: 5.06}
   m_BounceIntensity: 1
   m_ColorTemperature: 3458
   m_UseColorTemperature: 1
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 28.84}
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 111.1}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -120,8 +120,8 @@ MonoBehaviour:
   m_AffectDiffuse: 1
   m_AffectSpecular: 1
   m_NonLightmappedOnly: 0
-  m_ShapeWidth: 2
-  m_ShapeHeight: 2
+  m_ShapeWidth: 20.16
+  m_ShapeHeight: 5.06
   m_AspectRatio: 1
   m_ShapeRadius: 0.025
   m_SoftnessScale: 1

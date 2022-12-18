@@ -7,7 +7,7 @@ public class CameraMover : MonoBehaviour
     private GameObject knight = null;
 
     private Vector3 camPosition = new(0, 0, 0);
-    private Vector3 camOffset = new(120, 100, -20);
+    public Vector3 camOffset;
     private Vector2 sizeOfRoom = new(256, 192);
 
     // 0 -> fixed to the actual level
