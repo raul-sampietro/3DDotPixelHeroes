@@ -58,6 +58,8 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\TimedDestroy.cs" />
     <Compile Include="Assets\Scripts\CameraMover.cs" />
+    <Compile Include="Assets\Scripts\KnightSwordSpawn.cs" />
+    <Compile Include="Assets\Scripts\ChestOpen.cs" />
     <Compile Include="Assets\Scripts\PlayerWinLose.cs" />
     <Compile Include="Assets\Scripts\EnemyAnubisShoot.cs" />
     <Compile Include="Assets\Scripts\PlayerMove.cs" />
