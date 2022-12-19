@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <created>2022-12-19T20:54:11Z</created>
+    <modified>2022-12-19T20:54:11Z</modified>
+    <revision>1.0</revision>
+  </asset>
+  <library_images>
+    <image id="keyNormal-diffuse-tex" name="keyNormal-diffuse-tex">
+      <init_from>keyNormal_diffuse.png</init_from>
+    </image>
+    <image id="keyNormal-emissive-tex" name="keyNormal-emissive-tex">
+      <init_from>keyNormal_emissive.png</init_from>
+    </image>
+  </library_images>
+  <library_effects>
+    <effect id="keyNormal-Effect">
+      <profile_COMMON>
+        <newparam sid="keyNormal-diffuse-surface">
+          <surface type="2D">
+            <init_from>keyNormal-diffuse-tex</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="keyNormal-emissive-surface">
+          <surface type="2D">
+            <init_from>keyNormal-emissive-tex</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="keyNormal-diffuse-sampler">
+          <sampler2D>
+            <source>keyNormal-diffuse-surface</source>
+            <wrap_s>CLAMP</wrap_s>
+            <wrap_t>CLAMP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <newparam sid="keyNormal-emissive-sampler">
+          <sampler2D>
+            <source>keyNormal-emissive-surface</source>
+            <wrap_s>CLAMP</wrap_s>
+            <wrap_t>CLAMP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="phong1">
+          <phong>
+            <emission>
+              <texture texcoord="keyNormal-tex-bind" texture="keyNormal-emissive-sampler"/>
+            </emission>
+            <ambient>
+              <color>1.0 1.0 1.0 1.0</color>
+            </ambient>
+            <diffuse>
+              <texture texcoord="keyNormal-tex-bind" texture="keyNormal-diffuse-sampler"/>
+            </diffuse>
+            <specular>
+              <color>0.0 0.0 0.0 1.0</color>
+            </specular>
+            <shininess>
+              <float>5.0</float>
+            </shininess>
+            <reflective>
+              <color>1.0 1.0 1.0 1.0</color>
+            </reflective>
+            <reflectivity>
+              <float>0.2</float>
+            </reflectivity>
+            <transparent>
+              <color>1.0 1.0 1.0 1.0</color>
+            </transparent>
+            <transparency>
+              <float>1.0</float>
+            </transparency>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_materials>
+    <material id="keyNormal-Material">
+      <instance_effect url="#keyNormal-Effect"/>
+    </material>
+  </library_materials>
+  <library_geometries>
+    <geometry id="keyNormal-Geom" name="keyNormal-Geom">
+      <mesh>
+        <source id="keyNormal-Pos">
+          <float_array count="312" id="keyNormal-Pos-array">-3.4999998 -0.5 0.5 -3.4999998 0.4999999 0.5 -3.4999998 0.4999999 -0.5 -3.4999998 -0.5 -0.5 -2.5 -1.4999999 0.5 -2.5 -0.5 0.5 -2.5 -0.5 -0.5 -2.5 -1.4999999 -0.5 0.5000001 -1.4999999 0.5 0.5000001 -0.5 0.5 0.5000001 -0.5 -0.5 0.5000001 -1.4999999 -0.5 0.5000001 0.4999999 0.5 0.5000001 1.4999999 0.5 0.5000001 1.4999999 -0.5 0.5000001 0.4999999 -0.5 2.5000002 -0.5 0.5 2.5000002 0.4999999 0.5 2.5000002 0.4999999 -0.5 2.5000002 -0.5 -0.5 -1.4999998 -1.4999999 -0.5 -1.4999998 -0.5 -0.5 -1.4999998 -0.5 0.5 -1.4999998 -1.4999999 0.5 1.5 -0.5 -0.5 1.5 0.4999999 -0.5 1.5 0.4999999 0.5 1.5 -0.5 0.5 3.4999998 -1.4999999 -0.5 3.4999998 1.4999999 -0.5 3.4999998 1.4999999 0.5 3.4999998 -1.4999999 0.5 0.5000001 -1.4999999 -0.5 3.4999998 -1.4999999 -0.5 3.4999998 -1.4999999 0.5 0.5000001 -1.4999999 0.5 -2.5 -1.4999999 -0.5 -1.4999998 -1.4999999 -0.5 -1.4999998 -1.4999999 0.5 -2.5 -1.4999999 0.5 -1.4999998 -0.5 -0.5 0.5000001 -0.5 -0.5 0.5000001 -0.5 0.5 -1.4999998 -0.5 0.5 -3.4999998 -0.5 -0.5 -2.5 -0.5 -0.5 -2.5 -0.5 0.5 -3.4999998 -0.5 0.5 1.5 0.4999999 -0.5 2.5000002 0.4999999 -0.5 2.5000002 0.4999999 0.5 1.5 0.4999999 0.5 1.5 -0.5 0.5 2.5000002 -0.5 0.5 2.5000002 -0.5 -0.5 1.5 -0.5 -0.5 -3.4999998 0.4999999 0.5 0.5000001 0.4999999 0.5 0.5000001 0.4999999 -0.5 -3.4999998 0.4999999 -0.5 0.5000001 1.4999999 0.5 3.4999998 1.4999999 0.5 3.4999998 1.4999999 -0.5 0.5000001 1.4999999 -0.5 -3.4999998 0.4999999 -0.5 1.5 0.4999999 -0.5 1.5 -0.5 -0.5 -3.4999998 -0.5 -0.5 0.5000001 -0.5 -0.5 3.4999998 -0.5 -0.5 3.4999998 -1.4999999 -0.5 0.5000001 -1.4999999 -0.5 0.5000001 1.4999999 -0.5 3.4999998 1.4999999 -0.5 3.4999998 0.4999999 -0.5 0.5000001 0.4999999 -0.5 -2.5 -0.5 -0.5 -1.4999998 -0.5 -0.5 -1.4999998 -1.4999999 -0.5 -2.5 -1.4999999 -0.5 2.5000002 0.4999999 -0.5 3.4999998 0.4999999 -0.5 3.4999998 -0.5 -0.5 2.5000002 -0.5 -0.5 -3.4999998 -0.5 0.5 1.5 -0.5 0.5 1.5 0.4999999 0.5 -3.4999998 0.4999999 0.5 0.5000001 -1.4999999 0.5 3.4999998 -1.4999999 0.5 3.4999998 -0.5 0.5 0.5000001 -0.5 0.5 0.5000001 0.4999999 0.5 3.4999998 0.4999999 0.5 3.4999998 1.4999999 0.5 0.5000001 1.4999999 0.5 -2.5 -1.4999999 0.5 -1.4999998 -1.4999999 0.5 -1.4999998 -0.5 0.5 -2.5 -0.5 0.5 2.5000002 -0.5 0.5 3.4999998 -0.5 0.5 3.4999998 0.4999999 0.5 2.5000002 0.4999999 0.5 </float_array>
+          <technique_common>
+            <accessor count="104" source="#keyNormal-Pos-array" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="keyNormal-UV">
+          <float_array count="208" id="keyNormal-UV-array">0.0 0.9375 0.03125 0.9375 0.03125 1.0 0.0 1.0 0.0 0.9375 0.03125 0.9375 0.03125 1.0 0.0 1.0 0.0 0.9375 0.03125 0.9375 0.03125 1.0 0.0 1.0 0.0 0.9375 0.03125 0.9375 0.03125 1.0 0.0 1.0 0.0 0.9375 0.03125 0.9375 0.03125 1.0 0.0 1.0 0.0 1.0 0.03125 1.0 0.03125 0.9375 0.0 0.9375 0.0 1.0 0.03125 1.0 0.03125 0.9375 0.0 0.9375 0.28125 0.8125 0.28125 1.0 0.3125 1.0 0.3125 0.8125 0.28125 0.8125 0.28125 1.0 0.3125 1.0 0.3125 0.8125 0.0 1.0 0.03125 1.0 0.03125 0.9375 0.0 0.9375 0.28125 0.875 0.28125 1.0 0.3125 1.0 0.3125 0.875 0.0 1.0 0.03125 1.0 0.03125 0.9375 0.0 0.9375 0.0 1.0 0.03125 1.0 0.03125 0.9375 0.0 0.9375 0.0 0.9375 0.03125 0.9375 0.03125 1.0 0.0 1.0 0.03125 0.5625 0.03125 0.8125 0.0 0.8125 0.0 0.5625 0.125 0.625 0.125 0.8125 0.09375 0.8125 0.09375 0.625 0.3125 0.6875 0.3125 1.0 0.28125 1.0 0.28125 0.6875 0.3125 0.8125 0.3125 1.0 0.28125 1.0 0.28125 0.8125 0.3125 0.8125 0.3125 1.0 0.28125 1.0 0.28125 0.8125 0.0 0.9375 0.03125 0.9375 0.03125 1.0 0.0 1.0 0.0 0.9375 0.03125 0.9375 0.03125 1.0 0.0 1.0 0.28125 0.6875 0.28125 1.0 0.3125 1.0 0.3125 0.6875 0.28125 0.8125 0.28125 1.0 0.3125 1.0 0.3125 0.8125 0.28125 0.8125 0.28125 1.0 0.3125 1.0 0.3125 0.8125 0.0 1.0 0.03125 1.0 0.03125 0.9375 0.0 0.9375 0.0 1.0 0.03125 1.0 0.03125 0.9375 0.0 0.9375 </float_array>
+          <technique_common>
+            <accessor count="104" source="#keyNormal-UV-array" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="keyNormal-Normal">
+          <float_array count="18" id="keyNormal-Normal-array">-1.0 0.0 0.0 1.0 0.0 0.0 0.0 -1.0 0.0 0.0 1.0 0.0 0.0 0.0 -1.0 0.0 0.0 1.0</float_array>
+          <technique_common>
+            <accessor count="6" source="#keyNormal-Normal-array" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="keyNormal-Vertices">
+          <input semantic="POSITION" source="#keyNormal-Pos"/>
+        </vertices>
+        <polylist count="26" material="keyNormal-Material">
+          <input offset="0" semantic="VERTEX" source="#keyNormal-Vertices"/>
+          <input offset="1" semantic="TEXCOORD" set="0" source="#keyNormal-UV"/>
+          <input offset="2" semantic="NORMAL" source="#keyNormal-Normal"/>
+          <vcount>4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 </vcount>
+          <p>0 0 0 1 1 0 2 2 0 3 3 0 4 4 0 5 5 0 6 6 0 7 7 0 8 8 0 9 9 0 10 10 0 11 11 0 12 12 0 13 13 0 14 14 0 15 15 0 16 16 0 17 17 0 18 18 0 19 19 0 20 20 1 21 21 1 22 22 1 23 23 1 24 24 1 25 25 1 26 26 1 27 27 1 28 28 1 29 29 1 30 30 1 31 31 1 32 32 2 33 33 2 34 34 2 35 35 2 36 36 2 37 37 2 38 38 2 39 39 2 40 40 2 41 41 2 42 42 2 43 43 2 44 44 2 45 45 2 46 46 2 47 47 2 48 48 2 49 49 2 50 50 2 51 51 2 52 52 3 53 53 3 54 54 3 55 55 3 56 56 3 57 57 3 58 58 3 59 59 3 60 60 3 61 61 3 62 62 3 63 63 3 64 64 4 65 65 4 66 66 4 67 67 4 68 68 4 69 69 4 70 70 4 71 71 4 72 72 4 73 73 4 74 74 4 75 75 4 76 76 4 77 77 4 78 78 4 79 79 4 80 80 4 81 81 4 82 82 4 83 83 4 84 84 5 85 85 5 86 86 5 87 87 5 88 88 5 89 89 5 90 90 5 91 91 5 92 92 5 93 93 5 94 94 5 95 95 5 96 96 5 97 97 5 98 98 5 99 99 5 100 100 5 101 101 5 102 102 5 103 103 5 </p>
+        </polylist>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_animations>
+    <animation id="Key-global-anim" name="Key-global-anim">
+      <animation>
+        <source id="Key-global-anim-inSource-TIME">
+          <float_array count="25" id="Key-global-anim-inSource-TIME-array">0.0 0.041666668 0.083333336 0.125 0.16666667 0.20833333 0.25 0.29166666 0.33333334 0.375 0.41666666 0.45833334 0.5 0.5416667 0.5833333 0.625 0.6666667 0.7083333 0.75 0.7916667 0.8333333 0.875 0.9166667 0.9583333 1.0 </float_array>
+          <technique_common>
+            <accessor count="25" source="#Key-global-anim-inSource-TIME-array">
+              <param name="TIME" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Key-global-anim-interpolation">
+          <Name_array count="25" id="Key-global-anim-interpolation-array">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR </Name_array>
+          <technique_common>
+            <accessor count="25" source="#Key-global-anim-interpolation-array">
+              <param type="name"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Key-global-anim-outSource-global">
+          <float_array count="400" id="Key-global-anim-outSource-global-array">1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.9659259 0.0 -0.25881907 0.0 0.0 1.0 0.0 0.0 0.25881907 0.0 0.9659259 0.0 0.0 0.0 0.0 1.0 0.8660254 0.0 -0.5 0.0 0.0 0.99999994 0.0 0.0 0.5 0.0 0.8660254 0.0 0.0 0.0 0.0 1.0 0.7071069 0.0 -0.70710677 0.0 0.0 1.0000001 0.0 0.0 0.70710677 0.0 0.7071069 0.0 0.0 0.0 0.0 1.0 0.5 0.0 -0.8660254 0.0 0.0 1.0 0.0 0.0 0.8660254 0.0 0.5 0.0 0.0 0.0 0.0 1.0 0.2588192 0.0 -0.96592575 0.0 0.0 1.0 0.0 0.0 0.96592575 0.0 0.2588192 0.0 0.0 0.0 0.0 1.0 9.649992E-5 0.0 -1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 9.649992E-5 0.0 0.0 0.0 0.0 1.0 -0.25881895 0.0 -0.9659259 0.0 0.0 1.0 0.0 0.0 0.9659259 0.0 -0.25881895 0.0 0.0 0.0 0.0 1.0 -0.5000001 0.0 -0.8660254 0.0 0.0 1.0 0.0 0.0 0.8660254 0.0 -0.5000001 0.0 0.0 0.0 0.0 1.0 -0.70710677 0.0 -0.70710677 0.0 0.0 0.99999994 0.0 0.0 0.70710677 0.0 -0.70710677 0.0 0.0 0.0 0.0 1.0 -0.8660253 0.0 -0.50000006 0.0 0.0 1.0 0.0 0.0 0.50000006 0.0 -0.8660253 0.0 0.0 0.0 0.0 1.0 -0.96592575 0.0 -0.25881913 0.0 0.0 0.99999994 0.0 0.0 0.25881913 0.0 -0.96592575 0.0 0.0 0.0 0.0 1.0 -1.0 0.0 -1.509958E-7 0.0 0.0 1.0 0.0 0.0 1.509958E-7 0.0 -1.0 0.0 0.0 0.0 0.0 1.0 -0.96592593 0.0 0.25881886 0.0 0.0 1.0 0.0 0.0 -0.25881886 0.0 -0.96592593 0.0 0.0 0.0 0.0 1.0 -0.8660254 0.0 0.5 0.0 0.0 0.99999994 0.0 0.0 -0.5 0.0 -0.8660254 0.0 0.0 0.0 0.0 1.0 -0.7071069 0.0 0.7071067 0.0 0.0 1.0 0.0 0.0 -0.7071067 0.0 -0.7071069 0.0 0.0 0.0 0.0 1.0 -0.49999994 0.0 0.8660255 0.0 0.0 1.0 0.0 0.0 -0.8660255 0.0 -0.49999994 0.0 0.0 0.0 0.0 1.0 -0.258819 0.0 0.9659258 0.0 0.0 1.0 0.0 0.0 -0.9659258 0.0 -0.258819 0.0 0.0 0.0 0.0 1.0 0.0 0.0 1.0000001 0.0 0.0 1.0000001 0.0 0.0 -1.0000001 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.25881884 0.0 0.9659258 0.0 0.0 0.9999999 0.0 0.0 -0.9659258 0.0 0.25881884 0.0 0.0 0.0 0.0 1.0 0.49999994 0.0 0.8660255 0.0 0.0 1.0 0.0 0.0 -0.8660255 0.0 0.49999994 0.0 0.0 0.0 0.0 1.0 0.7071067 0.0 0.7071068 0.0 0.0 1.0 0.0 0.0 -0.7071068 0.0 0.7071067 0.0 0.0 0.0 0.0 1.0 0.8660254 0.0 0.5 0.0 0.0 0.99999994 0.0 0.0 -0.5 0.0 0.8660254 0.0 0.0 0.0 0.0 1.0 0.9659259 0.0 0.25881913 0.0 0.0 1.0000001 0.0 0.0 -0.25881913 0.0 0.9659259 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 </float_array>
+          <technique_common>
+            <accessor count="25" source="#Key-global-anim-outSource-global-array" stride="16">
+              <param type="float4x4"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <sampler id="Key-global-anim-globalSampler">
+          <input semantic="INPUT" source="#Key-global-anim-inSource-TIME"/>
+          <input semantic="OUTPUT" source="#Key-global-anim-outSource-global"/>
+          <input semantic="INTERPOLATION" source="#Key-global-anim-interpolation"/>
+        </sampler>
+        <channel source="#Key-global-anim-globalSampler" target="Key-global/matrix"/>
+      </animation>
+    </animation>
+    <animation id="Key-local-anim" name="Key-local-anim">
+      <animation>
+        <source id="Key-local-anim-inSource-TIME">
+          <float_array count="25" id="Key-local-anim-inSource-TIME-array">0.0 0.041666668 0.083333336 0.125 0.16666667 0.20833333 0.25 0.29166666 0.33333334 0.375 0.41666666 0.45833334 0.5 0.5416667 0.5833333 0.625 0.6666667 0.7083333 0.75 0.7916667 0.8333333 0.875 0.9166667 0.9583333 1.0 </float_array>
+          <technique_common>
+            <accessor count="25" source="#Key-local-anim-inSource-TIME-array">
+              <param name="TIME" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Key-local-anim-interpolation">
+          <Name_array count="25" id="Key-local-anim-interpolation-array">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR </Name_array>
+          <technique_common>
+            <accessor count="25" source="#Key-local-anim-interpolation-array">
+              <param type="name"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Key-local-anim-outSource-local">
+          <float_array count="400" id="Key-local-anim-outSource-local-array">1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 </float_array>
+          <technique_common>
+            <accessor count="25" source="#Key-local-anim-outSource-local-array" stride="16">
+              <param type="float4x4"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <sampler id="Key-local-anim-localSampler">
+          <input semantic="INPUT" source="#Key-local-anim-inSource-TIME"/>
+          <input semantic="OUTPUT" source="#Key-local-anim-outSource-local"/>
+          <input semantic="INTERPOLATION" source="#Key-local-anim-interpolation"/>
+        </sampler>
+        <channel source="#Key-local-anim-localSampler" target="Key-local/matrix"/>
+      </animation>
+    </animation>
+  </library_animations>
+  <library_visual_scenes>
+    <visual_scene id="DefaultScene">
+      <node id="Root-global" name="Root-global" sid="Root-global">
+        <matrix sid="matrix">1.0 0.0 -8.742278E-8 0.0 0.0 1.0 0.0 0.0 -8.742278E-8 0.0 -1.0 0.0 0.0 0.0 0.0 1.0 </matrix>
+        <node id="Key-global" name="Key-global" sid="Key-global">
+          <matrix sid="matrix">1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 </matrix>
+          <node id="Key-local" name="Key-local" sid="Key-local">
+            <matrix sid="matrix">1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 </matrix>
+            <instance_geometry url="#keyNormal-Geom">
+              <bind_material>
+                <technique_common>
+                  <instance_material symbol="keyNormal-Material" target="#keyNormal-Material">
+                    <bind_vertex_input input_semantic="TEXCOORD" input_set="0" semantic="keyNormal-tex-bind"/>
+                  </instance_material>
+                </technique_common>
+              </bind_material>
+            </instance_geometry>
+          </node>
+        </node>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#DefaultScene"/>
+  </scene>
+</COLLADA>

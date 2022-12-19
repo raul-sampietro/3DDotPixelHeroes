@@ -4,18 +4,27 @@ using UnityEngine;
 
 public class ChestOpen : MonoBehaviour
 {
+    public GameObject key;
+
     Animator animator;
+    bool opened;
 
     void Start()
     {
         animator = gameObject.GetComponent<Animator>();
+        opened = false;
     }
 
     void OnCollisionEnter(Collision collision)
     {
         Vector3 playerDirection = Vector3.Normalize(collision.gameObject.transform.position - transform.position);
         float angle = Vector3.Angle(playerDirection, transform.forward);
-        if (collision.gameObject.layer == 7 && angle < 35)
+
+        if (!opened && collision.gameObject.layer == 7 && angle < 35)
+        {
             animator.SetBool("isOpening", true);
+            opened = true;
+            Instantiate(key, transform.position + (transform.up * 4), transform.rotation);
+        }
     }
 }
