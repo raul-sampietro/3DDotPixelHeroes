@@ -9,6 +9,7 @@ public class PlayerMove : MonoBehaviour
     public GameObject sword;
 
     Animator animator;
+    Rigidbody rb;
 
     Vector3 prevLookDirection = Vector3.forward;
 
@@ -22,6 +23,7 @@ public class PlayerMove : MonoBehaviour
     void Start()
     {
         animator = gameObject.GetComponent<Animator>();
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -120,7 +122,8 @@ public class PlayerMove : MonoBehaviour
             transform.Rotate(new Vector3(0, 1, 0), angle, Space.World);
 
             // Translate
-            transform.Translate(Speed * Time.deltaTime * Vector3.Normalize(moveDirection), Space.World);
+            rb.velocity = Speed * Vector3.Normalize(moveDirection);
+
             prevLookDirection = lookDirection;
 
             // Update the position of the camera if needed
