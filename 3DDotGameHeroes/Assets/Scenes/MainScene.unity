@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 262.3369, g: 325.0498, b: 430.21924, a: 1}
+  m_IndirectSpecularColor: {r: 261.9017, g: 324.45706, b: 429.4361, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -244,10 +244,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3117255510970711554, guid: ebb459bbfc238f342b7a05bdd06688de, type: 3}
-      propertyPath: m_Intensity
-      value: 3643.509
-      objectReference: {fileID: 0}
     - target: {fileID: 3117255510970711555, guid: ebb459bbfc238f342b7a05bdd06688de, type: 3}
       propertyPath: m_Name
       value: DirectionalLight
@@ -295,10 +291,6 @@ PrefabInstance:
     - target: {fileID: 3117255510970711556, guid: ebb459bbfc238f342b7a05bdd06688de, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3117255510970711557, guid: ebb459bbfc238f342b7a05bdd06688de, type: 3}
-      propertyPath: m_Intensity
-      value: 3643.509
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebb459bbfc238f342b7a05bdd06688de, type: 3}
