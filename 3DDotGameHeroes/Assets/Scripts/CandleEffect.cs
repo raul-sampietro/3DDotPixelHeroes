@@ -21,7 +21,7 @@ public class CandleEffect : MonoBehaviour
     void Update()
     {
         
-        if ((int)(Time.deltaTime * 10000) % 4 == 0)
+        if ((Random.Range(0,4)) == 0)
         {
             //Debug.Log((int)(Time.deltaTime * 10000));
             torchLight.intensity = Random.Range(minIntensity, maxIntesity);
