@@ -93,9 +93,10 @@ GameObject:
   m_Component:
   - component: {fileID: 3229158069512387375}
   - component: {fileID: 734488014453538333}
+  - component: {fileID: 5045054031271371528}
   m_Layer: 0
   m_Name: Key
-  m_TagString: Untagged
+  m_TagString: Key
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -130,8 +131,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   framesToAppear: 90
   verticalDiff: 8
-  initialRotationSpeedDeg: 15
+  initialRotationSpeedDeg: 40
   finalRotationSpeedDeg: 4
+--- !u!114 &5045054031271371528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2854040313996992917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df65fbf9fad90dd4b974f89496606699, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6380742052972629847
 GameObject:
   m_ObjectHideFlags: 0

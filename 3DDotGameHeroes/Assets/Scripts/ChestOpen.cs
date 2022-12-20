@@ -4,16 +4,17 @@ using UnityEngine;
 
 public class ChestOpen : MonoBehaviour
 {
-    public GameObject key;
-    public float keySpawnY = 4;
+    public GameObject item;
+    public float itemSpawnY = 4;
 
     Animator animator;
-    bool opened;
+    bool opened, itemTaken;
+    GameObject itemObj;
 
     void Start()
     {
         animator = gameObject.GetComponent<Animator>();
-        opened = false;
+        opened = itemTaken = false;
     }
 
     void OnCollisionEnter(Collision collision)
@@ -21,11 +22,19 @@ public class ChestOpen : MonoBehaviour
         Vector3 playerDirection = Vector3.Normalize(collision.gameObject.transform.position - transform.position);
         float angle = Vector3.Angle(playerDirection, transform.forward);
 
-        if (!opened && collision.gameObject.layer == 7 && angle < 35)
+        if (collision.gameObject.layer == 7 && angle < 35)
         {
-            animator.SetBool("isOpening", true);
-            opened = true;
-            Instantiate(key, transform.position + (transform.up * keySpawnY), transform.rotation);
+            if (!opened)
+            {
+                animator.SetBool("isOpening", true);
+                opened = true;
+                itemObj = Instantiate(item, transform.position + (transform.up * itemSpawnY), transform.rotation);
+            }
+            else if (!itemTaken && itemObj.GetComponent<CollectibleObject>().CanBeCollected()) {
+                Debug.Log("Chest collect key");
+                collision.gameObject.GetComponent<InventoryManager>().CollectItem(itemObj);
+                itemTaken = true;
+            }
         }
     }
 }

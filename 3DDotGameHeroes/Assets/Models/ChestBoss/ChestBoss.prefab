@@ -129,8 +129,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15f92bd81720c844ab29f1f0369c02f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: {fileID: 8797959353352946498, guid: 55f0470898ac91c49be50302bf6c5ba6, type: 3}
-  keySpawnY: 7
+  item: {fileID: 8797959353352946498, guid: 55f0470898ac91c49be50302bf6c5ba6, type: 3}
+  itemSpawnY: 4
 --- !u!1 &3067225238689588380
 GameObject:
   m_ObjectHideFlags: 0

@@ -125,9 +125,10 @@ GameObject:
   m_Component:
   - component: {fileID: 8165995651253787128}
   - component: {fileID: 2811673383409307839}
+  - component: {fileID: 8450096050164921662}
   m_Layer: 0
   m_Name: KeyBoss
-  m_TagString: Untagged
+  m_TagString: KeyBoss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -162,5 +163,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   framesToAppear: 90
   verticalDiff: 10
-  initialRotationSpeedDeg: 15
+  initialRotationSpeedDeg: 40
   finalRotationSpeedDeg: 4
+--- !u!114 &8450096050164921662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8797959353352946498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df65fbf9fad90dd4b974f89496606699, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

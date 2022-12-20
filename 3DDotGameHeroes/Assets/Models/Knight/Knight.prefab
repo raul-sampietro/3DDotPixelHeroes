@@ -738,11 +738,12 @@ GameObject:
   - component: {fileID: 8581629285639960663}
   - component: {fileID: 8111734045783246682}
   - component: {fileID: 8111734045783246680}
+  - component: {fileID: 671145131892321941}
   - component: {fileID: 6772355089885092453}
   - component: {fileID: 7614699682512153990}
   m_Layer: 7
   m_Name: Knight
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -797,6 +798,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 70
   sword: {fileID: 7622455505207124268, guid: 5fa7ca1d330a33d4f91c0f940ae9363e, type: 3}
+--- !u!114 &671145131892321941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8958718431463006957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35dce4e075b8dd243848efdbda5db8f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!54 &6772355089885092453
 Rigidbody:
   m_ObjectHideFlags: 0
