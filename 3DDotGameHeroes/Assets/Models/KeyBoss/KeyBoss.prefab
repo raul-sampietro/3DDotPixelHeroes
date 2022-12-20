@@ -124,7 +124,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8165995651253787128}
-  - component: {fileID: 3108549836711121999}
   - component: {fileID: 2811673383409307839}
   m_Layer: 0
   m_Name: KeyBoss
@@ -149,26 +148,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &3108549836711121999
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8797959353352946498}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4903bb11812e55c47bfee9a64545776b, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &2811673383409307839
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,4 +161,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   framesToAppear: 90
-  finalHeight: 15
+  verticalDiff: 10
+  initialRotationSpeedDeg: 15
+  finalRotationSpeedDeg: 4

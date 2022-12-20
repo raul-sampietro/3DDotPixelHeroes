@@ -5,6 +5,7 @@ using UnityEngine;
 public class ChestOpen : MonoBehaviour
 {
     public GameObject key;
+    public float keySpawnY = 4;
 
     Animator animator;
     bool opened;
@@ -24,7 +25,7 @@ public class ChestOpen : MonoBehaviour
         {
             animator.SetBool("isOpening", true);
             opened = true;
-            Instantiate(key, transform.position + (transform.up * 4), transform.rotation);
+            Instantiate(key, transform.position + (transform.up * keySpawnY), transform.rotation);
         }
     }
 }

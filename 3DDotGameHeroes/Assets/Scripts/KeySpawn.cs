@@ -5,20 +5,25 @@ using UnityEngine;
 public class KeySpawn : MonoBehaviour
 {
     public int framesToAppear = 30;
-    public int finalHeight = 10;
+    public float verticalDiff = 10;
+    public float initialRotationSpeedDeg = 10;
+    public float finalRotationSpeedDeg = 2;
 
     Animator animator;
-    float scaleRate, translateRate;
-    bool finishedScale, finishedTranslate;
+    float finalHeight;
+    float currentRotationSpeed;
+    float scaleRate, translateRate, rotateRate;
 
     // Start is called before the first frame update
     void Start()
     {
         animator = gameObject.GetComponent<Animator>();
         transform.localScale = new Vector3(0, 0, 0);
+        finalHeight = transform.position.y + verticalDiff;
         scaleRate = 1f / (float)framesToAppear;
-        translateRate = (float)finalHeight / (float)framesToAppear;
-        finishedScale = finishedTranslate = false;
+        translateRate = (float)verticalDiff / (float)framesToAppear;
+        rotateRate = (finalRotationSpeedDeg - initialRotationSpeedDeg) / (float)framesToAppear;
+        currentRotationSpeed = initialRotationSpeedDeg;
     }
 
     // Update is called once per frame
@@ -29,27 +34,16 @@ public class KeySpawn : MonoBehaviour
         {
             transform.localScale = new Vector3(transform.localScale.x + scaleRate, transform.localScale.y + scaleRate, transform.localScale.z + scaleRate);
         }
-        else if (!finishedScale)
-        {
-            finishedScale = true;
-        }
         //Translate
         if (transform.position.y < finalHeight)
         {
             transform.Translate(0, translateRate, 0);
         }
-        else if (!finishedTranslate)
-        {
-            finishedTranslate = true;
-        }
         //Rotate
-        if (!finishedScale && !finishedTranslate && !animator.GetBool("isTurning"))
+        if (currentRotationSpeed > finalRotationSpeedDeg)
         {
-            animator.SetBool("isTurning", true);
+            currentRotationSpeed += rotateRate;
         }
-        else if (finishedScale && finishedTranslate)
-        {
-            animator.SetBool("isTurning", false);
-        }
+        transform.Rotate(transform.up, currentRotationSpeed);
     }
 }
