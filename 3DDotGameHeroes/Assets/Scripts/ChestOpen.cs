@@ -22,7 +22,7 @@ public class ChestOpen : MonoBehaviour
         Vector3 playerDirection = Vector3.Normalize(collision.gameObject.transform.position - transform.position);
         float angle = Vector3.Angle(playerDirection, transform.forward);
 
-        if (collision.gameObject.layer == 7 && angle < 35)
+        if (collision.gameObject.layer == 7 && angle < 40)
         {
             if (!opened)
             {
