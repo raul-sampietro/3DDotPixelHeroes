@@ -131,7 +131,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   framesToAppear: 60
   verticalDiff: 8
-  initialRotationSpeedDeg: 40
+  initialRotationSpeedDeg: 60
   finalRotationSpeedDeg: 4
 --- !u!114 &5045054031271371528
 MonoBehaviour:
