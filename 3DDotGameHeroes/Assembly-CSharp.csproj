@@ -61,6 +61,9 @@
     <Compile Include="Assets\Scripts\CameraMover.cs" />
     <Compile Include="Assets\Scripts\KnightSwordSpawn.cs" />
     <Compile Include="Assets\Scripts\ChestOpen.cs" />
+    <Compile Include="Assets\Scripts\Destroy.cs" />
+    <Compile Include="Assets\Scripts\CameraMover.cs" />
+    <Compile Include="Assets\Scripts\KnightSwordSpawn.cs" />
     <Compile Include="Assets\Scripts\PlayerWinLose.cs" />
     <Compile Include="Assets\Scripts\EnemyAnubisShoot.cs" />
     <Compile Include="Assets\Scripts\PlayerMove.cs" />
@@ -81,6 +84,7 @@
     <Compile Include="Assets\Scripts\DamagingCollision.cs" />
     <Compile Include="Assets\Scripts\DamageMatrix.cs" />
     <Compile Include="Assets\Scripts\Singleton.cs" />
+    <Compile Include="Assets\Scripts\TriggerParticles.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

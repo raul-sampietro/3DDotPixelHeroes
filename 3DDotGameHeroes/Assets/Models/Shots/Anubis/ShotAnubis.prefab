@@ -94,8 +94,9 @@ GameObject:
   - component: {fileID: 6969461543313633710}
   - component: {fileID: 7778649997117238032}
   - component: {fileID: 7778649997117238039}
-  - component: {fileID: 7778649997117238038}
+  - component: {fileID: -4333709433527808188}
   - component: {fileID: 7778649997117238037}
+  - component: {fileID: -3306486493124960345}
   - component: {fileID: 7027611689066068129}
   m_Layer: 0
   m_Name: ShotAnubis
@@ -146,8 +147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shotSpeed: 40
-  knight: {fileID: 362233387328048355, guid: 51f6f52c00a85264e90ed7d14cfbb39b, type: 3}
---- !u!114 &7778649997117238038
+--- !u!114 &-4333709433527808188
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -173,6 +173,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 30
+--- !u!114 &-3306486493124960345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7778649997117238036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c44154032b3d2948b3644fc05627773, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particles: {fileID: 1124872229260257672, guid: 78d5ff4e620611945ae388512f297502, type: 3}
 --- !u!54 &7027611689066068129
 Rigidbody:
   m_ObjectHideFlags: 0
