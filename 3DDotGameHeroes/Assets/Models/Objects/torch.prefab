@@ -263,7 +263,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 044f06f44486b524d811e5e73ea127e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minIntensity: 1.070225e+9
+  minIntensity: 1.570225e+9
   maxIntesity: 2.070225e+9
   minRange: 108
   maxRange: 111
