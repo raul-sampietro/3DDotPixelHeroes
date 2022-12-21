@@ -10,14 +10,12 @@ public class EnemyAnubisMove : MonoBehaviour
     private string movementPattern;
 
     private GameObject knight = null;
-    private LayerMask playerLayer;
     Animator animator;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        playerLayer  = LayerMask.GetMask("Player");
         animator = gameObject.GetComponent<Animator>();
     }
 
@@ -67,7 +65,6 @@ public class EnemyAnubisMove : MonoBehaviour
 
 
         // Stop moving and prepare to shoot the player
-        //Physics.Linecast(transform.position, knight.transform.position, out RaycastHit hit);
         if (Physics.Linecast(transform.position, knight.transform.position, out RaycastHit hit))
         {
             if (hit.collider.gameObject == knight)
