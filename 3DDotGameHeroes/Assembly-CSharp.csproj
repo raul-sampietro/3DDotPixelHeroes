@@ -67,12 +67,14 @@
     <Compile Include="Assets\Scripts\FollowPlayer.cs" />
     <Compile Include="Assets\Scripts\EnemyAnubisMove.cs" />
     <Compile Include="Assets\Scripts\FixedRotationY.cs" />
+    <Compile Include="Assets\Scripts\DoorOpenKey.cs" />
     <Compile Include="Assets\Scripts\ColorToPrefab.cs" />
     <Compile Include="Assets\Scripts\MenuManager.cs" />
     <Compile Include="Assets\Scripts\LevelGenerator.cs" />
     <Compile Include="Assets\Scripts\CandleEffect.cs" />
     <Compile Include="Assets\Scripts\KeySpawn.cs" />
     <Compile Include="Assets\Scripts\InventoryManager.cs" />
+    <Compile Include="Assets\Scripts\DoorOpen.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

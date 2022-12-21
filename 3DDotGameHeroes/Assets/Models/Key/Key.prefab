@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a243cb65c87413429741aa63c5a05f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  framesToAppear: 90
+  framesToAppear: 60
   verticalDiff: 8
   initialRotationSpeedDeg: 40
   finalRotationSpeedDeg: 4

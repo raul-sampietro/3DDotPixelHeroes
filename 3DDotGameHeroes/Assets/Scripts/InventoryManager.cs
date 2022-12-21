@@ -46,9 +46,18 @@ public class InventoryManager : MonoBehaviour
         return items[itemTag];        
     }
 
-    public int HasItem(string itemTag)
+    public bool HasItem(string itemTag)
     {
-        if (!items.ContainsKey(itemTag)) return 0;
-        return items[itemTag];
+        return items.ContainsKey(itemTag);
+    }
+
+    public bool HasItem(string itemTag, int count)
+    {
+        return items.ContainsKey(itemTag) && items[itemTag] >= count;
+    }
+
+    public int GetItemCount(string itemTag)
+    {
+        return items.ContainsKey(itemTag) ? items[itemTag] : 0;
     }
 }
