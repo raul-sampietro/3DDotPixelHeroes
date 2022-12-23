@@ -15,6 +15,7 @@ public class PlayerMove : MonoBehaviour
 
     bool swordInstantiated = false;
     GameObject swordObj;
+    Vector3 initialAttackDirection;
 
     private Vector2 actualRoomCoordinates, prevRoomCoordinates = new(0,0);
     private Vector2 sizeOfRoom = new(265, 192);
@@ -93,6 +94,7 @@ public class PlayerMove : MonoBehaviour
         else animator.SetBool("isAttacking", false);
 
         // Apply the inputs to the player
+        // End of the attack: Retract sword
         if (isOnAttackEnd)
         {
             if (swordInstantiated)
@@ -104,15 +106,28 @@ public class PlayerMove : MonoBehaviour
         }
         else if (isOnAttackStart)
         {
+            // Start of the attack: Instantiate sword
             if (!swordInstantiated)
             {
+                rb.velocity = Vector3.zero; // Stop translating
                 swordInstantiated = true;
                 Vector3 forward = transform.forward * 5;
                 Vector3 up = transform.up * 5;
                 Vector3 swordRelPos = forward + up;
                 swordObj = Instantiate(sword, transform.position + swordRelPos, transform.rotation);
+                initialAttackDirection = transform.forward;
+                Debug.Log(initialAttackDirection);
             }
+            // Already attacking: Allow for 90 degree sword swipe
+            /*else
+            {
+                if (true)
+                {
+                    swordObj.GetComponent<KnightSwordSwipe>().SwipeTo(gameObject, );
+                }
+            }*/
         }
+        // Not attacking at all
         else
         {
             // Rotate to face lookDirection

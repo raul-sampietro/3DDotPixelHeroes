@@ -29,7 +29,7 @@ public class InventoryManager : MonoBehaviour
         return res;
     }
 
-    private int CollectItem(string itemTag, int count = 1)
+    public int CollectItem(string itemTag, int count = 1)
     {
         if (items.ContainsKey(itemTag)) items[itemTag] += count;
         else items[itemTag] = count;
