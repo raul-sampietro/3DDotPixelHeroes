@@ -16,6 +16,7 @@ public class PlayerMove : MonoBehaviour
     bool swordInstantiated = false;
     GameObject swordObj;
     Vector3 initialAttackDirection;
+    bool swiped = false;
 
     private Vector2 actualRoomCoordinates, prevRoomCoordinates = new(0,0);
     private Vector2 sizeOfRoom = new(265, 192);
@@ -90,8 +91,10 @@ public class PlayerMove : MonoBehaviour
         }
 
         // Set isAttacking animator input
-        if (attackDirection != Vector3.zero) animator.SetBool("isAttacking", true);
-        else animator.SetBool("isAttacking", false);
+        if (attackDirection != Vector3.zero)
+            animator.SetBool("isAttacking", true);
+        else
+            animator.SetBool("isAttacking", false);
 
         // Apply the inputs to the player
         // End of the attack: Retract sword
@@ -100,7 +103,7 @@ public class PlayerMove : MonoBehaviour
             if (swordInstantiated)
             {
                 swordInstantiated = false;
-                swordObj.gameObject.GetComponent<KnightSwordSpawn>().Disappear();
+                swordObj.GetComponent<KnightSwordSpawn>().Disappear();
             }
                 
         }
@@ -111,21 +114,27 @@ public class PlayerMove : MonoBehaviour
             {
                 rb.velocity = Vector3.zero; // Stop translating
                 swordInstantiated = true;
+                swiped = false;
                 Vector3 forward = transform.forward * 5;
                 Vector3 up = transform.up * 5;
                 Vector3 swordRelPos = forward + up;
                 swordObj = Instantiate(sword, transform.position + swordRelPos, transform.rotation);
                 initialAttackDirection = transform.forward;
-                Debug.Log(initialAttackDirection);
             }
             // Already attacking: Allow for 90 degree sword swipe
-            /*else
+            else if (!swiped && attackDirection != initialAttackDirection)
             {
-                if (true)
-                {
-                    swordObj.GetComponent<KnightSwordSwipe>().SwipeTo(gameObject, );
-                }
-            }*/
+                swiped = true;
+
+                // Rotate Player to face the new attackDirection
+                Quaternion.FromToRotation(transform.forward, attackDirection)
+                    .ToAngleAxis(out float angle, out Vector3 axis);
+                if (axis.y < 0.0f) angle = -angle;
+                transform.Rotate(new Vector3(0, 1, 0), angle*2, Space.World);
+
+                // Rotate KnightSword
+                swordObj.GetComponent<KnightSwordSwipe>().SwipeTo(gameObject, attackDirection);
+            }
         }
         // Not attacking at all
         else

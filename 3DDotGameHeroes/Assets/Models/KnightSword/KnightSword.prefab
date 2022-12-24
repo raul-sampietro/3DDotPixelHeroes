@@ -273,6 +273,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7098717862762068886}
   - component: {fileID: 5580258281359577604}
+  - component: {fileID: 3813191746240965530}
   m_Layer: 0
   m_Name: KnightSword
   m_TagString: Untagged
@@ -311,3 +312,15 @@ MonoBehaviour:
   Scale: 2
   FramesToAppear: 3
   FramesToDisappear: 5
+--- !u!114 &3813191746240965530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7622455505207124268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c7608514125ebb4289806366b5fb875, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
