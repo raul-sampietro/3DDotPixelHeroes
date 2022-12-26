@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e057c9f3f872584f9b7ff12e4510ea6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Scale: 2
+  Scale: 1.2
   FramesToAppear: 3
   FramesToDisappear: 5
 --- !u!114 &8298066726717297521
