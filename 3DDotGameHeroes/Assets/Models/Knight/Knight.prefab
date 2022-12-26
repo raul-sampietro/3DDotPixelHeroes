@@ -739,8 +739,10 @@ GameObject:
   - component: {fileID: 8111734045783246682}
   - component: {fileID: 8111734045783246680}
   - component: {fileID: 671145131892321941}
+  - component: {fileID: 4732726354420381654}
   - component: {fileID: 6772355089885092453}
   - component: {fileID: 7614699682512153990}
+  - component: {fileID: 883868314003137729}
   m_Layer: 7
   m_Name: Knight
   m_TagString: Player
@@ -797,7 +799,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 70
-  sword: {fileID: 7622455505207124268, guid: 5fa7ca1d330a33d4f91c0f940ae9363e, type: 3}
+  sword: {fileID: 2242532154756507126, guid: ff96f3cce9b63284b9a42d9e7d860615, type: 3}
 --- !u!114 &671145131892321941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -810,6 +812,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35dce4e075b8dd243848efdbda5db8f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4732726354420381654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8958718431463006957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc7a41e0df415ca439e5517e079efb5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maximumHP: 50
 --- !u!54 &6772355089885092453
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -839,3 +854,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 12.056274, y: 16.490719, z: 7.0630655}
   m_Center: {x: 0.03852558, y: 7.745362, z: -0.45384502}
+--- !u!114 &883868314003137729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8958718431463006957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e42c3da4c7e29e24bbf0b403a276210f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  normalKeyTag: Key
+  bossKeyTag: KeyBoss
