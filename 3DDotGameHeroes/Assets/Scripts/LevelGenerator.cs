@@ -10,6 +10,9 @@ public class LevelGenerator : MonoBehaviour
 
     private Vector2 sizeOfImage = new(16, 12);
     // Start is called before the first frame update
+
+    private int roomsPerRow = 3;
+
     void Start()
     {
         int count = 0;
@@ -24,7 +27,7 @@ public class LevelGenerator : MonoBehaviour
                     Color pixelColor = level.GetPixel(x, z);
 
                     // Calcualte relative position
-                    Vector3 offset = new(sizeOfImage.x * (count % 3) * sizeOfImage.x, 0, sizeOfImage.x * (int)(count / 3) * sizeOfImage.y);
+                    Vector3 offset = new(sizeOfImage.x * (count % roomsPerRow) * sizeOfImage.x, 0, sizeOfImage.x * (int)(count / roomsPerRow) * sizeOfImage.y);
                     Vector3 position = new(x * sizeOfImage.x, 0, z * sizeOfImage.x);
                     position += offset;
 
@@ -52,7 +55,7 @@ public class LevelGenerator : MonoBehaviour
                                     case "wall":
                                         
                                         Vector3 rotationX = new(0,0,0);
-                                        Vector3 torchOffset = new(0, 0, 0);
+                                        Vector3 torchOffset = new(0, 15, 0);
                                         // Rotate according to position X in the level
                                         if (x == 0) // Left side
                                         {
@@ -63,12 +66,12 @@ public class LevelGenerator : MonoBehaviour
                                         {
                                             rotationX = new(0.0f, -90.0f, 0.0f); 
                                             torchOffset = new(-13, 0, 0);
-                                        } 
+                                        }
                                         obj.transform.Rotate(rotationX, Space.World);  
 
                                         Vector3 rotationZ = new(0, 0, 0);
                                         // Rotate according to position Y in the level
-                                        if (z == 0) // Bottom side (no rotation needed)
+                                        if (z == 0) // Bottom side
                                         {
                                             rotationZ = new(0.0f, 0.0f, 0.0f); 
                                             torchOffset = new(0, 0, 13);
@@ -83,7 +86,7 @@ public class LevelGenerator : MonoBehaviour
                                         // Check if a torch has to be added, if so, apply the transformations
                                         if (colorPrefab.torch != null)
                                         {
-                                            GameObject torch = Instantiate(colorPrefab.torch, position + new Vector3(0, 15, 0) + torchOffset, Quaternion.identity, transform);
+                                            GameObject torch = Instantiate(colorPrefab.torch, position + torchOffset, Quaternion.identity, transform);
                                             torch.transform.Rotate(rotationX, Space.World);
                                             torch.transform.Rotate(rotationZ, Space.World);
                                             

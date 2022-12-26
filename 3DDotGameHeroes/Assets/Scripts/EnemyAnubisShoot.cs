@@ -31,7 +31,6 @@ public class EnemyAnubisShoot : MonoBehaviour
         timeToShoot -= Time.deltaTime;
 
         // A valorar: hacerlo con pase de mensajes desde move hacia shoot
-        //Physics.Linecast(transform.position, knight.transform.position, out RaycastHit hit);
         if (Physics.Linecast(transform.position, knight.transform.position, out RaycastHit hit))
         {
             if (hit.collider.gameObject == knight)

@@ -74,7 +74,7 @@ public class EnemyAnubisMove : MonoBehaviour
                 Vector3 direction = knight.transform.position - transform.position;
                 direction = Vector3.Normalize(direction);
 
-                // Rotate the enemy to face the player
+                // Rotate the enemy to face the player TODO
                 Quaternion rotation = Quaternion.FromToRotation(transform.forward, direction);
                 rotation.ToAngleAxis(out float angle, out Vector3 axis);
                 if (angle > maxRotationSpeed * Time.deltaTime) angle = maxRotationSpeed * Time.deltaTime;

@@ -85,6 +85,7 @@
     <Compile Include="Assets\Scripts\DamageMatrix.cs" />
     <Compile Include="Assets\Scripts\Singleton.cs" />
     <Compile Include="Assets\Scripts\TriggerParticles.cs" />
+    <Compile Include="Assets\Scripts\CandleEffect.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
