@@ -7,13 +7,17 @@ public class HealthSystem : MonoBehaviour
     public int maximumHP = 50;
 
     int currentHP;
-    GodMode godMode;
+    bool isInvincible = false;
 
     // Start is called before the first frame update
     void Start()
     {
         currentHP = 20;
-        godMode = GetComponent<GodMode>();
+    }
+
+    public void SwitchInvincibility()
+    {
+        isInvincible = !isInvincible;
     }
 
     /// <summary>
@@ -22,14 +26,14 @@ public class HealthSystem : MonoBehaviour
     /// <returns>Whether it has been killed or not</returns>
     public bool Kill()
     {
-        if (godMode == null || !godMode.IsInvincible())
+        if (!isInvincible)
             currentHP = 0;
         return currentHP == 0;
     }
 
     public int Damage(int damage)
     {
-        if (godMode == null || !godMode.IsInvincible())
+        if (!isInvincible)
             currentHP = currentHP - damage < 0 ? 0 : currentHP - damage;
         return currentHP;
     }

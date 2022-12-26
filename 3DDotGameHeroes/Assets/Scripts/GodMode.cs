@@ -7,18 +7,14 @@ public class GodMode : MonoBehaviour
     public string normalKeyTag;
     public string bossKeyTag;
 
-    bool isInvincible = false;
     InventoryManager inventory;
+    HealthSystem health;
 
     // Start is called before the first frame update
     void Start()
     {
-        inventory = GetComponent<InventoryManager>();   
-    }
-
-    public bool IsInvincible()
-    {
-        return isInvincible;
+        inventory = GetComponent<InventoryManager>();
+        health = GetComponent<HealthSystem>();   
     }
 
     // Update is called once per frame
@@ -27,7 +23,7 @@ public class GodMode : MonoBehaviour
         // Invincibility
         if (Input.GetKeyDown(KeyCode.G))
         {
-            isInvincible = !isInvincible;
+            health.SwitchInvincibility();
         }
         // Get Normal Key
         if (Input.GetKeyDown(KeyCode.K))

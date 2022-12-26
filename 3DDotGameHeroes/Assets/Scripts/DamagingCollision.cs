@@ -14,6 +14,7 @@ public class DamagingCollision : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        Debug.Log("Collision");
         int damage = damageMatrix.DoesDamage(gameObject.tag, collision.gameObject.tag);
         if (damage > 0)
         {
