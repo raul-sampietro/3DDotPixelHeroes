@@ -69,7 +69,7 @@
     <Compile Include="Assets\Scripts\EnemyAnubisMove.cs" />
     <Compile Include="Assets\Scripts\KnightSwordSwipe.cs" />
     <Compile Include="Assets\Scripts\DoorOpen.cs" />
-    <Compile Include="Assets\Scripts\FixedRotationY.cs" />
+    <Compile Include="Assets\Scripts\SpinY.cs" />
     <Compile Include="Assets\Scripts\DoorOpenKey.cs" />
     <Compile Include="Assets\Scripts\ColorToPrefab.cs" />
     <Compile Include="Assets\Scripts\MenuManager.cs" />
