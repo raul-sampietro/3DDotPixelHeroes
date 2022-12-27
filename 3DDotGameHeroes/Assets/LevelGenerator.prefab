@@ -69,13 +69,13 @@ MonoBehaviour:
     dropLife: 0
     torch: {fileID: 0}
     movementPattern: NA
-  - color: {r: 0, g: 0.49411765, b: 1, a: 0.7607843}
+  - color: {r: 0, g: 0.49411765, b: 1, a: 1}
     prefab: {fileID: 7932199297264305723, guid: d46864143f4d4594ba6afc56ff0b4e82, type: 3}
     dropCoin: 0
     dropLife: 0
     torch: {fileID: 0}
     movementPattern: Vertically
-  - color: {r: 0, g: 0.20392157, b: 1, a: 0.70980394}
+  - color: {r: 0, g: 0.20392157, b: 1, a: 1}
     prefab: {fileID: 7932199297264305723, guid: d46864143f4d4594ba6afc56ff0b4e82, type: 3}
     dropCoin: 0
     dropLife: 0

@@ -27,10 +27,10 @@ public class EnemyAnubisShoot : MonoBehaviour
         if (knight == null)
             knight = GameObject.Find("Knight");
 
+        // TODO Eliminar el delta time, cambiar por un random como en el candle effect
         timeToShoot -= Time.deltaTime;
 
         // A valorar: hacerlo con pase de mensajes desde move hacia shoot
-        //Physics.Linecast(transform.position, knight.transform.position, out RaycastHit hit);
         if (Physics.Linecast(transform.position, knight.transform.position, out RaycastHit hit))
         {
             if (hit.collider.gameObject == knight)

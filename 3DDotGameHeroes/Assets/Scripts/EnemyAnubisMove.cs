@@ -10,14 +10,12 @@ public class EnemyAnubisMove : MonoBehaviour
     private string movementPattern;
 
     private GameObject knight = null;
-    private LayerMask playerLayer;
     Animator animator;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        playerLayer  = LayerMask.GetMask("Player");
         animator = gameObject.GetComponent<Animator>();
     }
 
@@ -67,7 +65,6 @@ public class EnemyAnubisMove : MonoBehaviour
 
 
         // Stop moving and prepare to shoot the player
-        //Physics.Linecast(transform.position, knight.transform.position, out RaycastHit hit);
         if (Physics.Linecast(transform.position, knight.transform.position, out RaycastHit hit))
         {
             if (hit.collider.gameObject == knight)
@@ -77,7 +74,7 @@ public class EnemyAnubisMove : MonoBehaviour
                 Vector3 direction = knight.transform.position - transform.position;
                 direction = Vector3.Normalize(direction);
 
-                // Rotate the enemy to face the player
+                // Rotate the enemy to face the player TODO
                 Quaternion rotation = Quaternion.FromToRotation(transform.forward, direction);
                 rotation.ToAngleAxis(out float angle, out Vector3 axis);
                 if (angle > maxRotationSpeed * Time.deltaTime) angle = maxRotationSpeed * Time.deltaTime;
