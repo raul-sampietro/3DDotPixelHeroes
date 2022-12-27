@@ -10,7 +10,7 @@ public class TriggerParticles : MonoBehaviour
     public void TriggerParticleSystem()
     {
         //Debug.Log("Se hace el trigger");
-        Instantiate(particles, transform.position + new Vector3(0, 2, 0), Quaternion.identity);
+        Instantiate(particles, transform.position + new Vector3(0, 2, 0), Quaternion.Euler(90f, 0f, 0f));
         particles.Play();
     }
 }
