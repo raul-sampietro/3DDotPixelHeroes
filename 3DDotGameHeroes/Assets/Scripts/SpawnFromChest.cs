@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KeySpawn : MonoBehaviour
+public class SpawnFromChest : MonoBehaviour
 {
     public int framesToAppear = 30;
     public float verticalDiff = 10;

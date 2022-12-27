@@ -6,6 +6,7 @@ public class GodMode : MonoBehaviour
 {
     public string normalKeyTag;
     public string bossKeyTag;
+    public string boomerangTag;
 
     InventoryManager inventory;
     HealthSystem health;
@@ -34,6 +35,11 @@ public class GodMode : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.B))
         {
             inventory.CollectItem(bossKeyTag);
+        }
+        // Get Boomerang
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            inventory.CollectItem(boomerangTag);
         }
     }
 }

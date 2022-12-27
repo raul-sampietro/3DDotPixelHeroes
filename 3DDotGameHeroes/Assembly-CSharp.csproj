@@ -78,10 +78,11 @@
     <Compile Include="Assets\Scripts\CandleEffect.cs" />
     <Compile Include="Assets\Scripts\GodMode.cs" />
     <Compile Include="Assets\Scripts\DamagingCollision.cs" />
-    <Compile Include="Assets\Scripts\KeySpawn.cs" />
+    <Compile Include="Assets\Scripts\SpawnFromChest.cs" />
     <Compile Include="Assets\Scripts\DamageMatrix.cs" />
     <Compile Include="Assets\Scripts\InventoryManager.cs" />
     <Compile Include="Assets\Scripts\Singleton.cs" />
+    <Compile Include="Assets\Scripts\BoomerangAttack.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

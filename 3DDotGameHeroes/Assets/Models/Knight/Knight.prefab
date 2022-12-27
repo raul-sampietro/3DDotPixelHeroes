@@ -868,3 +868,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   normalKeyTag: Key
   bossKeyTag: KeyBoss
+  boomerangTag: Boomerang

@@ -9,6 +9,8 @@ TagManager:
   - ChestBoss
   - KeyBoss
   - Key
+  - KnightSword
+  - Boomerang
   layers:
   - Default
   - TransparentFX

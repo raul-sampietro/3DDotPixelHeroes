@@ -72,6 +72,7 @@ public class PlayerMove : MonoBehaviour
         {
             attackDirection += Vector3.right;
         }
+        bool shiftPressed = Input.GetKey(KeyCode.LeftShift);
 
         bool isOnAttackStart = animator.GetCurrentAnimatorStateInfo(0).IsName("AttackStart");
         bool isOnAttackEnd = animator.GetCurrentAnimatorStateInfo(0).IsName("AttackEnd");
