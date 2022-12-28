@@ -11,19 +11,31 @@ public class LevelGenerator : MonoBehaviour
     public GameObject floor;
 
     private Vector2 sizeOfImage = new(16, 12);
+    private bool[,] activeRooms = new bool[10, 10];
     // Start is called before the first frame update
 
     public void InstanciateRoom(int i, int j)
     {
+        // Instanciate this room and those around it
+        for (int x = i - 1; x <= i + 1; ++x)
+            for (int y = j - 1; y <= j + 1; ++y)
+                InstRoomByCords(x, y);
+    }
+
+    private void InstRoomByCords(int i, int j)
+    {
         Texture2D level = null;
 
         // Check that we are not out of bounds
-        if (i < levelsList.Length && j < levelsList[i].levels.Length)
+        if (i >= 0 && j >= 0 && i < levelsList.Length && j < levelsList[i].levels.Length)
             level = levelsList[i].levels[j];
 
-        if (level == null) return;
+        // Check if it is already instanciated or there is no room to place there
+        if (level == null || activeRooms[i,j]) return;
+
         GameObject levelObject = new();
         levelObject.name = "Room" + i + j;
+        activeRooms[i,j] = true;
         for (int x = 0; x < level.width; ++x)
         {
             for (int z = 0; z < level.height; ++z)
@@ -160,12 +172,14 @@ public class LevelGenerator : MonoBehaviour
 
     void Start()
     {
+        /*
         for (int i = 0; i < 10; ++i)
-        {
             for (int j = 0; j < 10; ++j)
-            {
-                InstanciateRoom(i, j);
-            }
-        }
+                InstRoomByCords(i, j);
+
+        */
+        InstanciateRoom(3, 3);
+
+        // TODO manage the rooms that have to be "deinstanciated"
     }
 }
