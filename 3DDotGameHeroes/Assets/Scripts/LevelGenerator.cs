@@ -80,12 +80,12 @@ public class LevelGenerator : MonoBehaviour
                                     if (x == 0) // Left side
                                     {
                                         rotationX = new(0.0f, 90.0f, 0.0f);
-                                        torchOffset = new(13, 0, 0);
+                                        torchOffset += new Vector3(13, 0, 0);
                                     }
                                     else if (x == level.width - 1) // Right side
                                     {
                                         rotationX = new(0.0f, -90.0f, 0.0f);
-                                        torchOffset = new(-13, 0, 0);
+                                        torchOffset += new Vector3(-13, 0, 0);
                                     }
                                     obj.transform.Rotate(rotationX, Space.World);
 
@@ -94,12 +94,12 @@ public class LevelGenerator : MonoBehaviour
                                     if (z == 0) // Bottom side
                                     {
                                         rotationZ = new(0.0f, 0.0f, 0.0f);
-                                        torchOffset = new(0, 0, 13);
+                                        torchOffset += new Vector3(0, 0, 13);
                                     }
                                     else if (z == level.height - 1) // Top side
                                     {
                                         rotationZ = new(0.0f, -180.0f, 0.0f);
-                                        torchOffset = new(0, 0, -13);
+                                        torchOffset += new Vector3(0, 0, -13);
                                     }
                                     obj.transform.Rotate(rotationZ, Space.World);
 

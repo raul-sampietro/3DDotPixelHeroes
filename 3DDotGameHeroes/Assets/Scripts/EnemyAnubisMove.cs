@@ -35,6 +35,7 @@ public class EnemyAnubisMove : MonoBehaviour
 
     private void MoveEnemy()
     {
+        animator.SetBool("isShooting", false);
         animator.SetBool("isMoving", true);
         if (movDirection == new Vector3(0, 0, 0))
         {
@@ -74,12 +75,14 @@ public class EnemyAnubisMove : MonoBehaviour
                 Vector3 direction = knight.transform.position - transform.position;
                 direction = Vector3.Normalize(direction);
 
-                // Rotate the enemy to face the player TODO
+                // Rotate the enemy to face the player
                 Quaternion rotation = Quaternion.FromToRotation(transform.forward, direction);
                 rotation.ToAngleAxis(out float angle, out Vector3 axis);
-                //if (angle > maxRotationSpeed * Time.deltaTime) angle = maxRotationSpeed * Time.deltaTime;
+                if (angle > maxRotationSpeed * Time.deltaTime) angle = maxRotationSpeed * Time.deltaTime;
                 if (axis.y < 0.0f) angle = -angle;
+
                 transform.Rotate(new Vector3(0, 1, 0), angle, Space.World);
+                //transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.FromToRotation(transform.forward, hit.normal), 0.8f);
             }
             else
                 MoveEnemy();
