@@ -5,15 +5,15 @@ using Array2DEditor;
 
 public class LevelGenerator : MonoBehaviour
 {
-    public LevelsList[] levelsList;
-    public Array2DInt levelsList2;
+    public Array2DInt levelsList;
+    public Texture2D[] levelsMappings;
     public ColorToPrefab[] colorMappings;
     public GameObject floor;
 
     private Vector2 sizeOfImage = new(16, 12);
     private bool[,] activeRooms = new bool[10, 10];
-    // Start is called before the first frame update
 
+    // Entry point to manage the rooms that have to be instanciated
     public void InstanciateRoom(int i, int j)
     {
         // Instanciate this room and those around it
@@ -24,18 +24,22 @@ public class LevelGenerator : MonoBehaviour
 
     private void InstRoomByCords(int i, int j)
     {
-        Texture2D level = null;
+        Vector2Int boundaries = levelsList.GridSize;
+        // Check that we are not outside the grid range
+        if (!(i >= 0 && j >= 0 && i < boundaries.x && j < boundaries.y)) return;
+       
+        int roomNumber = levelsList.GetCell(i, boundaries.y - 1 - j) - 1;
+        // Check that we are not outside the array range
+        if (roomNumber >= levelsMappings.Length || roomNumber < 0) return;
+        Texture2D level = levelsMappings[roomNumber];
 
-        // Check that we are not out of bounds
-        if (i >= 0 && j >= 0 && i < levelsList.Length && j < levelsList[i].levels.Length)
-            level = levelsList[i].levels[j];
-
-        // Check if it is already instanciated or there is no room to place there
-        if (level == null || activeRooms[i,j]) return;
+        // Check if it is already instanciated, otherwise mark it as so
+        if (activeRooms[i,j]) return;
+        activeRooms[i, j] = true;
 
         GameObject levelObject = new();
         levelObject.name = "Room" + i + j;
-        activeRooms[i,j] = true;
+        
         for (int x = 0; x < level.width; ++x)
         {
             for (int z = 0; z < level.height; ++z)
@@ -43,7 +47,7 @@ public class LevelGenerator : MonoBehaviour
                 Color pixelColor = level.GetPixel(x, z);
 
                 // Calcualte relative position
-                Vector3 offset = new(sizeOfImage.x * j * sizeOfImage.x, 0, sizeOfImage.x * i * sizeOfImage.y);
+                Vector3 offset = new(sizeOfImage.x * i * sizeOfImage.x, 0, sizeOfImage.x * j * sizeOfImage.y);
                 Vector3 position = new(x * sizeOfImage.x, 0, z * sizeOfImage.x);
                 position += offset;
 
@@ -172,13 +176,11 @@ public class LevelGenerator : MonoBehaviour
 
     void Start()
     {
-        /*
         for (int i = 0; i < 10; ++i)
             for (int j = 0; j < 10; ++j)
                 InstRoomByCords(i, j);
 
-        */
-        InstanciateRoom(3, 3);
+        //InstanciateRoom(3, 3);
 
         // TODO manage the rooms that have to be "deinstanciated"
     }
