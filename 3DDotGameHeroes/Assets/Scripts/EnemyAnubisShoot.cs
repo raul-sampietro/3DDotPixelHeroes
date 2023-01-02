@@ -9,14 +9,12 @@ public class EnemyAnubisShoot : MonoBehaviour
     public GameObject shot;
 
     private GameObject knight = null;
-    private LayerMask playerLayer;
     Animator animator;
 
     // Start is called before the first frame update
     void Start()
     {
         timeToShoot = 1.0f / shootingFreq;
-        playerLayer = LayerMask.GetMask("Player");
         animator = gameObject.GetComponent<Animator>();
     }
 
@@ -43,10 +41,6 @@ public class EnemyAnubisShoot : MonoBehaviour
                     // Create the shot
                     timeToShoot = 1.0f / shootingFreq;
                     Instantiate(shot, transform.position + transform.forward + new Vector3(0.0f, 5.0f, 0.0f), transform.rotation);
-                }
-                else {
-                    // TODO: wait for the shooting animation to finish
-                    animator.SetBool("isShooting", false);
                 }
             }
         }
