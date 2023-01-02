@@ -10,6 +10,7 @@ public class PlayerMove : MonoBehaviour
     public GameObject boomerang;
 
     Animator animator;
+    InventoryManager inventory;
     Rigidbody rb;
 
     Vector3 prevLookDirection = Vector3.forward;
@@ -29,6 +30,7 @@ public class PlayerMove : MonoBehaviour
     void Start()
     {
         animator = gameObject.GetComponent<Animator>();
+        inventory = gameObject.GetComponent<InventoryManager>();
         rb = GetComponent<Rigidbody>();
     }
 
@@ -76,7 +78,11 @@ public class PlayerMove : MonoBehaviour
         {
             attackDirection += Vector3.right;
         }
-        bool shiftPressed = Input.GetKey(KeyCode.LeftShift);
+
+        bool shiftPressed;
+        if (inventory.HasItem(boomerang.tag))
+            shiftPressed = Input.GetKey(KeyCode.LeftShift);
+        else shiftPressed = false;
 
         bool isOnAttackStart = animator.GetCurrentAnimatorStateInfo(0).IsName("AttackStart");
         bool isOnAttackEnd = animator.GetCurrentAnimatorStateInfo(0).IsName("AttackEnd");

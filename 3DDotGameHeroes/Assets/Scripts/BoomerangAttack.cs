@@ -36,6 +36,7 @@ public class BoomerangAttack : MonoBehaviour
 
     public void Initialize(GameObject player, Vector3 startPos, Vector3 startDirection)
     {
+
         transform.Rotate(90, 0, 0);
         this.player = player;
         this.startPos = startPos;
@@ -85,7 +86,11 @@ public class BoomerangAttack : MonoBehaviour
             {
                 // Reduce scale
                 if (transform.localScale.x <= 0)
+                {
+                    player.GetComponent<PlayerMove>().BoomerangIsBack();
                     Destroy(gameObject);
+                }
+                    
                 transform.localScale = new Vector3(transform.localScale.x - scaleRate,
                                                    transform.localScale.y - scaleRate,
                                                    transform.localScale.z - scaleRate);
