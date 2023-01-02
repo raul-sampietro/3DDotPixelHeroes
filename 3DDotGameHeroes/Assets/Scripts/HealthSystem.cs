@@ -12,7 +12,7 @@ public class HealthSystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currentHP = 20;
+        currentHP = maximumHP;
     }
 
     public void SwitchInvincibility()
@@ -34,7 +34,10 @@ public class HealthSystem : MonoBehaviour
     public int Damage(int damage)
     {
         if (!isInvincible)
+        {
             currentHP = currentHP - damage < 0 ? 0 : currentHP - damage;
+            Debug.Log("Damage " + tag + " -" + damage + " -> " + currentHP);
+        }
         return currentHP;
     }
 

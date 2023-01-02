@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5546389411050140440}
   - component: {fileID: 7811738458426189486}
   - component: {fileID: 257199375403420485}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: head-local
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 5623193694108899479}
   - component: {fileID: 1148452181278105503}
   - component: {fileID: 7203503977461391245}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: barita-local
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -175,7 +175,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2595182721435871335}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: head-global
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -207,7 +207,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3626738888433572120}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: body-global
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -239,7 +239,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 433771030520692128}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: barita-global
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -273,7 +273,7 @@ GameObject:
   - component: {fileID: 5939838350281168008}
   - component: {fileID: 2619859810572065742}
   - component: {fileID: 3497246913009691018}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: armL-local
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -356,7 +356,7 @@ GameObject:
   - component: {fileID: 3939058147381804533}
   - component: {fileID: 4837986484882217894}
   - component: {fileID: 7675503422844885973}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: armR-local
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -437,7 +437,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6585766213574665893}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: body-global-global
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -474,7 +474,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6842425312887693372}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: armL-global
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -508,7 +508,7 @@ GameObject:
   - component: {fileID: 4983460744888214131}
   - component: {fileID: 2791845465576348623}
   - component: {fileID: 8743690072045007853}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: body-local
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -589,7 +589,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3397306540479871327}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: armR-global
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -621,7 +621,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5034758722249510878}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: feet-global
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -658,9 +658,9 @@ GameObject:
   - component: {fileID: 7121806099732909757}
   - component: {fileID: -257678686952057258}
   - component: {fileID: 5662884647437801996}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AnubisIdle
-  m_TagString: Untagged
+  m_TagString: Anubis
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -770,7 +770,7 @@ GameObject:
   - component: {fileID: 287527168853560584}
   - component: {fileID: 4913078202489316036}
   - component: {fileID: 2481163271826071175}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: feet-local
   m_TagString: Untagged
   m_Icon: {fileID: 0}
