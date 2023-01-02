@@ -25,7 +25,7 @@ public class CameraMover : MonoBehaviour
     {
         // Find the player
         if (knight == null)
-            knight = GameObject.Find("Knight");
+            knight = GameObject.FindGameObjectWithTag("Player");
 
         if (knight.transform.position.z < 0) // Player is outside the dungeon
             cameraState = 1;

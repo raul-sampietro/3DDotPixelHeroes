@@ -63,10 +63,9 @@
     <Compile Include="Assets\Scripts\ChestOpen.cs" />
     <Compile Include="Assets\Scripts\HealthSystem.cs" />
     <Compile Include="Assets\Scripts\PlayerWinLose.cs" />
-    <Compile Include="Assets\Scripts\EnemyAnubisShoot.cs" />
     <Compile Include="Assets\Scripts\PlayerMove.cs" />
     <Compile Include="Assets\Scripts\FollowPlayer.cs" />
-    <Compile Include="Assets\Scripts\EnemyAnubisMove.cs" />
+    <Compile Include="Assets\Scripts\EnemyAnubis.cs" />
     <Compile Include="Assets\Scripts\KnightSwordSwipe.cs" />
     <Compile Include="Assets\Scripts\DoorOpen.cs" />
     <Compile Include="Assets\Scripts\SpinY.cs" />
@@ -83,6 +82,7 @@
     <Compile Include="Assets\Scripts\InventoryManager.cs" />
     <Compile Include="Assets\Scripts\Singleton.cs" />
     <Compile Include="Assets\Scripts\TriggerParticles.cs" />
+    <Compile Include="Assets\Scripts\Enemy.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
