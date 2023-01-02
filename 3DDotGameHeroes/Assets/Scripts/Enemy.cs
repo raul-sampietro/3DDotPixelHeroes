@@ -24,6 +24,15 @@ public class Enemy : MonoBehaviour
         animator = gameObject.GetComponent<Animator>();
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        // 3 is the obstable layer number
+        if (collision.gameObject.layer == 3)
+        {
+            movDirection *= -1;
+        }
+    }
+
     protected GameObject FindPlayer()
     {
         return GameObject.FindGameObjectWithTag(playerTag);
@@ -36,5 +45,43 @@ public class Enemy : MonoBehaviour
         if (angle > maxRotationSpeed * Time.deltaTime) angle = maxRotationSpeed * Time.deltaTime;
         if (axis.y < 0.0f) angle = -angle;
         transform.Rotate(new Vector3(0, 1, 0), angle, Space.World);
+    }
+
+    protected void MoveEnemy()
+    {
+        animator.SetBool("isAttacking", false);
+        animator.SetBool("isMoving", true);
+        if (movDirection == new Vector3(0, 0, 0))
+        {
+            if (movementPattern == "Vertically")
+                movDirection = Vector3.forward;
+            else if (movementPattern == "Horizontally")
+                movDirection = Vector3.right;
+            else if (movementPattern == "Random")
+            {
+                int randomNumber = Random.Range(0, 40);
+                // Randomly change direction
+                if (randomNumber == 0)
+                {
+                    // Randomly choose direction
+                    if (randomNumber > 30)
+                        movDirection = Vector3.left;
+                    else if (randomNumber > 20)
+                        movDirection = Vector3.right;
+                    else if (randomNumber > 10)
+                        movDirection = Vector3.forward;
+                    else
+                        movDirection = Vector3.back;
+
+                }
+            }
+        }
+        // Rotate the enemy to face the movement direction 
+        RotateYAxes(movDirection);
+
+        Debug.Log(movDirection);
+
+        // Move the enemy
+        transform.Translate(movSpeed * Time.deltaTime * Vector3.Normalize(movDirection), Space.World);
     }
 }

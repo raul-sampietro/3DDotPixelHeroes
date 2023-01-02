@@ -21,7 +21,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 1827226128182048838, guid: 775913bd2d9b50a4fbf27c38e405df82, type: 3}
+  m_Motion: {fileID: 1827226128182048838, guid: be92b8b148c1cd046b5a1c9704ac92d9, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -61,7 +61,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: AnubisAnimator
+  m_Name: SkeletonAnimator
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: isMoving
@@ -135,7 +135,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 1827226128182048838, guid: e8afbeaed920a07429e118453b29729c, type: 3}
+  m_Motion: {fileID: 1827226128182048838, guid: 07a7931d514579a4cae506a8079a6e67, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -163,7 +163,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 1827226128182048838, guid: ff5e558111d7501438854c61a9e6d05a, type: 3}
+  m_Motion: {fileID: 1827226128182048838, guid: 8c545ea0593f52044aac4bfe2880ee8f, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

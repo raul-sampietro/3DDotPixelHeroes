@@ -2,23 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyAnubis : Enemy
+public class EnemySkeleton : Enemy
 {
-    public int shootingOffset;
-    public GameObject shot;
-    
-    private int iniShootingOffset;
-    private bool isShooting;
-
     // Start is called before the first frame update
     void Start()
     {
-        isShooting = false;
-        iniShootingOffset = shootingOffset;
         GetAnimator();
     }
 
-    private void ShootPlayer()
+    private void AttackPlayer()
     {
         animator.SetBool("isMoving", false);
 
@@ -29,25 +21,7 @@ public class EnemyAnubis : Enemy
         // Rotate the enemy to face the player
         RotateYAxes(direction);
 
-        // Check if its time to shoot
-        if (shootingOffset < 0)
-        {
-            shootingOffset = iniShootingOffset;
-            isShooting = false;
-            animator.SetBool("isAttacking", false);
-
-            // Create the shoot
-            Instantiate(shot, transform.position + transform.forward + new Vector3(0.0f, 5.0f, 0.0f), transform.rotation);
-        }
-        else if (shootingOffset < 50 && !isShooting)
-        {
-            animator.SetBool("isAttacking", true);
-            isShooting = true;
-        }
-        else
-        {
-            shootingOffset -= 1;
-        }
+        // Proced to attack
     }
 
     // Update is called once per frame
@@ -59,12 +33,12 @@ public class EnemyAnubis : Enemy
             knight = FindPlayer();
         }
 
-        // If the player is visible shoot him, otherwise keep moving
+        // If the player is visible attack him, otherwise keep moving
         if (Physics.Linecast(transform.position, knight.transform.position, out RaycastHit hit))
         {
             if (hit.collider.gameObject == knight)
             {
-                ShootPlayer();
+                AttackPlayer();
             }
             else
                 MoveEnemy();
