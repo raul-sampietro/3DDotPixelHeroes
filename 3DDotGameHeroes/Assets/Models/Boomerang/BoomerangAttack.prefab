@@ -111,9 +111,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ae65f473f2d0124ea0f01eee686aaf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 30
-  range: 96
-  framesToSpawn: 4
+  speed: 150
+  range: 70
+  framesToSpawn: 5
 --- !u!114 &5945146283665575917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,4 +126,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d8d3b5b1ad06d84f8381f48df71170e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 1200
+  rotationSpeed: 2000

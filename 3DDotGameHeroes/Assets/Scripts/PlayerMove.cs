@@ -7,6 +7,7 @@ public class PlayerMove : MonoBehaviour
 
     public float Speed = 15;
     public GameObject sword;
+    public GameObject boomerang;
 
     Animator animator;
     Rigidbody rb;
@@ -17,6 +18,9 @@ public class PlayerMove : MonoBehaviour
     GameObject swordObj;
     Vector3 initialAttackDirection;
     bool swiped = false;
+
+    bool boomerangThrown = false;
+    GameObject boomerangObj;
 
     private Vector2 actualRoomCoordinates, prevRoomCoordinates = new(0,0);
     private Vector2 sizeOfRoom = new(265, 192);
@@ -76,6 +80,8 @@ public class PlayerMove : MonoBehaviour
 
         bool isOnAttackStart = animator.GetCurrentAnimatorStateInfo(0).IsName("AttackStart");
         bool isOnAttackEnd = animator.GetCurrentAnimatorStateInfo(0).IsName("AttackEnd");
+        bool isOnThrowStart = animator.GetCurrentAnimatorStateInfo(0).IsName("ThrowStart");
+        bool isOnThrowEnd = animator.GetCurrentAnimatorStateInfo(0).IsName("ThrowEnd");
 
         // Set lookDirection
         Vector3 lookDirection;
@@ -91,16 +97,37 @@ public class PlayerMove : MonoBehaviour
             lookDirection = attackDirection;
         }
 
-        // Set isAttacking animator input
-        if (attackDirection != Vector3.zero)
-            animator.SetBool("isAttacking", true);
+        // Set isAttacking && isThrowing animator input
+        if (shiftPressed && attackDirection != Vector3.zero)
+        {
+            animator.SetBool("isThrowing", true);
+        } 
         else
-            animator.SetBool("isAttacking", false);
+        {
+            animator.SetBool("isThrowing", false);
+
+            if (attackDirection != Vector3.zero)
+                animator.SetBool("isAttacking", true);
+            else
+                animator.SetBool("isAttacking", false);
+        }
 
         // Apply the inputs to the player
-        // End of the attack: Retract sword
-        if (isOnAttackEnd)
+        if (isOnThrowStart)
         {
+            if (!boomerangThrown)
+            {
+                boomerangThrown = true;
+                Vector3 forward = transform.forward * 5;
+                Vector3 up = transform.up * 5;
+                Vector3 boomerangRelPos = forward + up;
+                boomerangObj = Instantiate(boomerang, transform.position + boomerangRelPos, Quaternion.identity);
+                boomerangObj.GetComponent<BoomerangAttack>().Initialize(gameObject, transform.position + boomerangRelPos, transform.forward);
+            }
+        }
+        else if (isOnAttackEnd)
+        {
+            // End of the attack: Retract sword
             if (swordInstantiated)
             {
                 swordInstantiated = false;
@@ -162,5 +189,10 @@ public class PlayerMove : MonoBehaviour
             }
         }
         
+    }
+
+    public void BoomerangIsBack()
+    {
+        boomerangThrown = false;
     }
 }

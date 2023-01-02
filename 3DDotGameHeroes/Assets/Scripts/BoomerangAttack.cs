@@ -19,7 +19,7 @@ public class BoomerangAttack : MonoBehaviour
 
     Vector3 startPos;
     Vector3 startDirection;
-    float maxScale = 1f;
+    float maxScale = 0.6f;
     float scaleRate;
     float despawnDistance;
 
@@ -28,7 +28,7 @@ public class BoomerangAttack : MonoBehaviour
     DamageMatrix damageMatrix;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         state = BoomerangState.NONE;
         damageMatrix = DamageMatrix.Instance;
@@ -36,6 +36,7 @@ public class BoomerangAttack : MonoBehaviour
 
     public void Initialize(GameObject player, Vector3 startPos, Vector3 startDirection)
     {
+        transform.Rotate(90, 0, 0);
         this.player = player;
         this.startPos = startPos;
         this.startDirection = Vector3.Normalize(startDirection);
@@ -70,7 +71,7 @@ public class BoomerangAttack : MonoBehaviour
             }
 
             // Common: Move on to the startDirection
-            transform.Translate(Time.deltaTime * speed * startDirection);
+            transform.Translate(Time.deltaTime * speed * startDirection, Space.World);
         }
         else if (state == BoomerangState.RETURNING || state == BoomerangState.DESPAWNING)
         {
@@ -93,14 +94,19 @@ public class BoomerangAttack : MonoBehaviour
             // Common: Move back to the player
             Vector3 returnDirection = player.transform.position - transform.position;
             returnDirection.y = 0f;
-            transform.Translate(Time.deltaTime * speed * returnDirection);
+            transform.Translate(Time.deltaTime * speed * Vector3.Normalize(returnDirection), Space.World);
         }
     }
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") &&
+            (state == BoomerangState.RETURNING || state == BoomerangState.DESPAWNING))
+        {
+            collision.gameObject.GetComponent<PlayerMove>().BoomerangIsBack();
             Destroy(gameObject);
+        }
+            
         int damage = damageMatrix.DoesDamage(gameObject.tag, collision.gameObject.tag);
         if (damage > 0)
             collision.gameObject.GetComponent<HealthSystem>().Damage(damage);

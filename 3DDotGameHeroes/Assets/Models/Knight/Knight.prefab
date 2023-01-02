@@ -800,6 +800,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 70
   sword: {fileID: 2242532154756507126, guid: ff96f3cce9b63284b9a42d9e7d860615, type: 3}
+  boomerang: {fileID: 3534706685597108825, guid: 00313cfaf270ec942aa8c5209067509e, type: 3}
 --- !u!114 &671145131892321941
 MonoBehaviour:
   m_ObjectHideFlags: 0
