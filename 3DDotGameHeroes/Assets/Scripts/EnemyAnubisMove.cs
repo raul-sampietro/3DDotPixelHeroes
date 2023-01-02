@@ -26,14 +26,6 @@ public class EnemyAnubisMove : MonoBehaviour
         {
             movDirection *= -1;
         }
-        else if (collision.gameObject.tag == "Player")
-        {
-            int damage = DamageMatrix.Instance.DoesDamage("Anubis", "Player");
-            if (damage > 0)
-            {
-                collision.gameObject.GetComponent<HealthSystem>().Damage(damage);
-            }
-        }
     }
 
     public void SetMovementPattern(string movementPatter)

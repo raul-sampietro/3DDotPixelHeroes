@@ -33,7 +33,7 @@ public class DamageMatrix : Singleton<DamageMatrix>
         damageValues = new Dictionary<string, int>
         {
             // Weapons
-            ["KnightSword"] = 20,
+            ["KnightSword"] = 15,
 
             // Enemies
             ["Anubis"] = 5,

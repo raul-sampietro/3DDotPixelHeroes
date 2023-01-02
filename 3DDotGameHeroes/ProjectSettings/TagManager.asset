@@ -11,6 +11,7 @@ TagManager:
   - Key
   - KnightSword
   - Boomerang
+  - Anubis
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - UI
   - UICamera
   - Player
-  - 
+  - Enemy
   - 
   - 
   - 

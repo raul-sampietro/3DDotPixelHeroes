@@ -656,6 +656,8 @@ GameObject:
   - component: {fileID: 7121806099732909730}
   - component: {fileID: 7121806099732909759}
   - component: {fileID: 7121806099732909757}
+  - component: {fileID: 1497197818700772522}
+  - component: {fileID: -319859184458603085}
   - component: {fileID: -257678686952057258}
   - component: {fileID: 5662884647437801996}
   m_Layer: 8
@@ -729,6 +731,31 @@ MonoBehaviour:
   shootingFreq: 0.25
   timeToShoot: 0
   shot: {fileID: 7778649997117238036, guid: 71b433c9e00c68c47a510a7c02092bbc, type: 3}
+--- !u!114 &1497197818700772522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7932199297264305723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc7a41e0df415ca439e5517e079efb5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maximumHP: 45
+--- !u!114 &-319859184458603085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7932199297264305723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e93fa9c479799384da1540b7a89ade50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!54 &-257678686952057258
 Rigidbody:
   m_ObjectHideFlags: 0
