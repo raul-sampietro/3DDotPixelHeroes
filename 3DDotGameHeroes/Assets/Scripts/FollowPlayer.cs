@@ -19,7 +19,7 @@ public class FollowPlayer : MonoBehaviour
     {
         // Find the player
         if (knight == null)
-            knight = GameObject.Find("Knight");
+            knight = GameObject.FindGameObjectWithTag("Player");
 
         // Set the direction
         Vector3 direction = knight.transform.position - transform.position;

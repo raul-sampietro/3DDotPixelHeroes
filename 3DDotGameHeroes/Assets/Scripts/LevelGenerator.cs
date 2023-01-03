@@ -143,6 +143,7 @@ public class LevelGenerator : MonoBehaviour
                                 switch (obj.name)
                                 {
                                     case "AnubisIdle(Clone)":
+                                    case "SkeletonIdle(Clone)":
                                         obj.BroadcastMessage("SetMovementPattern", colorPrefab.movementPattern);
                                         break;
 
