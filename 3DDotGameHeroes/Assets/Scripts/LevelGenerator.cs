@@ -116,6 +116,10 @@ public class LevelGenerator : MonoBehaviour
 
                                     break;
 
+                                case "batFlying":
+                                    transform.Translate(new Vector3(0, 7, 0), Space.World);
+                                    break;
+
                                 default:
                                     break;
                             }
@@ -144,6 +148,7 @@ public class LevelGenerator : MonoBehaviour
                                 {
                                     case "AnubisIdle(Clone)":
                                     case "SkeletonIdle(Clone)":
+                                    case "batFlying(Clone)":
                                         obj.BroadcastMessage("SetMovementPattern", colorPrefab.movementPattern);
                                         break;
 

@@ -70,7 +70,7 @@ public class Enemy : MonoBehaviour
 
         if (movementPattern == "Random")
         {
-            int randomNumber = (int)Random.Range(0, 100);
+            int randomNumber = (int)Random.Range(0, 200);
 
             // Randomly change direction
             if (randomNumber == 0)

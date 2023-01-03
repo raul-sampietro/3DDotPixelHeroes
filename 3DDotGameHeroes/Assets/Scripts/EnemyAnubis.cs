@@ -22,7 +22,7 @@ public class EnemyAnubis : Enemy
     {
         animator.SetBool("isMoving", false);
 
-        // Locate the direction to reach  the player
+        // Locate the direction to reach the player
         Vector3 direction = knight.transform.position - transform.position;
         direction = Vector3.Normalize(direction);
 
