@@ -33,6 +33,12 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    protected void DestroyWithParticles()
+    {
+        gameObject.BroadcastMessage("TriggerParticleSystem");
+        Destroy(gameObject);
+    }
+
     protected GameObject FindPlayer()
     {
         return GameObject.FindGameObjectWithTag(playerTag);
@@ -65,7 +71,7 @@ public class Enemy : MonoBehaviour
         if (movementPattern == "Random")
         {
             int randomNumber = (int)Random.Range(0, 100);
-            //Debug.Log(randomNumber);
+
             // Randomly change direction
             if (randomNumber == 0)
             {
@@ -84,8 +90,6 @@ public class Enemy : MonoBehaviour
 
         // Rotate the enemy to face the movement direction 
         RotateYAxes(movDirection);
-
-        //Debug.Log(movDirection);
 
         // Move the enemy
         transform.Translate(movSpeed * Time.deltaTime * Vector3.Normalize(movDirection), Space.World);
