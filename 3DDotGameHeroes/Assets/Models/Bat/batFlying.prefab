@@ -132,7 +132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70c54e7365007e1469ffc49c650a32a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movSpeed: 30
+  movSpeed: 15
   playerTag: Player
 --- !u!114 &2603842944366467304
 MonoBehaviour:
@@ -161,7 +161,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 4
   m_CollisionDetection: 0
 --- !u!65 &919132147489552004
 BoxCollider:

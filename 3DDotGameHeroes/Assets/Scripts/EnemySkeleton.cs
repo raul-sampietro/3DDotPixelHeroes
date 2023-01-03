@@ -39,7 +39,7 @@ public class EnemySkeleton : Enemy
         // Initialise the attack
         if (!attackInProgress)
         {
-            // Locate the initial direction to reac  the player
+            // Locate the initial direction to reach the player
             attackDirection = knight.transform.position - transform.position;
             attackDirection = Vector3.Normalize(attackDirection);
         }

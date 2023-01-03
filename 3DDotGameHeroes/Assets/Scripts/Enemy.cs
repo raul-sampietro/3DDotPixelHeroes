@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour
     public string playerTag;
 
     protected Vector3 movDirection = new(0, 0, 0);
-    protected float maxRotationSpeed = 180.0f;
+    protected float maxRotationSpeed = 240.0f;
     protected string movementPattern;
 
     protected GameObject knight = null;
