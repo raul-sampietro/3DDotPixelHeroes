@@ -132,7 +132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70c54e7365007e1469ffc49c650a32a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movSpeed: 15
+  movSpeed: 30
   playerTag: Player
 --- !u!114 &2603842944366467304
 MonoBehaviour:
@@ -174,8 +174,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 36.471443, y: 17.289015, z: 7.5365944}
-  m_Center: {x: -0.36499786, y: 8.144507, z: -0.044870853}
+  m_Size: {x: 12.50042, y: 17.289015, z: 7.5365944}
+  m_Center: {x: -0.34862137, y: 8.144507, z: -0.044870853}
 --- !u!95 &-7021593495751031572
 Animator:
   serializedVersion: 4

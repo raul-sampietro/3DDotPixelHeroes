@@ -11,6 +11,7 @@ public class EnemySkeleton : Enemy
     void Start()
     {
         GetAnimator();
+        maxRotationSpeed = 300.0f;
     }
 
     private void OnCollisionEnter(Collision collision)
