@@ -57,29 +57,35 @@ public class Enemy : MonoBehaviour
                 movDirection = Vector3.forward;
             else if (movementPattern == "Horizontally")
                 movDirection = Vector3.right;
+            // Set an initial movement direcction even when random, to avoid initial stalling
             else if (movementPattern == "Random")
-            {
-                int randomNumber = Random.Range(0, 40);
-                // Randomly change direction
-                if (randomNumber == 0)
-                {
-                    // Randomly choose direction
-                    if (randomNumber > 30)
-                        movDirection = Vector3.left;
-                    else if (randomNumber > 20)
-                        movDirection = Vector3.right;
-                    else if (randomNumber > 10)
-                        movDirection = Vector3.forward;
-                    else
-                        movDirection = Vector3.back;
+                movDirection = Vector3.left;
+        }
 
-                }
+        if (movementPattern == "Random")
+        {
+            int randomNumber = (int)Random.Range(0, 100);
+            //Debug.Log(randomNumber);
+            // Randomly change direction
+            if (randomNumber == 0)
+            {
+                randomNumber = (int)Random.Range(0, 3);
+                // Randomly choose direction
+                if (randomNumber == 0)
+                    movDirection = Vector3.left;
+                else if (randomNumber == 1)
+                    movDirection = Vector3.right;
+                else if (randomNumber == 2)
+                    movDirection = Vector3.forward;
+                else
+                    movDirection = Vector3.back;
             }
         }
+
         // Rotate the enemy to face the movement direction 
         RotateYAxes(movDirection);
 
-        Debug.Log(movDirection);
+        //Debug.Log(movDirection);
 
         // Move the enemy
         transform.Translate(movSpeed * Time.deltaTime * Vector3.Normalize(movDirection), Space.World);
