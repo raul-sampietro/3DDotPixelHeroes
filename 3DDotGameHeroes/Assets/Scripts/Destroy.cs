@@ -25,6 +25,7 @@ public class Destroy : MonoBehaviour
             // Aditional features like health
         }
     }
+
     // Update is called once per frame
     void Update()
     {

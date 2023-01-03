@@ -52,13 +52,14 @@ MonoBehaviour:
     - row: 0000000000000000000000000000000000000000
     - row: 0000000000000000000000000000000000000000
     - row: 0000000000000000000000000000000000000000
-    - row: 0500000000000000000000000000000000000000
+    - row: 0100000000000000000000000000000000000000
   levelsMappings:
   - {fileID: 2800000, guid: feb970ea5d8929c4d9fd4fe598fa5a7b, type: 3}
   - {fileID: 2800000, guid: aa1d633859dc1594cbc40f9b4ae6a0c9, type: 3}
   - {fileID: 2800000, guid: 14c5742b2f31cb14fbae22e46aa6854c, type: 3}
   - {fileID: 2800000, guid: ed498db522ce88145884b2c78b7899b4, type: 3}
   - {fileID: 2800000, guid: 48e01c6e752956742a75c0ec726db8c0, type: 3}
+  - {fileID: 2800000, guid: 1e57a91e14819954a83d006d06bf42c3, type: 3}
   colorMappings:
   - color: {r: 0, g: 0, b: 0, a: 1}
     prefab: {fileID: 628964721386925927, guid: 9301f103174d5384e8a2560f906ded51, type: 3}
@@ -72,7 +73,7 @@ MonoBehaviour:
     dropLife: 0
     torch: {fileID: 1830077005556076418, guid: 6c553da2c91dbf34a81a588ce0688ef0, type: 3}
     movementPattern: NA
-  - color: {r: 0.40392157, g: 0.40392157, b: 0.40392157, a: 1}
+  - color: {r: 0.15686275, g: 0.15686275, b: 0.15686275, a: 1}
     prefab: {fileID: 7853757004229677363, guid: 59b8fe50dcf17c140a880e99d9899470, type: 3}
     dropCoin: 0
     dropLife: 0
@@ -98,6 +99,18 @@ MonoBehaviour:
     movementPattern: Random
   - color: {r: 0.23137255, g: 0.23137255, b: 0.23137255, a: 1}
     prefab: {fileID: 2232970650883413775, guid: aea7903f4db1e7c428b5c4f3b1fe1262, type: 3}
+    dropCoin: 0
+    dropLife: 0
+    torch: {fileID: 0}
+    movementPattern: Random
+  - color: {r: 0.19607843, g: 0.47058824, b: 0.19607843, a: 1}
+    prefab: {fileID: 8730592329626198468, guid: a2b9a8d14685842498d8d49ef7579504, type: 3}
+    dropCoin: 0
+    dropLife: 0
+    torch: {fileID: 0}
+    movementPattern: Random
+  - color: {r: 0.19607843, g: 0.5882353, b: 0.19607843, a: 1}
+    prefab: {fileID: 4394324923391832502, guid: 9e42cb5144f0a4c48a67e563ac848e05, type: 3}
     dropCoin: 0
     dropLife: 0
     torch: {fileID: 0}

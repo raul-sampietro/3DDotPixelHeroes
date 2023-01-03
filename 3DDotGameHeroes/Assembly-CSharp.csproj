@@ -70,7 +70,9 @@
     <Compile Include="Assets\Scripts\DoorOpen.cs" />
     <Compile Include="Assets\Scripts\SpinY.cs" />
     <Compile Include="Assets\Scripts\EnemySkeleton.cs" />
+    <Compile Include="Assets\Scripts\EnemyBat.cs" />
     <Compile Include="Assets\Scripts\DoorOpenKey.cs" />
+    <Compile Include="Assets\Scripts\BoomerangAttack.cs" />
     <Compile Include="Assets\Scripts\ColorToPrefab.cs" />
     <Compile Include="Assets\Scripts\MenuManager.cs" />
     <Compile Include="Assets\Scripts\LevelGenerator.cs" />
@@ -83,8 +85,7 @@
     <Compile Include="Assets\Scripts\InventoryManager.cs" />
     <Compile Include="Assets\Scripts\Singleton.cs" />
     <Compile Include="Assets\Scripts\Enemy.cs" />
-    <Compile Include="Assets\Scripts\BoomerangAttack.cs" />
-    <Compile Include="Assets\Scripts\EnemyBat.cs" />
+    <Compile Include="Assets\Scripts\TimedDestroy.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
