@@ -32,7 +32,7 @@ public class Enemy : MonoBehaviour
         {
                 movDirection *= -1;
         }
-        else if (collision.gameObject.CompareTag("Player"))
+        else if (collision.gameObject.CompareTag("KnightSword") || collision.gameObject.CompareTag("Boomerang"))
         {
             int damage = damageMatrix.DoesDamage(gameObject.tag, collision.gameObject.tag);
             if (damage > 0)
