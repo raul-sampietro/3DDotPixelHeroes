@@ -16,6 +16,7 @@ TagManager:
   - Bat
   - Skeleton
   - Scorpion
+  - Floor
   layers:
   - Default
   - TransparentFX

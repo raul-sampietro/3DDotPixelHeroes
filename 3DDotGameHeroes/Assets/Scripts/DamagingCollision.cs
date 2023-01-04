@@ -14,10 +14,14 @@ public class DamagingCollision : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        int damage = damageMatrix.DoesDamage(gameObject.tag, collision.gameObject.tag);
-        if (damage > 0)
+        if (!collision.gameObject.CompareTag("Floor")) 
         {
-            collision.gameObject.GetComponent<HealthSystem>().Damage(damage);
+            int damage = damageMatrix.DoesDamage(gameObject.tag, collision.gameObject.tag);
+            if (damage > 0)
+            {
+                collision.gameObject.GetComponent<HealthSystem>().Damage(damage);
+            }
         }
+        
     }
 }
