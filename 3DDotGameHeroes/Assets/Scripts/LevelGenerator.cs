@@ -3,15 +3,83 @@ using System.Collections.Generic;
 using UnityEngine;
 using Array2DEditor;
 
-public class LevelGenerator : MonoBehaviour
+enum RoomInstanceState
+{
+    UNINSTANTIATED,
+    INSTANTIATED
+}
+
+enum RoomState
+{
+    NOT_STARTED,
+    ACTIVE,
+    FINISHED,
+    KEY_DOOR_OPENED
+}
+
+public class LevelGenerator : Singleton<LevelGenerator>
 {
     public Array2DInt levelsList;
+    public Vector2 bossRoomBottomLeft;
+    public Vector2 bossRoomTopRight;
+    public Vector2 startingRoom;
+
     public Texture2D[] levelsMappings;
+
     public ColorToPrefab[] colorMappings;
     public GameObject floor;
 
     private Vector2 sizeOfImage = new(16, 12);
     private bool[,] activeRooms = new bool[10, 10];
+
+    private GameObject player;
+
+    private Vector2 currentRoom;
+    private Dictionary<int, Dictionary<int, List<GameObject>>> roomEnemiesState;
+
+    void Awake()
+    {
+        currentRoom = startingRoom;
+        Debug.Log("" + bossRoomBottomLeft + bossRoomTopRight);
+        GameObject.Find("OverviewCamera")
+            .GetComponent<CameraMover>()
+            .SetBossRooms(bossRoomBottomLeft, bossRoomTopRight);
+    }
+
+    void Start()
+    {
+
+
+
+
+        for (int i = 0; i < 10; ++i)
+            for (int j = 0; j < 10; ++j)
+                InstRoomByCords(i, j);
+
+        //InstanciateRoom(3, 3);
+
+        // TODO manage the rooms that have to be "deinstanciated"
+    }
+
+    void Update()
+    {
+
+    }
+
+    public void SetCurrentRoom(int x, int z)
+    {
+        currentRoom = new Vector3(x, z);
+        Debug.Log("Room: " + currentRoom);
+        //// Start room
+        // Move camera
+        GameObject.Find("OverviewCamera")
+            .GetComponent<CameraMover>()
+            .ChangeCurrentRoom(currentRoom);
+        // Instanciate next rooms if needed
+        // Disappear innecessary rooms
+        // Close doors
+        // Instanciate enemies
+    }
 
     // Entry point to manage the rooms that have to be instanciated
     public void InstanciateRoom(int i, int j)
@@ -45,18 +113,20 @@ public class LevelGenerator : MonoBehaviour
             for (int z = 0; z < level.height; ++z)
             {
                 Color pixelColor = level.GetPixel(x, z);
-                Debug.Log("Pixel (" + x + "," + z + "): (" + pixelColor.r * 255 + "," + pixelColor.g * 255 + "," + pixelColor.b * 255 + "," + pixelColor.a + ")");
+                //Debug.Log("Pixel (" + x + "," + z + "): (" + pixelColor.r * 255 + "," + pixelColor.g * 255 + "," + pixelColor.b * 255 + "," + pixelColor.a + ")");
 
                 // Calcualte relative position
+                Vector3 worldOffset = new(8, 0, 8);
                 Vector3 offset = new(sizeOfImage.x * i * sizeOfImage.x, 0, sizeOfImage.x * j * sizeOfImage.y);
                 Vector3 position = new(x * sizeOfImage.x, 0, z * sizeOfImage.x);
                 position += offset;
+                position += worldOffset;
 
                 if (pixelColor.a > 0) // Pixel not transparent
                 {
                     foreach (ColorToPrefab colorPrefab in colorMappings)
                     {
-                        Debug.Log("colorPrefab: " + "(" + colorPrefab.color.r * 255 + "," + colorPrefab.color.g * 255 + "," + colorPrefab.color.b * 255 + "," + colorPrefab.color.a + ")");
+                        //Debug.Log("colorPrefab: " + "(" + colorPrefab.color.r * 255 + "," + colorPrefab.color.g * 255 + "," + colorPrefab.color.b * 255 + "," + colorPrefab.color.a + ")");
                         //Debug.Log("X: " + x);
                         //Debug.Log("Z: " + z);
 
@@ -70,6 +140,7 @@ public class LevelGenerator : MonoBehaviour
                             !(x == level.width - 1 && z == 0) && // Bottom-right corner
                             !(x == level.width - 1 && z == level.height - 1)) // Top-right corner
                         {
+                            
                             GameObject obj = Instantiate(colorPrefab.prefab, position, Quaternion.identity, transform);
 
                             // Scale, rotate and move the asset
@@ -188,16 +259,5 @@ public class LevelGenerator : MonoBehaviour
                 }
             }
         }
-    }
-
-    void Start()
-    {
-        for (int i = 0; i < 10; ++i)
-            for (int j = 0; j < 10; ++j)
-                InstRoomByCords(i, j);
-
-        //InstanciateRoom(3, 3);
-
-        // TODO manage the rooms that have to be "deinstanciated"
     }
 }

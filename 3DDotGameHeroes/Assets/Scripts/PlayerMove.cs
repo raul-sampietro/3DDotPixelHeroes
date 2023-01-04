@@ -23,8 +23,9 @@ public class PlayerMove : MonoBehaviour
     bool boomerangThrown = false;
     GameObject boomerangObj;
 
-    private Vector2 actualRoomCoordinates, prevRoomCoordinates = new(0,0);
-    private Vector2 sizeOfRoom = new(265, 192);
+    private Vector2Int currentRoom, previousRoom = Vector2Int.zero;
+    private int tileSize = 16;
+    private Vector2Int sizeOfRoomTiles = new(16, 12);
 
     // Start is called before the first frame update
     void Start()
@@ -184,14 +185,16 @@ public class PlayerMove : MonoBehaviour
 
             prevLookDirection = lookDirection;
 
-            // Update the position of the camera if needed
-            actualRoomCoordinates.x = (int)(transform.position.x / sizeOfRoom.x);
-            actualRoomCoordinates.y = (int)(transform.position.z / sizeOfRoom.y);
+            // Update the position of the knight in the level if needed
+            currentRoom.x = (int)Mathf.Floor((transform.position.x) / (float)(sizeOfRoomTiles.x * tileSize));
+            currentRoom.y = (int)Mathf.Floor((transform.position.z) / (float)(sizeOfRoomTiles.y * tileSize));
 
-            if (actualRoomCoordinates != prevRoomCoordinates)
+            if (currentRoom != previousRoom)
             {
-                GameObject.Find("OverviewCamera").BroadcastMessage("ChangeCurrentRoom", actualRoomCoordinates);
-                prevRoomCoordinates = actualRoomCoordinates;
+                GameObject.Find("LevelGenerator")
+                    .GetComponent<LevelGenerator>()
+                    .SetCurrentRoom(currentRoom.x, currentRoom.y);
+                previousRoom = currentRoom;
             }
         }
         
