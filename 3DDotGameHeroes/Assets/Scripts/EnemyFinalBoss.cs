@@ -16,15 +16,19 @@ public class EnemyFinalBoss : Enemy
         GetAnimator();
         maxRotationSpeed = 300.0f;
         damageMatrix = DamageMatrix.Instance;
-        coolDown = 0;
+        coolDown = coolDownIni;
     }
 
     private void OnCollisionEnter(Collision collision)
     {
+        if (collision.gameObject.layer != 2)
+            Debug.Log("Collision1 " + collision.gameObject.name);
         // 3 is the obstable layer number
         if (collision.gameObject.layer == 3)
         {
-                movDirection *= -1;
+            movDirection = collision.gameObject.transform.forward;
+            attackInProgress = false;
+            coolDown = coolDownIni;
         }
         else if (collision.gameObject.CompareTag("KnightSword") || collision.gameObject.CompareTag("Boomerang"))
         {
@@ -53,7 +57,7 @@ public class EnemyFinalBoss : Enemy
         // Continue with the attack
         else
         {
-            transform.Translate(movSpeed * 6 * Time.deltaTime * attackDirection, Space.World);
+            transform.Translate(movSpeed * 2 * Time.deltaTime * attackDirection, Space.World);
         }
     }
 
@@ -74,10 +78,6 @@ public class EnemyFinalBoss : Enemy
                 AttackPlayer();
                 attackInProgress = true;
             }
-            else if (hit.collider.gameObject.layer == 3 && hit.distance < 30)
-            {
-                movDirection *= -1;
-            }
             else
             {
                 if (coolDown > -1)
@@ -85,6 +85,15 @@ public class EnemyFinalBoss : Enemy
                 attackInProgress = false;
                 MoveEnemy();
             }
+            
+            // Check that the model does not cross the obstacles
+            if (Physics.Linecast(transform.position, transform.TransformDirection(Vector3.forward), out RaycastHit hitObstacle))
+                if (hitObstacle.collider.gameObject.layer == 3 && hitObstacle.distance < 50)
+                {
+                    attackInProgress = false;
+                    MoveEnemy();
+                }
+            
         }
         else // Move according to the pattern
         {

@@ -24,8 +24,8 @@ public class EnemySkeleton : Enemy
             {
                 DestroyWithParticles();
             }
-            else 
-                movDirection *= -1;
+            else
+                movDirection = collision.gameObject.transform.forward;
         }
         else if (collision.gameObject.CompareTag("KnightSword") || collision.gameObject.CompareTag("Boomerang"))
         {

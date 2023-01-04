@@ -27,10 +27,11 @@ public class Enemy : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        Debug.Log("Collision2 " + collision.gameObject.name);
         // 3 is the obstable layer number
         if (collision.gameObject.layer == 3)
         {
-                movDirection *= -1;
+            movDirection = collision.gameObject.transform.forward;
         }
         else if (collision.gameObject.CompareTag("KnightSword") || collision.gameObject.CompareTag("Boomerang"))
         {
@@ -77,7 +78,7 @@ public class Enemy : MonoBehaviour
 
         if (movementPattern == "Random")
         {
-            int randomNumber = (int)Random.Range(0, 200);
+            int randomNumber = (int)Random.Range(0, 500);
 
             // Randomly change direction
             if (randomNumber == 0)
