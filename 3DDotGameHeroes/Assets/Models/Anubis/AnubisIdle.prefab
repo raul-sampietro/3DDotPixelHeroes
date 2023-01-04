@@ -654,6 +654,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7304563268389608577}
   - component: {fileID: 7121806099732909730}
+  - component: {fileID: 5841254848696604824}
   - component: {fileID: 7450961924062889701}
   - component: {fileID: 7121806099732909759}
   - component: {fileID: -257678686952057258}
@@ -703,6 +704,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5841254848696604824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7932199297264305723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c44154032b3d2948b3644fc05627773, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particles: {fileID: 1124872229260257672, guid: 78d5ff4e620611945ae388512f297502, type: 3}
 --- !u!114 &7450961924062889701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -759,9 +773,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 11.01883
-  m_Height: 35.150646
+  m_Height: 34.004677
   m_Direction: 1
-  m_Center: {x: 0.3306222, y: 17.075321, z: 1.5527308}
+  m_Center: {x: 0.33062267, y: 17.648304, z: 1.5527306}
 --- !u!114 &-319859184458603085
 MonoBehaviour:
   m_ObjectHideFlags: 0

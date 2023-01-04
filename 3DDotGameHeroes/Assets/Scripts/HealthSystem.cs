@@ -66,7 +66,8 @@ public class HealthSystem : MonoBehaviour
     {
         if (currentHP <= 0)
         {
-            gameObject.GetComponent<TriggerParticles>().TriggerParticleSystem();
+            Debug.Log(gameObject.name);
+            gameObject.GetComponent<Enemy>().DestroyWithParticles();
         }
     }
 }

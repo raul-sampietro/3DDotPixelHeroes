@@ -14,16 +14,7 @@ public class EnemyBat : Enemy
         GetAnimator();
         coolDown = 0;
         maxRotationSpeed = 400.0f;
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        // 3 is the obstable layer number
-        if (collision.gameObject.layer == 3)
-        {
-            movDirection *= -1;
-        }
-        //DestroyWithParticles();
+        damageMatrix = DamageMatrix.Instance;
     }
 
     private void AttackPlayer()

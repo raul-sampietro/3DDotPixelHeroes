@@ -14,16 +14,11 @@ public class Destroy : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        // 3 is the obstable layer number
-        if (collision.gameObject.layer == 3)
+        if (!collision.gameObject.CompareTag("Anubis"))
         {
             DestroyWithParticles();
         }
-        else if (collision.gameObject.layer == 7)
-        {
-            DestroyWithParticles();
-            // Aditional features like health
-        }
+            
     }
 
     // Update is called once per frame

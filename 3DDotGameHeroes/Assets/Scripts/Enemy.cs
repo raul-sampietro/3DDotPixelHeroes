@@ -13,6 +13,7 @@ public class Enemy : MonoBehaviour
 
     protected GameObject knight = null;
     protected Animator animator;
+    protected DamageMatrix damageMatrix;
 
     public void SetMovementPattern(string movementPatter)
     {
@@ -29,7 +30,13 @@ public class Enemy : MonoBehaviour
         // 3 is the obstable layer number
         if (collision.gameObject.layer == 3)
         {
-            movDirection *= -1;
+                movDirection *= -1;
+        }
+        else if (collision.gameObject.CompareTag("Player"))
+        {
+            int damage = damageMatrix.DoesDamage(gameObject.tag, collision.gameObject.tag);
+            if (damage > 0)
+                collision.gameObject.GetComponent<HealthSystem>().Damage(damage);
         }
     }
 
