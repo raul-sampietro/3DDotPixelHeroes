@@ -53,7 +53,7 @@ public class EnemyFinalBoss : Enemy
         // Continue with the attack
         else
         {
-            transform.Translate(movSpeed * 3 * Time.deltaTime * attackDirection, Space.World);
+            transform.Translate(movSpeed * 6 * Time.deltaTime * attackDirection, Space.World);
         }
     }
 
@@ -73,6 +73,10 @@ public class EnemyFinalBoss : Enemy
                 if (hit.distance < 10) coolDown = coolDownIni;
                 AttackPlayer();
                 attackInProgress = true;
+            }
+            else if (hit.collider.gameObject.layer == 3 && hit.distance < 30)
+            {
+                movDirection *= -1;
             }
             else
             {

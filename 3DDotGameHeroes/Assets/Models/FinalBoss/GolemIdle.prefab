@@ -533,7 +533,7 @@ GameObject:
   - component: {fileID: 3801133018739945881}
   m_Layer: 0
   m_Name: GolemIdle
-  m_TagString: Untagged
+  m_TagString: Golem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -633,7 +633,7 @@ Animator:
   m_GameObject: {fileID: 4488586204580207727}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f90d67e5cd9780c498435c82ab42a539, type: 2}
+  m_Controller: {fileID: 9100000, guid: 00d7b74a09f89b749aed01a55c9108d4, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

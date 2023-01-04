@@ -144,12 +144,13 @@ public class LevelGenerator : MonoBehaviour
                                 // Assing this property to the gameObject depending on its type
                                 // The gameObject movement script should implement the method
                                 // TODO establecer capas y comprobar que esta en la capa que toca (enemies, obstacles, etc...)
-                                switch (obj.name)
+                                switch (obj.tag)
                                 {
-                                    case "AnubisIdle(Clone)":
-                                    case "SkeletonIdle(Clone)":
-                                    case "batFlying(Clone)":
-                                    case "scorpionIdle(Clone)":
+                                    case "Anubis":
+                                    case "Skeleton":
+                                    case "Bat":
+                                    case "Scorpion":
+                                    case "Golem":
                                         obj.BroadcastMessage("SetMovementPattern", colorPrefab.movementPattern);
                                         break;
 

@@ -17,6 +17,7 @@ TagManager:
   - Skeleton
   - Scorpion
   - Floor
+  - Golem
   layers:
   - Default
   - TransparentFX
