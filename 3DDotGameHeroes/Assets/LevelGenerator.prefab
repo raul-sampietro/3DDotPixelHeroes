@@ -52,7 +52,7 @@ MonoBehaviour:
     - row: 0000000000000000000000000000000000000000
     - row: 0000000000000000000000000000000000000000
     - row: 0000000000000000000000000000000000000000
-    - row: 0100000000000000000000000000000000000000
+    - row: 0600000000000000000000000000000000000000
   levelsMappings:
   - {fileID: 2800000, guid: feb970ea5d8929c4d9fd4fe598fa5a7b, type: 3}
   - {fileID: 2800000, guid: aa1d633859dc1594cbc40f9b4ae6a0c9, type: 3}
@@ -103,14 +103,8 @@ MonoBehaviour:
     dropLife: 0
     torch: {fileID: 0}
     movementPattern: Random
-  - color: {r: 0.19607843, g: 0.47058824, b: 0.19607843, a: 1}
-    prefab: {fileID: 8730592329626198468, guid: a2b9a8d14685842498d8d49ef7579504, type: 3}
-    dropCoin: 0
-    dropLife: 0
-    torch: {fileID: 0}
-    movementPattern: Random
-  - color: {r: 0.19607843, g: 0.5882353, b: 0.19607843, a: 1}
-    prefab: {fileID: 4394324923391832502, guid: 9e42cb5144f0a4c48a67e563ac848e05, type: 3}
+  - color: {r: 0.77254903, g: 0.6117647, b: 0.44313726, a: 1}
+    prefab: {fileID: 4809462453767537209, guid: 1705d016cad8bc44c94d81c602043f0c, type: 3}
     dropCoin: 0
     dropLife: 0
     torch: {fileID: 0}

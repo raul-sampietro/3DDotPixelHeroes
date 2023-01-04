@@ -149,6 +149,7 @@ public class LevelGenerator : MonoBehaviour
                                     case "AnubisIdle(Clone)":
                                     case "SkeletonIdle(Clone)":
                                     case "batFlying(Clone)":
+                                    case "scorpionIdle(Clone)":
                                         obj.BroadcastMessage("SetMovementPattern", colorPrefab.movementPattern);
                                         break;
 

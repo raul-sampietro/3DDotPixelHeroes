@@ -59,12 +59,14 @@
     <Compile Include="Assets\Scripts\CollectibleObject.cs" />
     <Compile Include="Assets\Scripts\Destroy.cs" />
     <Compile Include="Assets\Scripts\CameraMover.cs" />
+    <Compile Include="Assets\Scripts\TimedDestroy.cs" />
     <Compile Include="Assets\Scripts\KnightSwordSpawn.cs" />
     <Compile Include="Assets\Scripts\ChestOpen.cs" />
     <Compile Include="Assets\Scripts\HealthSystem.cs" />
     <Compile Include="Assets\Scripts\PlayerWinLose.cs" />
     <Compile Include="Assets\Scripts\PlayerMove.cs" />
     <Compile Include="Assets\Scripts\FollowPlayer.cs" />
+    <Compile Include="Assets\Scripts\EnemyScorpion.cs" />
     <Compile Include="Assets\Scripts\EnemyAnubis.cs" />
     <Compile Include="Assets\Scripts\KnightSwordSwipe.cs" />
     <Compile Include="Assets\Scripts\DoorOpen.cs" />
@@ -85,7 +87,6 @@
     <Compile Include="Assets\Scripts\InventoryManager.cs" />
     <Compile Include="Assets\Scripts\Singleton.cs" />
     <Compile Include="Assets\Scripts\Enemy.cs" />
-    <Compile Include="Assets\Scripts\TimedDestroy.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
