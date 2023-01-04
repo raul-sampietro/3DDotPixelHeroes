@@ -116,7 +116,11 @@ public class LevelGenerator : MonoBehaviour
                                         // Set parent object
                                         torch.transform.parent = levelObject.transform;
                                     }
+                                    break;
 
+                                case "Door":
+                                case "DoorKey":
+                                case "DoorBoss":
                                     break;
 
                                 case "batFlying":

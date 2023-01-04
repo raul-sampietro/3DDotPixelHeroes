@@ -45,26 +45,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelsList:
-    gridSize: {x: 5, y: 5}
+    gridSize: {x: 5, y: 6}
     cellSize: {x: 32, y: 16}
     cells:
-    - row: 0000000000000000000000000000000000000000
-    - row: 0000000000000000000000000000000000000000
-    - row: 0000000000000000000000000000000000000000
-    - row: 0000000000000000000000000000000000000000
-    - row: 0100000000000000000000000000000000000000
+    - row: 00000000000000000e0000000f00000000000000
+    - row: 0000000000000000100000001100000000000000
+    - row: 000000000b0000000a0000000c0000000d000000
+    - row: 0000000000000000080000000900000000000000
+    - row: 0000000000000000070000000500000000000000
+    - row: 0400000003000000010000000200000006000000
   levelsMappings:
   - {fileID: 2800000, guid: feb970ea5d8929c4d9fd4fe598fa5a7b, type: 3}
-  - {fileID: 2800000, guid: aa1d633859dc1594cbc40f9b4ae6a0c9, type: 3}
+  - {fileID: 2800000, guid: feb970ea5d8929c4d9fd4fe598fa5a7b, type: 3}
   - {fileID: 2800000, guid: 14c5742b2f31cb14fbae22e46aa6854c, type: 3}
   - {fileID: 2800000, guid: ed498db522ce88145884b2c78b7899b4, type: 3}
-  - {fileID: 2800000, guid: 48e01c6e752956742a75c0ec726db8c0, type: 3}
-  - {fileID: 2800000, guid: 1e57a91e14819954a83d006d06bf42c3, type: 3}
-  - {fileID: 2800000, guid: 1e57a91e14819954a83d006d06bf42c3, type: 3}
-  - {fileID: 2800000, guid: b8b06b4a4033e5b4795ca2b578e932ce, type: 3}
-  - {fileID: 2800000, guid: 29a3f98edcc1c5d419cb4d2facc32e61, type: 3}
-  - {fileID: 2800000, guid: b9c1b8a4fe92bd84c8ea94e20fe3474a, type: 3}
-  - {fileID: 2800000, guid: f2a8882db89334141964f4a82f9078da, type: 3}
+  - {fileID: 2800000, guid: 5247f9128a55f0045b805590dcb461be, type: 3}
+  - {fileID: 2800000, guid: 28561314be06f214bb8baa9218a828ad, type: 3}
+  - {fileID: 2800000, guid: e2c67751d6998734189bf93581d62221, type: 3}
+  - {fileID: 2800000, guid: 17e9e8f2899120e41a7c81dfc885c228, type: 3}
+  - {fileID: 2800000, guid: 87b2feb8f27ae16479ee840ce7d92c3d, type: 3}
+  - {fileID: 2800000, guid: 6b39cd7213ebd0d4cb65413d675d3038, type: 3}
+  - {fileID: 2800000, guid: 118215d0ecfce9c46b0b880e016b1ea1, type: 3}
+  - {fileID: 2800000, guid: 86ef3acef35a0534d8cf2bbff6f00d54, type: 3}
+  - {fileID: 2800000, guid: a408eb8ecb0d2894693cdbfd44d9b5fc, type: 3}
+  - {fileID: 2800000, guid: 4507b24a9dba5a74d9421dc0bdb26cf2, type: 3}
+  - {fileID: 2800000, guid: 8cc3354112ea89940a35b87ce7fe76d3, type: 3}
+  - {fileID: 2800000, guid: c36204fa0498b924d995a34c92393902, type: 3}
+  - {fileID: 2800000, guid: df8130866c0217f4daca21d436e459f2, type: 3}
   colorMappings:
   - color: {r: 0, g: 0, b: 0, a: 1}
     prefab: {fileID: 628964721386925927, guid: 9301f103174d5384e8a2560f906ded51, type: 3}
