@@ -12,6 +12,11 @@ TagManager:
   - KnightSword
   - Boomerang
   - Anubis
+  - AnubisShot
+  - Bat
+  - Skeleton
+  - Scorpion
+  - Floor
   layers:
   - Default
   - TransparentFX

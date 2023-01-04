@@ -12,6 +12,7 @@ public class EnemySkeleton : Enemy
     {
         GetAnimator();
         maxRotationSpeed = 300.0f;
+        damageMatrix = DamageMatrix.Instance;
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -25,6 +26,12 @@ public class EnemySkeleton : Enemy
             }
             else 
                 movDirection *= -1;
+        }
+        else if (collision.gameObject.CompareTag("Player"))
+        {
+            int damage = damageMatrix.DoesDamage(gameObject.tag, collision.gameObject.tag);
+            if (damage > 0)
+                collision.gameObject.GetComponent<HealthSystem>().Damage(damage);
         }
     }
 
