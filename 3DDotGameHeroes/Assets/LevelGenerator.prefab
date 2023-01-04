@@ -50,9 +50,9 @@ MonoBehaviour:
     cells:
     - row: 0000000000000000000000000000000000000000
     - row: 0000000000000000000000000000000000000000
-    - row: 070000000a000000000000000000000000000000
-    - row: 080000000b000000000000000700000006000000
-    - row: 0100000002000000030000000400000005000000
+    - row: 0000000000000000000000000000000000000000
+    - row: 0000000000000000000000000000000000000000
+    - row: 0100000000000000000000000000000000000000
   levelsMappings:
   - {fileID: 2800000, guid: feb970ea5d8929c4d9fd4fe598fa5a7b, type: 3}
   - {fileID: 2800000, guid: aa1d633859dc1594cbc40f9b4ae6a0c9, type: 3}
@@ -78,8 +78,32 @@ MonoBehaviour:
     dropLife: 0
     torch: {fileID: 1830077005556076418, guid: 6c553da2c91dbf34a81a588ce0688ef0, type: 3}
     movementPattern: NA
-  - color: {r: 0.40392157, g: 0.40392157, b: 0.40392157, a: 1}
+  - color: {r: 0.15686275, g: 0.15686275, b: 0.15686275, a: 1}
     prefab: {fileID: 7853757004229677363, guid: 59b8fe50dcf17c140a880e99d9899470, type: 3}
+    dropCoin: 0
+    dropLife: 0
+    torch: {fileID: 0}
+    movementPattern: NA
+  - color: {r: 0.19607843, g: 0.47058827, b: 0.19607843, a: 1}
+    prefab: {fileID: 8730592329626198468, guid: a2b9a8d14685842498d8d49ef7579504, type: 3}
+    dropCoin: 0
+    dropLife: 0
+    torch: {fileID: 0}
+    movementPattern: NA
+  - color: {r: 0.19607843, g: 0.5882353, b: 0.19607843, a: 1}
+    prefab: {fileID: 7711957016726115138, guid: d8736bb4ac0411c4daa4d9ce2400e277, type: 3}
+    dropCoin: 0
+    dropLife: 0
+    torch: {fileID: 0}
+    movementPattern: NA
+  - color: {r: 0.19607843, g: 0.7058824, b: 0.19607843, a: 1}
+    prefab: {fileID: 4394324923391832502, guid: 9e42cb5144f0a4c48a67e563ac848e05, type: 3}
+    dropCoin: 0
+    dropLife: 0
+    torch: {fileID: 0}
+    movementPattern: NA
+  - color: {r: 0.5137255, g: 0.24313726, b: 0.11372549, a: 1}
+    prefab: {fileID: 4652328699493616981, guid: af62e9f4d7fb7a04bbe551d70feba5e7, type: 3}
     dropCoin: 0
     dropLife: 0
     torch: {fileID: 0}

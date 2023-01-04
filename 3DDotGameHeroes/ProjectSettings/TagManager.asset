@@ -18,6 +18,9 @@ TagManager:
   - Scorpion
   - Floor
   - Golem
+  - AnubisShot
+  - Wall
+  - BigBox
   layers:
   - Default
   - TransparentFX

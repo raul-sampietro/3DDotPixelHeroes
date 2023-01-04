@@ -39,12 +39,13 @@ public class LevelGenerator : MonoBehaviour
 
         GameObject levelObject = new();
         levelObject.name = "Room" + i + j;
-        
+
         for (int x = 0; x < level.width; ++x)
         {
             for (int z = 0; z < level.height; ++z)
             {
                 Color pixelColor = level.GetPixel(x, z);
+                Debug.Log("Pixel (" + x + "," + z + "): (" + pixelColor.r * 255 + "," + pixelColor.g * 255 + "," + pixelColor.b * 255 + "," + pixelColor.a + ")");
 
                 // Calcualte relative position
                 Vector3 offset = new(sizeOfImage.x * i * sizeOfImage.x, 0, sizeOfImage.x * j * sizeOfImage.y);
@@ -55,24 +56,26 @@ public class LevelGenerator : MonoBehaviour
                 {
                     foreach (ColorToPrefab colorPrefab in colorMappings)
                     {
-                        //Debug.Log("PixelColor: " + pixelColor);
-                        //Debug.Log("colorPrefab: " + colorPrefab.color);
+                        Debug.Log("colorPrefab: " + "(" + colorPrefab.color.r * 255 + "," + colorPrefab.color.g * 255 + "," + colorPrefab.color.b * 255 + "," + colorPrefab.color.a + ")");
                         //Debug.Log("X: " + x);
                         //Debug.Log("Z: " + z);
 
                         // Color matches and we are not in the corners
-                        if (colorPrefab.color.Equals(pixelColor) &
-                            !(x == 0 & z == 0) & // Bottom-left corner
-                            !(x == 0 & z == level.height - 1) & // Top-left corner
-                            !(x == level.width - 1 & z == 0) & // Bottom-right corner
-                            !(x == level.width - 1 & z == level.height - 1)) // Top-right corner
+                        if (Mathf.Approximately(colorPrefab.color.r, pixelColor.r) &&
+                            Mathf.Approximately(colorPrefab.color.g, pixelColor.g) &&
+                            Mathf.Approximately(colorPrefab.color.b, pixelColor.b) &&
+                            Mathf.Approximately(colorPrefab.color.a, pixelColor.a) &&
+                            !(x == 0 && z == 0) && // Bottom-left corner
+                            !(x == 0 && z == level.height - 1) && // Top-left corner
+                            !(x == level.width - 1 && z == 0) && // Bottom-right corner
+                            !(x == level.width - 1 && z == level.height - 1)) // Top-right corner
                         {
                             GameObject obj = Instantiate(colorPrefab.prefab, position, Quaternion.identity, transform);
 
                             // Scale, rotate and move the asset
-                            switch (colorPrefab.prefab.name)
+                            switch (colorPrefab.prefab.tag)
                             {
-                                case "wall":
+                                case "Wall":
 
                                     Vector3 rotationX = new(0, 0, 0);
                                     Vector3 torchOffset = new(0, 15, 0);
@@ -162,13 +165,14 @@ public class LevelGenerator : MonoBehaviour
                             // Set parent object
                             obj.transform.parent = levelObject.transform;
 
-                            if (colorPrefab.prefab.name != "wall" &
-                                colorPrefab.prefab.name != "BigBox")
+                            if (colorPrefab.prefab.tag != "Wall" &
+                                colorPrefab.prefab.tag != "BigBox")
                             {
                                 // Instanciate the floor
                                 GameObject floorObject = Instantiate(floor, position, Quaternion.identity, transform);
                                 floorObject.transform.parent = levelObject.transform;
                             }
+                            break;
                         }
                     }
                 }
