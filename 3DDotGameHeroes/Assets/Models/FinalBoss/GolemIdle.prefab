@@ -530,6 +530,7 @@ GameObject:
   - component: {fileID: 6320074580478562230}
   - component: {fileID: 919132149501126718}
   - component: {fileID: 919132149501126717}
+  - component: {fileID: 3801133018739945881}
   m_Layer: 0
   m_Name: GolemIdle
   m_TagString: Untagged
@@ -565,8 +566,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83d05cb9c4ef8e741acac3d463a80c0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movSpeed: 0
-  playerTag: 
+  movSpeed: 10
+  playerTag: Player
 --- !u!114 &-3163102995772288033
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -592,7 +593,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c44154032b3d2948b3644fc05627773, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particles: {fileID: 0}
+  particles: {fileID: 1124872229260257672, guid: 0f33ae823c70ed849ae122d769e1de23, type: 3}
 --- !u!54 &919132149501126718
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -622,6 +623,26 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 52.648323, y: 45.6419, z: 26.453312}
   m_Center: {x: 0.01897049, y: 22.32095, z: 2.0266423}
+--- !u!95 &3801133018739945881
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4488586204580207727}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f90d67e5cd9780c498435c82ab42a539, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6300514069062183564
 GameObject:
   m_ObjectHideFlags: 0
