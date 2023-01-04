@@ -278,12 +278,14 @@ GameObject:
   m_Component:
   - component: {fileID: 5329293492828297347}
   - component: {fileID: -7365930607001193516}
+  - component: {fileID: 6746073086627742330}
+  - component: {fileID: 3834037804284906310}
   - component: {fileID: -681389833632471952}
   - component: {fileID: 2603240248704700974}
   - component: {fileID: -5947352957792605664}
   m_Layer: 0
   m_Name: scorpionIdle
-  m_TagString: Untagged
+  m_TagString: Scorpion
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -324,6 +326,32 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &6746073086627742330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4809462453767537209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc7a41e0df415ca439e5517e079efb5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maximumHP: 30
+--- !u!114 &3834037804284906310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4809462453767537209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c44154032b3d2948b3644fc05627773, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particles: {fileID: 1124872229260257672, guid: 3800dea5a40e2dc4b92495ff2136e787, type: 3}
 --- !u!114 &-681389833632471952
 MonoBehaviour:
   m_ObjectHideFlags: 0

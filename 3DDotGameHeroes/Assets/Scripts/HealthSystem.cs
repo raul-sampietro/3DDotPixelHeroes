@@ -66,7 +66,7 @@ public class HealthSystem : MonoBehaviour
     {
         if (currentHP <= 0)
         {
-            //Kill
+            gameObject.GetComponent<TriggerParticles>().TriggerParticleSystem();
         }
     }
 }

@@ -26,6 +26,10 @@ public class EnemySkeleton : Enemy
             else 
                 movDirection *= -1;
         }
+        else if (collision.gameObject.CompareTag("Player"))
+        {
+
+        }
     }
 
     private void AttackPlayer()

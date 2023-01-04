@@ -33,9 +33,9 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    protected void DestroyWithParticles()
+    public void DestroyWithParticles()
     {
-        gameObject.BroadcastMessage("TriggerParticleSystem");
+        gameObject.GetComponent<TriggerParticles>().TriggerParticleSystem();
         Destroy(gameObject);
     }
 

@@ -8,7 +8,7 @@ public class Destroy : MonoBehaviour
     
     private void DestroyWithParticles()
     {
-        gameObject.BroadcastMessage("TriggerParticleSystem");
+        gameObject.GetComponent<TriggerParticles>().TriggerParticleSystem();
         Destroy(gameObject);
     }
 

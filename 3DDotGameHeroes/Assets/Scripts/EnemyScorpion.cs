@@ -24,7 +24,10 @@ public class EnemyScorpion : Enemy
         {
             movDirection *= -1;
         }
-        //DestroyWithParticles();
+        else if (collision.gameObject.CompareTag("Player")) 
+        {
+            
+        }
     }
 
     private void AttackPlayer()
