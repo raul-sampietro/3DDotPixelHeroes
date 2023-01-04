@@ -27,17 +27,10 @@ public class Enemy : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Collision2 " + collision.gameObject.name);
         // 3 is the obstable layer number
         if (collision.gameObject.layer == 3)
         {
             movDirection = collision.gameObject.transform.forward;
-        }
-        else if (collision.gameObject.CompareTag("KnightSword") || collision.gameObject.CompareTag("Boomerang"))
-        {
-            int damage = damageMatrix.DoesDamage(gameObject.tag, collision.gameObject.tag);
-            if (damage > 0)
-                collision.gameObject.GetComponent<HealthSystem>().Damage(damage);
         }
     }
 

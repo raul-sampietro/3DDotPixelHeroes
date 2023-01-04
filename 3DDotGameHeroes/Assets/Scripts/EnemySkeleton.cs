@@ -27,12 +27,6 @@ public class EnemySkeleton : Enemy
             else
                 movDirection = collision.gameObject.transform.forward;
         }
-        else if (collision.gameObject.CompareTag("KnightSword") || collision.gameObject.CompareTag("Boomerang"))
-        {
-            int damage = damageMatrix.DoesDamage(gameObject.tag, collision.gameObject.tag);
-            if (damage > 0)
-                collision.gameObject.GetComponent<HealthSystem>().Damage(damage);
-        }
     }
 
     private void AttackPlayer()

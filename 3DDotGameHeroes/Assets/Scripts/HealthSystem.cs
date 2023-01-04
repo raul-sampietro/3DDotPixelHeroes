@@ -44,6 +44,7 @@ public class HealthSystem : MonoBehaviour
     public int Cure(int hp)
     {
         currentHP = currentHP + hp > maximumHP ? maximumHP : currentHP + hp;
+        Debug.Log("Heal " + tag + " -" + hp + " -> " + currentHP);
         return currentHP;
     }
 

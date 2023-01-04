@@ -7,8 +7,14 @@ public class EnemyFinalBoss : Enemy
     private bool attackInProgress = false;
     private Vector3 attackDirection;
 
+    private bool isFallen = false;
+    private int timeFallenIni = 500;
+    private int timeFallen;
+
     private int coolDownIni = 250;
     private int coolDown;
+
+    private int coolDownMov;
 
     // Start is called before the first frame update
     void Start()
@@ -17,12 +23,12 @@ public class EnemyFinalBoss : Enemy
         maxRotationSpeed = 300.0f;
         damageMatrix = DamageMatrix.Instance;
         coolDown = coolDownIni;
+        timeFallen = timeFallenIni;
+        coolDownMov = -1;
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.layer != 2)
-            Debug.Log("Collision1 " + collision.gameObject.name);
         // 3 is the obstable layer number
         if (collision.gameObject.layer == 3)
         {
@@ -30,12 +36,21 @@ public class EnemyFinalBoss : Enemy
             attackInProgress = false;
             coolDown = coolDownIni;
         }
-        else if (collision.gameObject.CompareTag("KnightSword") || collision.gameObject.CompareTag("Boomerang"))
+        else if (collision.gameObject.CompareTag("KnightSword") && !isFallen)
         {
-            int damage = damageMatrix.DoesDamage(gameObject.tag, collision.gameObject.tag);
+            int damage = damageMatrix.DoesDamage(collision.gameObject.tag, gameObject.tag);
             if (damage > 0)
-                collision.gameObject.GetComponent<HealthSystem>().Damage(damage);
+                gameObject.GetComponent<HealthSystem>().Cure(damage);
         }
+        else if (collision.gameObject.CompareTag("Boomerang") && !isFallen)
+        {
+            isFallen = true;
+            timeFallen = timeFallenIni;
+            animator.SetBool("isAttacking", false);
+            animator.SetBool("isMoving", false);
+            animator.SetBool("isFallen", true);
+        }
+        
     }
 
     private void AttackPlayer()
@@ -69,36 +84,54 @@ public class EnemyFinalBoss : Enemy
         {
             knight = FindPlayer();
         }
-        // If the player is visible attack him, otherwise keep moving
-        if (Physics.Linecast(transform.position, knight.transform.position, out RaycastHit hit))
+
+        if (isFallen)
         {
-            if (hit.collider.gameObject == knight && coolDown < 0)
+            timeFallen -= 1;
+            if (timeFallen < 0)
             {
-                if (hit.distance < 10) coolDown = coolDownIni;
-                AttackPlayer();
-                attackInProgress = true;
+                isFallen = false;
+                animator.SetBool("isFallen", false);
+                coolDownMov = coolDownIni;
             }
-            else
+        }
+        else if (coolDownMov < 0)
+        {
+            // If the player is visible attack him, otherwise keep moving
+            if (Physics.Linecast(transform.position, knight.transform.position, out RaycastHit hit))
             {
-                if (coolDown > -1)
-                    --coolDown;
-                attackInProgress = false;
-                MoveEnemy();
-            }
-            
-            // Check that the model does not cross the obstacles
-            if (Physics.Linecast(transform.position, transform.TransformDirection(Vector3.forward), out RaycastHit hitObstacle))
-                if (hitObstacle.collider.gameObject.layer == 3 && hitObstacle.distance < 50)
+                if (hit.collider.gameObject == knight && coolDown < 0)
                 {
+                    if (hit.distance < 10) coolDown = coolDownIni;
+                    AttackPlayer();
+                    attackInProgress = true;
+                }
+                else
+                {
+                    if (coolDown > -1)
+                        --coolDown;
                     attackInProgress = false;
                     MoveEnemy();
                 }
-            
+
+                // Check that the model does not cross the obstacles
+                if (Physics.Linecast(transform.position, transform.TransformDirection(Vector3.forward), out RaycastHit hitObstacle))
+                    if (hitObstacle.collider.gameObject.layer == 3 && hitObstacle.distance < 50)
+                    {
+                        attackInProgress = false;
+                        MoveEnemy();
+                    }
+
+            }
+            else // Move according to the pattern
+            {
+                attackInProgress = false;
+                MoveEnemy();
+            }
         }
-        else // Move according to the pattern
+        else
         {
-            attackInProgress = false;
-            MoveEnemy();
+            coolDownMov -= 1;
         }
     }
 }
