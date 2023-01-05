@@ -21,6 +21,7 @@ TagManager:
   - AnubisShot
   - Wall
   - BigBox
+  - Door
   layers:
   - Default
   - TransparentFX

@@ -223,4 +223,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de19648232ea8d14192f42fbfcc8530b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camOffset: {x: 120, y: 120, z: -20}
+  camOffset: {x: 128, y: 120, z: -12}

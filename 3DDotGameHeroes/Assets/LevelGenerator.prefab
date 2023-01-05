@@ -54,9 +54,12 @@ MonoBehaviour:
     - row: 0000000000000000080000000900000000000000
     - row: 0000000000000000070000000500000000000000
     - row: 0400000003000000010000000200000006000000
+  bossRoomBottomLeft: {x: 2, y: 4}
+  bossRoomTopRight: {x: 3, y: 5}
+  startingRoom: {x: 0, y: 2}
   levelsMappings:
   - {fileID: 2800000, guid: feb970ea5d8929c4d9fd4fe598fa5a7b, type: 3}
-  - {fileID: 2800000, guid: feb970ea5d8929c4d9fd4fe598fa5a7b, type: 3}
+  - {fileID: 2800000, guid: aa1d633859dc1594cbc40f9b4ae6a0c9, type: 3}
   - {fileID: 2800000, guid: 14c5742b2f31cb14fbae22e46aa6854c, type: 3}
   - {fileID: 2800000, guid: ed498db522ce88145884b2c78b7899b4, type: 3}
   - {fileID: 2800000, guid: 5247f9128a55f0045b805590dcb461be, type: 3}
