@@ -77,6 +77,23 @@ public class InventoryManager : MonoBehaviour
         items[itemTag] -= count;
         if (items[itemTag] < 0) items[itemTag] = 0;
         Debug.Log("DeleteItem " + itemTag + ": " + items[itemTag]);
+
+        if (itemTag == "Key")
+        {
+            GameObject stkey = GameObject.FindGameObjectWithTag("HUD");
+            stkey = stkey.transform.Find("StKeys").gameObject;
+            TextMeshProUGUI textUI = stkey.transform.GetComponent<TextMeshProUGUI>();
+            textUI.text = GetItemCount("Key").ToString();
+        }
+        else if (itemTag == "KeyBoss")
+        {
+            GameObject stkeyB = GameObject.FindGameObjectWithTag("HUD");
+            stkeyB = stkeyB.transform.Find("StKeysB").gameObject;
+            TextMeshProUGUI textUI = stkeyB.transform.GetComponent<TextMeshProUGUI>();
+            string aux = GetItemCount("KeyBoss").ToString() + " (Boss)";
+            textUI.text = aux;
+        }
+
         return items[itemTag];        
     }
 
