@@ -22,6 +22,5 @@ public class DamagingCollision : MonoBehaviour
                 collision.gameObject.GetComponent<HealthSystem>().Damage(damage);
             }
         }
-        
     }
 }

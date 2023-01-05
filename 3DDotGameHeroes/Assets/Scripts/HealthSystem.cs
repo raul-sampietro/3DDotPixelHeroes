@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class HealthSystem : MonoBehaviour
@@ -13,6 +14,8 @@ public class HealthSystem : MonoBehaviour
 
     int currentHP;
     bool isInvincible = false;
+
+    private GameObject nlife = null;
 
     // Start is called before the first frame update
     void Start()
@@ -42,6 +45,18 @@ public class HealthSystem : MonoBehaviour
         {
             currentHP = currentHP - damage < 0 ? 0 : currentHP - damage;
             Debug.Log("Damage " + tag + " -" + damage + " -> " + currentHP);
+            
+            if (gameObject.CompareTag("Player"))
+            {
+                if (nlife == null)
+                {
+                    nlife = GameObject.FindGameObjectWithTag("HUD");
+                    nlife = nlife.transform.Find("NLife").gameObject;
+                }
+                int life = GetHP();
+                TextMeshProUGUI textUI = nlife.transform.GetComponent<TextMeshProUGUI>();
+                textUI.text = life.ToString();                
+            }
         }
         return currentHP;
     }

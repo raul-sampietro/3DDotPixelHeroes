@@ -105,8 +105,8 @@ public class LevelGenerator : Singleton<LevelGenerator>
 
     void Awake()
     {
-        Debug.Log("Awake");
-        Debug.Log("" + bossRoomBottomLeft + bossRoomTopRight);
+        //Debug.Log("Awake");
+        //Debug.Log("" + bossRoomBottomLeft + bossRoomTopRight);
         GameObject.Find("OverviewCamera")
             .GetComponent<CameraMover>()
             .SetBossRooms(bossRoomBottomLeft, bossRoomTopRight);
@@ -114,7 +114,7 @@ public class LevelGenerator : Singleton<LevelGenerator>
 
     void Start()
     {
-        Debug.Log("Start");
+        //Debug.Log("Start");
         //SetCurrentRoom((int)startingRoom.x, (int)startingRoom.y);
         for (int i = 0; i < 10; ++i)
             for (int j = 0; j < 10; ++j)
@@ -135,7 +135,7 @@ public class LevelGenerator : Singleton<LevelGenerator>
     {
         int i = (int)currentRoom.x;
         int j = (int)currentRoom.y;
-        Debug.Log("Play (" + i + "," + j + ")");
+        //Debug.Log("Play (" + i + "," + j + ")");
         // Close doors
         // Instanciate enemies
         switch (rooms[i][j].ProgressState)
@@ -174,7 +174,7 @@ public class LevelGenerator : Singleton<LevelGenerator>
     public void SetCurrentRoom(int x, int z)
     {
         currentRoom = new Vector3(x, z);
-        Debug.Log("Current Room: " + currentRoom);
+        //Debug.Log("Current Room: " + currentRoom);
         //// Start room
         // Move camera
         GameObject.Find("OverviewCamera")
@@ -200,15 +200,15 @@ public class LevelGenerator : Singleton<LevelGenerator>
         Vector2Int boundaries = levelsList.GridSize;
         // Check that we are not outside the grid range
         if (!(i >= 0 && j >= 0 && i < boundaries.x && j < boundaries.y)) return;
-        Debug.Log("Boundaries checked");
+        //Debug.Log("Boundaries checked");
         int roomNumber = levelsList.GetCell(i, boundaries.y - 1 - j) - 1;
         // Check that we are not outside the array range or have a 0 (no room)
-        Debug.Log("Room (" + i + "," + j + ") number: " + roomNumber);
+        //Debug.Log("Room (" + i + "," + j + ") number: " + roomNumber);
         if (roomNumber >= levelsMappings.Length || roomNumber < 0) return;
-        Debug.Log("Room Number checked");
+        //Debug.Log("Room Number checked");
         Texture2D level = levelsMappings[roomNumber];
 
-        Debug.Log("Enable Room (" + i + "," + j + ")");
+        //Debug.Log("Enable Room (" + i + "," + j + ")");
 
         // Check if the room already existed, otherwise create it.
         if (!rooms.ContainsKey(i))
@@ -223,7 +223,7 @@ public class LevelGenerator : Singleton<LevelGenerator>
         switch (rooms[i][j].InstanceState)
         {
             case RoomInstanceState.UNINSTANTIATED:
-                Debug.Log("Instanciate room(" + i + ", " + j + ")");
+                //Debug.Log("Instanciate room(" + i + ", " + j + ")");
                 // Instantiate
                 GameObject levelObject = new GameObject();
                 levelObject.name = "Room" + i + j;
@@ -420,7 +420,7 @@ public class LevelGenerator : Singleton<LevelGenerator>
                 break;
 
             case RoomInstanceState.HIDDEN:
-                Debug.Log("Unhide room (" + i + "," + j + ")");
+                //Debug.Log("Unhide room (" + i + "," + j + ")");
                 // Activate
                 GameObject levelObj = rooms[i][j].Obj;
                 levelObj.SetActive(true);

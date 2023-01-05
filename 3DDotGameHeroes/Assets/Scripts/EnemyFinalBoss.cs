@@ -37,6 +37,12 @@ public class EnemyFinalBoss : Enemy
             attackInProgress = false;
             coolDown = coolDownIni;
         }
+        else if (collision.gameObject.CompareTag("Player"))
+        {
+            int damage = damageMatrix.DoesDamage(gameObject.tag, collision.gameObject.tag);
+            if (damage > 0)
+                collision.gameObject.GetComponent<HealthSystem>().Damage(damage);
+        }
         else if (collision.gameObject.CompareTag("KnightSword") && !isFallen)
         {
             int damage = damageMatrix.DoesDamage(collision.gameObject.tag, gameObject.tag);

@@ -15,6 +15,8 @@ public class Enemy : MonoBehaviour
     protected Animator animator;
     protected DamageMatrix damageMatrix;
 
+    protected GameObject nlife = null;
+
     public void SetMovementPattern(string movementPatter)
     {
         this.movementPattern = movementPatter;
@@ -32,6 +34,12 @@ public class Enemy : MonoBehaviour
         {
             Physics.Linecast(transform.position, collision.gameObject.transform.position, out RaycastHit hit);
             movDirection = hit.normal;
+        }
+        else if (collision.gameObject.CompareTag("Player"))
+        {
+            int damage = damageMatrix.DoesDamage(gameObject.tag, collision.gameObject.tag);
+            if (damage > 0)
+                collision.gameObject.GetComponent<HealthSystem>().Damage(damage);
         }
     }
 
