@@ -65,6 +65,19 @@ public class HealthSystem : MonoBehaviour
     {
         currentHP = currentHP + hp > maximumHP ? maximumHP : currentHP + hp;
         Debug.Log("Heal " + tag + " +" + hp + " -> " + currentHP);
+
+        if (gameObject.CompareTag("Player"))
+        {
+            if (nlife == null)
+            {
+                nlife = GameObject.FindGameObjectWithTag("HUD");
+                nlife = nlife.transform.Find("NLife").gameObject;
+            }
+            int life = GetHP();
+            TextMeshProUGUI textUI = nlife.transform.GetComponent<TextMeshProUGUI>();
+            textUI.text = life.ToString();
+        }
+
         return currentHP;
     }
 
