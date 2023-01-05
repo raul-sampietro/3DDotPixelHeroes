@@ -226,54 +226,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8748259256771117124, guid: 1ae5d0ba965c48745a5b49f1b369dc71, type: 3}
-      propertyPath: startingRoom.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8748259256771117124, guid: 1ae5d0ba965c48745a5b49f1b369dc71, type: 3}
-      propertyPath: bossRoomTopRight.x
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8748259256771117124, guid: 1ae5d0ba965c48745a5b49f1b369dc71, type: 3}
-      propertyPath: bossRoomBottomLeft.x
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8748259256771117124, guid: 1ae5d0ba965c48745a5b49f1b369dc71, type: 3}
-      propertyPath: levelsList.gridSize.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8748259256771117124, guid: 1ae5d0ba965c48745a5b49f1b369dc71, type: 3}
-      propertyPath: levelsList.gridSize.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8748259256771117124, guid: 1ae5d0ba965c48745a5b49f1b369dc71, type: 3}
-      propertyPath: levelsList.cells.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8748259256771117124, guid: 1ae5d0ba965c48745a5b49f1b369dc71, type: 3}
-      propertyPath: levelsList.cells.Array.data[0].row.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8748259256771117124, guid: 1ae5d0ba965c48745a5b49f1b369dc71, type: 3}
-      propertyPath: levelsList.cells.Array.data[1].row.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8748259256771117124, guid: 1ae5d0ba965c48745a5b49f1b369dc71, type: 3}
-      propertyPath: levelsList.cells.Array.data[0].row.Array.data[0]
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 8748259256771117124, guid: 1ae5d0ba965c48745a5b49f1b369dc71, type: 3}
-      propertyPath: levelsList.cells.Array.data[0].row.Array.data[1]
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8748259256771117124, guid: 1ae5d0ba965c48745a5b49f1b369dc71, type: 3}
-      propertyPath: levelsList.cells.Array.data[1].row.Array.data[0]
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8748259256771117124, guid: 1ae5d0ba965c48745a5b49f1b369dc71, type: 3}
-      propertyPath: levelsList.cells.Array.data[1].row.Array.data[1]
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ae5d0ba965c48745a5b49f1b369dc71, type: 3}
 --- !u!1001 &620495505

@@ -22,6 +22,8 @@ TagManager:
   - Wall
   - BigBox
   - Door
+  - DoorBoss
+  - DoorKey
   layers:
   - Default
   - TransparentFX
