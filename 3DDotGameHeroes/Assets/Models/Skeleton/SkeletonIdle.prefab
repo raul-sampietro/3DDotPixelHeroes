@@ -657,9 +657,9 @@ GameObject:
   - component: {fileID: 1402118738101756926}
   - component: {fileID: -714687573324664801}
   - component: {fileID: -3773266165753443163}
+  - component: {fileID: 225586025022933716}
   - component: {fileID: 919132148965520085}
   - component: {fileID: 919132148965520084}
-  - component: {fileID: 225586025022933716}
   m_Layer: 8
   m_Name: SkeletonIdle
   m_TagString: Skeleton
@@ -730,6 +730,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particles: {fileID: 1124872229260257672, guid: 4cd0b1cf1c20a4c4e80c96e145f39bcf, type: 3}
+--- !u!114 &225586025022933716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7543975313010120804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc7a41e0df415ca439e5517e079efb5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maximumHP: 30
 --- !u!54 &919132148965520085
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -760,19 +773,6 @@ CapsuleCollider:
   m_Height: 34.561775
   m_Direction: 1
   m_Center: {x: -0.16576576, y: 16.676842, z: -0.8062773}
---- !u!114 &225586025022933716
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7543975313010120804}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc7a41e0df415ca439e5517e079efb5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maximumHP: 50
 --- !u!1 &7888904299675229542
 GameObject:
   m_ObjectHideFlags: 0

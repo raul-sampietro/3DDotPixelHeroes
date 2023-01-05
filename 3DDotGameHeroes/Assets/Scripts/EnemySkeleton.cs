@@ -7,12 +7,16 @@ public class EnemySkeleton : Enemy
     private bool attackInProgress = false;
     private Vector3 attackDirection;
 
+    private int coolDownIni = 250;
+    private int coolDown;
+
     // Start is called before the first frame update
     void Start()
     {
         GetAnimator();
         maxRotationSpeed = 300.0f;
         damageMatrix = DamageMatrix.Instance;
+        coolDown = 0;
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -20,15 +24,9 @@ public class EnemySkeleton : Enemy
         // 3 is the obstable layer number
         if (collision.gameObject.layer == 3)
         {
-            if (attackInProgress)
-            {
-                DestroyWithParticles();
-            }
-            else
-            {
-                Physics.Linecast(transform.position, collision.gameObject.transform.position, out RaycastHit hit);
-                movDirection = hit.normal;
-            }
+            Physics.Linecast(transform.position, collision.gameObject.transform.position, out RaycastHit hit);
+            movDirection = hit.normal;
+            attackInProgress = false;
         }
     }
 
@@ -66,13 +64,16 @@ public class EnemySkeleton : Enemy
         // If the player is visible attack him, otherwise keep moving
         if (Physics.Linecast(transform.position, knight.transform.position, out RaycastHit hit))
         {
-            if (hit.collider.gameObject == knight)
+            if (hit.collider.gameObject == knight && coolDown < 0)
             {
+                if (hit.distance < 10) coolDown = coolDownIni;
                 AttackPlayer();
                 attackInProgress = true;
             }
             else
             {
+                if (coolDown > -1)
+                    --coolDown;
                 attackInProgress = false;
                 MoveEnemy();
             }
