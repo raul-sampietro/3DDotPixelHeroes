@@ -6,6 +6,11 @@ public class HealthSystem : MonoBehaviour
 {
     public int maximumHP = 50;
 
+    public GameObject life;
+    public GameObject coin1;
+    public GameObject coin2;
+    public GameObject coin3;
+
     int currentHP;
     bool isInvincible = false;
 
@@ -44,7 +49,7 @@ public class HealthSystem : MonoBehaviour
     public int Cure(int hp)
     {
         currentHP = currentHP + hp > maximumHP ? maximumHP : currentHP + hp;
-        Debug.Log("Heal " + tag + " -" + hp + " -> " + currentHP);
+        Debug.Log("Heal " + tag + " +" + hp + " -> " + currentHP);
         return currentHP;
     }
 
@@ -67,14 +72,34 @@ public class HealthSystem : MonoBehaviour
     {
         if (currentHP <= 0)
         {
-            if (!gameObject.CompareTag("Player"))
-            {
-                gameObject.GetComponent<Enemy>().DestroyWithParticles();
-            }
-            else
+            if (gameObject.CompareTag("Player"))
             {
                 //gameObject.GetComponent<TriggerParticles>().TriggerParticleSystem();
                 //Destroy(gameObject);
+            }
+            else
+            {
+                int n = (int)Random.Range(0, 100);
+                if (n < 30)
+                {
+                    // Life
+                }
+                else if (n < 40)
+                {
+                    // Bronze Coin
+
+                }
+                else if (n < 90)
+                {
+                    // Silver Coin
+
+                }
+                else
+                {
+                    // Gold Coin
+                }
+
+                gameObject.GetComponent<Enemy>().DestroyWithParticles();
             }
 
         }
