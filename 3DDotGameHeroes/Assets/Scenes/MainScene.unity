@@ -235,14 +235,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6772355089885092453, guid: 8935b0413cde0ee4097b61c116baad9e, type: 3}
-      propertyPath: m_Constraints
-      value: 112
-      objectReference: {fileID: 0}
-    - target: {fileID: 6772355089885092453, guid: 8935b0413cde0ee4097b61c116baad9e, type: 3}
-      propertyPath: m_CollisionDetection
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8581629285639960663, guid: 8935b0413cde0ee4097b61c116baad9e, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -257,7 +249,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8581629285639960663, guid: 8935b0413cde0ee4097b61c116baad9e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 8581629285639960663, guid: 8935b0413cde0ee4097b61c116baad9e, type: 3}
       propertyPath: m_LocalRotation.w
