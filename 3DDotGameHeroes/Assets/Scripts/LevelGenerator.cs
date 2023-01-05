@@ -319,8 +319,17 @@ public class LevelGenerator : Singleton<LevelGenerator>
                                                 // Set parent object
                                                 torch.transform.parent = levelObject.transform;
                                             }
+
+                                            if (roomNumber == 12 || roomNumber == 8 || roomNumber == 3)
+                                            {
+                                                obj.GetComponent<Rigidbody>().isKinematic = true;
+                                            }
+
                                             break;
 
+                                        case "SlideBox":
+                                            //obj.transform.GetComponent<Rigidbody>().isKinematic = false;
+                                            break;
                                         case "Door":
                                         case "DoorKey":
                                         case "DoorBoss":

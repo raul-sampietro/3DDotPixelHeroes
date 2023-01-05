@@ -53,7 +53,7 @@ MonoBehaviour:
     - row: 000000000b0000000a0000000c0000000d000000
     - row: 0000000000000000080000000900000000000000
     - row: 0000000000000000070000000500000000000000
-    - row: 0400000003000000010000000200000006000000
+    - row: 0900000003000000010000000200000006000000
   bossRoomBottomLeft: {x: 2, y: 4}
   bossRoomTopRight: {x: 3, y: 5}
   startingRoom: {x: 0, y: 2}
@@ -94,6 +94,18 @@ MonoBehaviour:
     dropLife: 0
     torch: {fileID: 0}
     movementPattern: NA
+  - color: {r: 1, g: 0, b: 0.49803922, a: 1}
+    prefab: {fileID: 4445026867434694081, guid: 732dabc759fa0dc4d8c79dbea5d251e3, type: 3}
+    dropCoin: 0
+    dropLife: 0
+    torch: {fileID: 0}
+    movementPattern: NA
+  - color: {r: 1, g: 1, b: 0, a: 1}
+    prefab: {fileID: 1568261423619833017, guid: f4db12f0757bb2f40bcb0916f89b02cc, type: 3}
+    dropCoin: 0
+    dropLife: 0
+    torch: {fileID: 0}
+    movementPattern: NA
   - color: {r: 0.19607843, g: 0.47058827, b: 0.19607843, a: 1}
     prefab: {fileID: 8730592329626198468, guid: a2b9a8d14685842498d8d49ef7579504, type: 3}
     dropCoin: 0
@@ -118,6 +130,18 @@ MonoBehaviour:
     dropLife: 0
     torch: {fileID: 0}
     movementPattern: NA
+  - color: {r: 1, g: 0.3529412, b: 0, a: 1}
+    prefab: {fileID: 7266733282207239719, guid: 222ac45a3de81d5498fb0216ddb1dbfc, type: 3}
+    dropCoin: 0
+    dropLife: 0
+    torch: {fileID: 0}
+    movementPattern: NA
+  - color: {r: 0.49803922, g: 1, b: 0, a: 1}
+    prefab: {fileID: 2186583115255020930, guid: b320a6b4a703f73439845fbc9e93022a, type: 3}
+    dropCoin: 0
+    dropLife: 0
+    torch: {fileID: 0}
+    movementPattern: Random
   - color: {r: 0, g: 0.49411765, b: 1, a: 1}
     prefab: {fileID: 7932199297264305723, guid: d46864143f4d4594ba6afc56ff0b4e82, type: 3}
     dropCoin: 0
