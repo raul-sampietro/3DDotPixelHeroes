@@ -32,7 +32,8 @@ public class EnemyFinalBoss : Enemy
         // 3 is the obstable layer number
         if (collision.gameObject.layer == 3)
         {
-            movDirection = collision.gameObject.transform.forward;
+            Physics.Linecast(transform.position, collision.gameObject.transform.position, out RaycastHit hit);
+            movDirection = hit.normal;
             attackInProgress = false;
             coolDown = coolDownIni;
         }

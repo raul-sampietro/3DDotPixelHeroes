@@ -25,7 +25,10 @@ public class EnemySkeleton : Enemy
                 DestroyWithParticles();
             }
             else
-                movDirection = collision.gameObject.transform.forward;
+            {
+                Physics.Linecast(transform.position, collision.gameObject.transform.position, out RaycastHit hit);
+                movDirection = hit.normal;
+            }
         }
     }
 
