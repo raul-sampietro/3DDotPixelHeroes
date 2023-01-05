@@ -28,6 +28,7 @@ public class CameraMover : MonoBehaviour
         bossRoomTopRight = topRight;
         Debug.Log("" + bottomLeft + topRight);
     }
+
     public void ChangeCurrentRoom(Vector2 roomNumber)
     {
         if (roomNumber.x >= bossRoomBottomLeft.x && roomNumber.x <= bossRoomTopRight.x &&
