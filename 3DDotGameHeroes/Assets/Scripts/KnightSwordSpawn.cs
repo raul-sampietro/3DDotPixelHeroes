@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class KnightSwordSpawn : MonoBehaviour
 {
-    public float Scale = 1;
+    public float maxScale = 1.5f;
+    public float minScale = 0.5f;
     public int FramesToAppear = 30;
     public int FramesToDisappear = 30;
 
     Transform bladeTransform;
+    private float scale;
 
     bool appearing, appearingParent, appearingBlade;
     bool disappearing, disappearingParent, disappearingBlade;
@@ -22,8 +24,12 @@ public class KnightSwordSpawn : MonoBehaviour
         appearing = appearingParent = appearingBlade = true;
         disappearing = disappearingParent = disappearingBlade = false;
 
-        appearRate = Scale / (float)FramesToAppear;
-        disappearRate = Scale / (float)FramesToDisappear;
+        float normHP = GameObject.FindGameObjectWithTag("Player").GetComponent<HealthSystem>().GetNormalizedHP();
+        float diffScale = maxScale - minScale;
+        scale = minScale + (diffScale * normHP);
+
+        appearRate = scale / (float)FramesToAppear;
+        disappearRate = scale / (float)FramesToDisappear;
 
         transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y, 0);
 
@@ -53,9 +59,9 @@ public class KnightSwordSpawn : MonoBehaviour
             }
 
             // Scale blade
-            if (bladeTransform.localScale.z + appearRate > Scale)
+            if (bladeTransform.localScale.z + appearRate > scale)
             {
-                bladeTransform.localScale += new Vector3(0, 0, appearRate - (transform.localScale.z + appearRate - Scale));
+                bladeTransform.localScale += new Vector3(0, 0, appearRate - (transform.localScale.z + appearRate - scale));
                 appearingBlade = false;
             }
             else {
