@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5262266507656862993}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: armR-global
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 4849991629773509169}
   - component: {fileID: 3258798475110363606}
   - component: {fileID: 5797611470093481966}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: legR-local
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,7 +124,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3337023978188098351}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: head-global
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -156,7 +156,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2431724853922255623}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: legR-global
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -188,7 +188,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2725417404953483908}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: armL-global
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -220,7 +220,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2799991417653371491}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: skeleton-global
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -260,7 +260,7 @@ GameObject:
   - component: {fileID: 6592535986601450711}
   - component: {fileID: 1869430228153892686}
   - component: {fileID: 5690886203154366166}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: chest-local
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -343,7 +343,7 @@ GameObject:
   - component: {fileID: 8091967547771179088}
   - component: {fileID: 2146939604602959267}
   - component: {fileID: 794861998860956392}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: legL-local
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -424,7 +424,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5740293928393524576}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: legL-global
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -456,7 +456,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 32249796723356803}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sword-global
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -490,7 +490,7 @@ GameObject:
   - component: {fileID: 27357265828805188}
   - component: {fileID: 5394486008058401391}
   - component: {fileID: 4654035724284468594}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: armL-local
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -573,7 +573,7 @@ GameObject:
   - component: {fileID: 1676882516047009692}
   - component: {fileID: 7501893691046863142}
   - component: {fileID: 1601119875823398098}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: head-local
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -656,11 +656,11 @@ GameObject:
   - component: {fileID: 7204146692109140702}
   - component: {fileID: 1402118738101756926}
   - component: {fileID: -714687573324664801}
-  - component: {fileID: 225586025022933716}
   - component: {fileID: -3773266165753443163}
   - component: {fileID: 919132148965520085}
   - component: {fileID: 919132148965520084}
-  m_Layer: 0
+  - component: {fileID: 225586025022933716}
+  m_Layer: 8
   m_Name: SkeletonIdle
   m_TagString: Skeleton
   m_Icon: {fileID: 0}
@@ -717,19 +717,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movSpeed: 15
   playerTag: Player
---- !u!114 &225586025022933716
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7543975313010120804}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc7a41e0df415ca439e5517e079efb5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maximumHP: 50
 --- !u!114 &-3773266165753443163
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -773,6 +760,19 @@ CapsuleCollider:
   m_Height: 34.561775
   m_Direction: 1
   m_Center: {x: -0.16576576, y: 16.676842, z: -0.8062773}
+--- !u!114 &225586025022933716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7543975313010120804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc7a41e0df415ca439e5517e079efb5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maximumHP: 50
 --- !u!1 &7888904299675229542
 GameObject:
   m_ObjectHideFlags: 0
@@ -784,7 +784,7 @@ GameObject:
   - component: {fileID: 2179914516614949325}
   - component: {fileID: 4812378690851691213}
   - component: {fileID: 6809128925835613947}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: armR-local
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -867,7 +867,7 @@ GameObject:
   - component: {fileID: 8685974787215046015}
   - component: {fileID: 9076280456289903897}
   - component: {fileID: 4106339176392350685}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sword-local
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -948,7 +948,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7248383948784815693}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: chest-global
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5459166277724371091}
   - component: {fileID: 226641485876914067}
   - component: {fileID: 4393291810035085409}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 7022673933302753369}
   - component: {fileID: 7022673933302753370}
   - component: {fileID: 7022673933302753372}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: SlideBox
   m_TagString: SlideBox
   m_Icon: {fileID: 0}

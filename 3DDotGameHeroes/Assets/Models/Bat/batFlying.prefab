@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6164356321854644286}
   - component: {fileID: 3922420633393107219}
   - component: {fileID: 3774387063542897546}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: wingR-local
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 919132147489552005}
   - component: {fileID: 919132147489552004}
   - component: {fileID: -7021593495751031572}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: batFlying
   m_TagString: Bat
   m_Icon: {fileID: 0}
@@ -219,7 +219,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 787507765576783242}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: paws-global
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -251,7 +251,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6978500909552765654}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: wingL-global
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -285,7 +285,7 @@ GameObject:
   - component: {fileID: 7252700904144107587}
   - component: {fileID: 2069132410193062593}
   - component: {fileID: 7417186196393578871}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: body-local
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -368,7 +368,7 @@ GameObject:
   - component: {fileID: 5293793484256916243}
   - component: {fileID: 7706733163895678233}
   - component: {fileID: 1412115098877884723}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: head-local
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -451,7 +451,7 @@ GameObject:
   - component: {fileID: 1935435461588981843}
   - component: {fileID: 7239507672485785029}
   - component: {fileID: 3435723809440141910}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: paws-local
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -532,7 +532,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 242144538226119440}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: head-global
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -564,7 +564,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8751105409046042395}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bat-global
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -600,7 +600,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3109460494140302805}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: body-global
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -632,7 +632,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5888641251864740000}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: wingR-global
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -666,7 +666,7 @@ GameObject:
   - component: {fileID: 3437984111476848953}
   - component: {fileID: 7241760025227505209}
   - component: {fileID: 3839471287802056091}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: wingL-local
   m_TagString: Untagged
   m_Icon: {fileID: 0}

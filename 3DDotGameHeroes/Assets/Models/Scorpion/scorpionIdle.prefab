@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7566942207712646214}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tail-global
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7133739008601521488}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: pawnsR-global
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75,7 +75,7 @@ GameObject:
   - component: {fileID: 6176784685906657793}
   - component: {fileID: 8917730111833401310}
   - component: {fileID: 4623563653952923818}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: body-local
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -158,7 +158,7 @@ GameObject:
   - component: {fileID: 6164992391896709435}
   - component: {fileID: 444802116899798342}
   - component: {fileID: 37428034590574027}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: armR-local
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -239,7 +239,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8792560175166586293}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: scorpion-global
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -283,7 +283,7 @@ GameObject:
   - component: {fileID: -681389833632471952}
   - component: {fileID: 2603240248704700974}
   - component: {fileID: -5947352957792605664}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: scorpionIdle
   m_TagString: Scorpion
   m_Icon: {fileID: 0}
@@ -404,7 +404,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3993073844776691282}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: pawnsL-global
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -438,7 +438,7 @@ GameObject:
   - component: {fileID: 4588257758002642677}
   - component: {fileID: 3771699400928988689}
   - component: {fileID: 2856054000269881035}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: armL-local
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -519,7 +519,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1849511042007925444}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: armR-global
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -551,7 +551,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8110296861634262410}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: head-global
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -583,7 +583,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9210065914960894967}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: armL-global
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -617,7 +617,7 @@ GameObject:
   - component: {fileID: 906253768573774276}
   - component: {fileID: 2213945882495354816}
   - component: {fileID: 1335842286356191053}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: pawnsR-local
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -700,7 +700,7 @@ GameObject:
   - component: {fileID: 4927635931660501032}
   - component: {fileID: 2589459003481440606}
   - component: {fileID: 5037563638383785192}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: pawnsL-local
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -783,7 +783,7 @@ GameObject:
   - component: {fileID: 3572007837108884214}
   - component: {fileID: 5286170708804671617}
   - component: {fileID: 121010428289964480}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: head-local
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -864,7 +864,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2480984129419984520}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: body-global
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -898,7 +898,7 @@ GameObject:
   - component: {fileID: 5891986766652481303}
   - component: {fileID: 8231239028329462412}
   - component: {fileID: 471171733724716113}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tail-local
   m_TagString: Untagged
   m_Icon: {fileID: 0}

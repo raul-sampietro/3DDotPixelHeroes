@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6813692687661972621}
   - component: {fileID: 173179065551909908}
   - component: {fileID: 3795790249065903224}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: body-local
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 4664308731919434464}
   - component: {fileID: 8136549820422993342}
   - component: {fileID: 3401827203492066609}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightArm-local
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 7845874085065636297}
   - component: {fileID: 5260612351187987102}
   - component: {fileID: 4986054621961545678}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightFoot-local
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -258,7 +258,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7232799721936226378}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightFoot-global
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -290,7 +290,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8924611988703615471}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: body-global
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -324,7 +324,7 @@ GameObject:
   - component: {fileID: 9004771366323091211}
   - component: {fileID: 6129310769568366354}
   - component: {fileID: 7956243414719164630}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftArm-local
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -407,7 +407,7 @@ GameObject:
   - component: {fileID: 3362150989349676982}
   - component: {fileID: 6447678132549837295}
   - component: {fileID: 1240308091415271863}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: core-local
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -488,7 +488,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1736484490722005630}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Node-global
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -531,7 +531,7 @@ GameObject:
   - component: {fileID: 919132149501126718}
   - component: {fileID: 919132149501126717}
   - component: {fileID: 3801133018739945881}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GolemIdle
   m_TagString: Golem
   m_Icon: {fileID: 0}
@@ -654,7 +654,7 @@ GameObject:
   - component: {fileID: 4474771868014951177}
   - component: {fileID: 6172439646698204989}
   - component: {fileID: 3205806012894145528}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftFoot-local
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -735,7 +735,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7991675433696686430}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightArm-global
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -767,7 +767,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1372288189551211256}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: core-global
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -799,7 +799,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8455216624994034344}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftFoot-global
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -831,7 +831,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6718782144295358328}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftArm-global
   m_TagString: Untagged
   m_Icon: {fileID: 0}
