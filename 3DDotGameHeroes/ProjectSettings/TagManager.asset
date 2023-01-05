@@ -25,6 +25,7 @@ TagManager:
   - DoorBoss
   - DoorKey
   - SlideBox
+  - Torch
   layers:
   - Default
   - TransparentFX
