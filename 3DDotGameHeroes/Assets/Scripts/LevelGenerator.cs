@@ -115,6 +115,7 @@ public class LevelGenerator : Singleton<LevelGenerator>
 
     void Start()
     {
+
         //Debug.Log("Start");
         //SetCurrentRoom((int)startingRoom.x, (int)startingRoom.y);
         Vector2 spawnOffset = new Vector2(8 * 16, 3 * 16);
