@@ -89,7 +89,6 @@
     <Compile Include="Assets\Scripts\EnemyFinalBoss.cs" />
     <Compile Include="Assets\Scripts\EnemyScorpion.cs" />
     <Compile Include="Assets\Scripts\TimedDestroy.cs" />
-    <Compile Include="Assets\Scripts\SlideBox.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
