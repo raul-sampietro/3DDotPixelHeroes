@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HealthSystem : MonoBehaviour
 {
@@ -102,11 +103,19 @@ public class HealthSystem : MonoBehaviour
         {
             if (gameObject.CompareTag("Player"))
             {
-                //gameObject.GetComponent<TriggerParticles>().TriggerParticleSystem();
-                //Destroy(gameObject);
+                // Lose
+                gameObject.GetComponent<TriggerParticles>().TriggerParticleSystem();
+                SceneManager.LoadScene("GameOverScene");
             }
-            else
+            else if (gameObject.CompareTag("GolemIdle"))
             {
+                // Win
+                gameObject.GetComponent<Enemy>().DestroyWithParticles();
+                SceneManager.LoadScene("WinScene");
+            }
+            else // is Enemy
+            {
+                // Get reward
                 Vector3 pos = transform.position;
                 pos.y = 4;
                 int n = (int)Random.Range(0, 100);
