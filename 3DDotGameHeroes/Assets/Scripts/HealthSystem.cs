@@ -107,7 +107,7 @@ public class HealthSystem : MonoBehaviour
                 gameObject.GetComponent<TriggerParticles>().TriggerParticleSystem();
                 SceneManager.LoadScene("GameOverScene");
             }
-            else if (gameObject.CompareTag("GolemIdle"))
+            else if (gameObject.CompareTag("Golem"))
             {
                 // Win
                 gameObject.GetComponent<Enemy>().DestroyWithParticles();

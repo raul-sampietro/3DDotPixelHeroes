@@ -55,7 +55,7 @@ public class EnemySkeleton : Enemy
         // Continue with the attack
         else
         {
-            transform.Translate(movSpeed * 3 * Time.deltaTime * attackDirection, Space.World);
+            transform.Translate(movSpeed * 4 * Time.deltaTime * attackDirection, Space.World);
         }
     }
 

@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyBat : Enemy
 {
     private Vector3 attackDirection;
-    private int coolDownIni = 250;
+    private int coolDownIni = 120;
     private int coolDown;
 
     // Start is called before the first frame update
@@ -44,7 +44,7 @@ public class EnemyBat : Enemy
         // If the player is visible attack him, otherwise keep moving
         if (Physics.Linecast(transform.position, knight.transform.position, out RaycastHit hit))
         {
-            if (hit.collider.gameObject == knight && hit.distance < 40 && coolDown < 0)
+            if (hit.collider.gameObject == knight && coolDown < 0)
             {
                 if (hit.distance < 10) coolDown = coolDownIni;
                 AttackPlayer();

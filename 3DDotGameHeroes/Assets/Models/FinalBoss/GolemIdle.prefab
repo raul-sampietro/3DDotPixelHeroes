@@ -530,6 +530,7 @@ GameObject:
   - component: {fileID: 6320074580478562230}
   - component: {fileID: 919132149501126718}
   - component: {fileID: 919132149501126717}
+  - component: {fileID: 5556611717193827760}
   - component: {fileID: 3801133018739945881}
   m_Layer: 8
   m_Name: GolemIdle
@@ -580,7 +581,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc7a41e0df415ca439e5517e079efb5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maximumHP: 200
+  maximumHP: 500
+  life: {fileID: 0}
+  coin1: {fileID: 0}
+  coin2: {fileID: 0}
+  coin3: {fileID: 0}
 --- !u!114 &6320074580478562230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -623,6 +628,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 45.01319, y: 45.6419, z: 31.444061}
   m_Center: {x: -0.2689638, y: 22.32095, z: 4.5220184}
+--- !u!65 &5556611717193827760
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4488586204580207727}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 44.504883, y: 15.950001, z: 49.627808}
+  m_Center: {x: -0.09515381, y: 7.4750004, z: -24.313904}
 --- !u!95 &3801133018739945881
 Animator:
   serializedVersion: 4

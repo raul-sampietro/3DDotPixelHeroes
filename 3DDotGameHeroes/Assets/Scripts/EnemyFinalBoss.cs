@@ -37,7 +37,7 @@ public class EnemyFinalBoss : Enemy
             attackInProgress = false;
             coolDown = coolDownIni;
         }
-        else if (collision.gameObject.CompareTag("Player"))
+        else if (collision.gameObject.CompareTag("Player") && !isFallen)
         {
             int damage = damageMatrix.DoesDamage(gameObject.tag, collision.gameObject.tag);
             if (damage > 0)
@@ -78,7 +78,7 @@ public class EnemyFinalBoss : Enemy
         // Continue with the attack
         else
         {
-            transform.Translate(movSpeed * 2 * Time.deltaTime * attackDirection, Space.World);
+            transform.Translate(movSpeed * 3 * Time.deltaTime * attackDirection, Space.World);
         }
     }
 
@@ -93,6 +93,8 @@ public class EnemyFinalBoss : Enemy
 
         if (isFallen)
         {
+            gameObject.GetComponents<BoxCollider>()[0].enabled = false;
+            gameObject.GetComponents<BoxCollider>()[1].enabled = true;
             timeFallen -= 1;
             if (timeFallen < 0)
             {
@@ -100,9 +102,12 @@ public class EnemyFinalBoss : Enemy
                 animator.SetBool("isFallen", false);
                 coolDownMov = coolDownIni;
             }
+            coolDownMov -= 1;
         }
         else if (coolDownMov < 0)
         {
+            gameObject.GetComponents<BoxCollider>()[0].enabled = true;
+            gameObject.GetComponents<BoxCollider>()[1].enabled = false;
             // If the player is visible attack him, otherwise keep moving
             if (Physics.Linecast(transform.position, knight.transform.position, out RaycastHit hit))
             {
