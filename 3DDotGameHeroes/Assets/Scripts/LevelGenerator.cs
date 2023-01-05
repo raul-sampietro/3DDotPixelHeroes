@@ -272,7 +272,7 @@ public class LevelGenerator : Singleton<LevelGenerator>
                                     //    rooms[i][j].AddDoor(new DoorStruct(colorPrefab.prefab, position));
                                     //    break;
                                     //}
-
+                                    if (colorPrefab.prefab.tag == "Door") break;
                                     GameObject obj = Instantiate(colorPrefab.prefab, position, Quaternion.identity, transform);
 
                                     // Scale, rotate and move the asset
@@ -324,12 +324,36 @@ public class LevelGenerator : Singleton<LevelGenerator>
                                         case "Door":
                                         case "DoorKey":
                                         case "DoorBoss":
+                                            // Rotate according to position X in the level
+                                            if (x == 0) // Left side
+                                            {
+                                                obj.transform.Rotate(Vector3.up, 90);
+                                            }
+                                            else if (x == level.width - 1) // Right side
+                                            {
+                                                obj.transform.Rotate(Vector3.up, -90);
+                                            }
+
+                                            // Rotate according to position Y in the level
+                                            if (z == 0) // Bottom side
+                                            {
+
+                                            }
+                                            else if (z == level.height - 1) // Top side
+                                            {
+                                                obj.transform.Rotate(Vector3.up, 180);
+                                            }
+                                            obj.transform.Translate(-8, 0, 0);
                                             break;
 
                                 case "batFlying":
                                     transform.Translate(new Vector3(0, 7, 0), Space.World);
                                     break;
 
+                                        case "Chest":
+                                        case "ChestBoss":
+                                            obj.transform.Rotate(Vector3.up, 180);
+                                            break;
                                         default:
                                             break;
                                     }
