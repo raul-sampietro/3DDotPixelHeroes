@@ -319,7 +319,7 @@ public class LevelGenerator : Singleton<LevelGenerator>
                                                 // Set parent object
                                                 torch.transform.parent = levelObject.transform;
                                             }
-                                            break;
+                                            break
 
                                         case "Door":
                                         case "DoorKey":
@@ -397,7 +397,8 @@ public class LevelGenerator : Singleton<LevelGenerator>
                                     obj.transform.parent = levelObject.transform;
 
                                     if (colorPrefab.prefab.tag != "Wall" &
-                                        colorPrefab.prefab.tag != "BigBox")
+                                        colorPrefab.prefab.tag != "BigBox" &
+                                        colorPrefab.prefab.tag != "SlideBox")
                                     {
                                         // Instanciate the floor
                                         GameObject floorObject = Instantiate(floor, position, Quaternion.identity, transform);
