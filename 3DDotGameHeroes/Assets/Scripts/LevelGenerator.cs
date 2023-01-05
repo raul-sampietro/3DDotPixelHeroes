@@ -272,7 +272,7 @@ public class LevelGenerator : Singleton<LevelGenerator>
                                     //    rooms[i][j].AddDoor(new DoorStruct(colorPrefab.prefab, position));
                                     //    break;
                                     //}
-                                    if (colorPrefab.prefab.tag == "Door") break;
+                                    //if (colorPrefab.prefab.tag == "Door") break;
                                     GameObject obj = Instantiate(colorPrefab.prefab, position, Quaternion.identity, transform);
 
                                     // Scale, rotate and move the asset
