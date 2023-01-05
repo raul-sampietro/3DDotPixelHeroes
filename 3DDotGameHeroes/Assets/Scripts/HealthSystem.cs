@@ -79,24 +79,29 @@ public class HealthSystem : MonoBehaviour
             }
             else
             {
+                Vector3 pos = transform.position;
+                pos.y = 4;
                 int n = (int)Random.Range(0, 100);
                 if (n < 30)
                 {
                     // Life
+                    Instantiate(life, pos, Quaternion.identity);
                 }
                 else if (n < 40)
                 {
                     // Bronze Coin
+                    Instantiate(coin1, pos, Quaternion.identity);
 
                 }
                 else if (n < 90)
                 {
                     // Silver Coin
-
+                    Instantiate(coin2, pos, Quaternion.identity);
                 }
                 else
                 {
                     // Gold Coin
+                    Instantiate(coin3, pos, Quaternion.identity);
                 }
 
                 gameObject.GetComponent<Enemy>().DestroyWithParticles();
