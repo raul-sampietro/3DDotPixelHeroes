@@ -76,12 +76,13 @@ public class InventoryManager : MonoBehaviour
         
         items[itemTag] -= count;
         if (items[itemTag] < 0) items[itemTag] = 0;
+        Debug.Log("DeleteItem " + itemTag + ": " + items[itemTag]);
         return items[itemTag];        
     }
 
     public bool HasItem(string itemTag)
     {
-        return items.ContainsKey(itemTag);
+        return items.ContainsKey(itemTag) && items[itemTag] > 0;
     }
 
     public bool HasItem(string itemTag, int count)
