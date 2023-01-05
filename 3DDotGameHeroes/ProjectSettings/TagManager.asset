@@ -28,6 +28,7 @@ TagManager:
   - Torch
   - Coin
   - Life
+  - HUD
   layers:
   - Default
   - TransparentFX

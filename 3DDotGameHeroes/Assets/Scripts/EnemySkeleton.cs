@@ -28,6 +28,12 @@ public class EnemySkeleton : Enemy
             movDirection = hit.normal;
             attackInProgress = false;
         }
+        else if (collision.gameObject.CompareTag("Player"))
+        {
+            int damage = damageMatrix.DoesDamage(gameObject.tag, collision.gameObject.tag);
+            if (damage > 0)
+                collision.gameObject.GetComponent<HealthSystem>().Damage(damage);
+        }
     }
 
     private void AttackPlayer()

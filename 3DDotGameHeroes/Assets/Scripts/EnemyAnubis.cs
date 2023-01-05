@@ -17,6 +17,7 @@ public class EnemyAnubis : Enemy
         iniShootingOffset = shootingOffset;
         damageMatrix = DamageMatrix.Instance;
         GetAnimator();
+        shootingOffset = 0;
     }
 
     private void ShootPlayer()
