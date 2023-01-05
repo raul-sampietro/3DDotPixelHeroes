@@ -319,8 +319,11 @@ public class LevelGenerator : Singleton<LevelGenerator>
                                                 // Set parent object
                                                 torch.transform.parent = levelObject.transform;
                                             }
-                                            break
+                                            break;
 
+                                        case "SlideBox":
+                                            //obj.transform.GetComponent<Rigidbody>().isKinematic = false;
+                                            break;
                                         case "Door":
                                         case "DoorKey":
                                         case "DoorBoss":
@@ -397,8 +400,7 @@ public class LevelGenerator : Singleton<LevelGenerator>
                                     obj.transform.parent = levelObject.transform;
 
                                     if (colorPrefab.prefab.tag != "Wall" &
-                                        colorPrefab.prefab.tag != "BigBox" &
-                                        colorPrefab.prefab.tag != "SlideBox")
+                                        colorPrefab.prefab.tag != "BigBox")
                                     {
                                         // Instanciate the floor
                                         GameObject floorObject = Instantiate(floor, position, Quaternion.identity, transform);
