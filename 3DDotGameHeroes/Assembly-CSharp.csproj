@@ -82,6 +82,7 @@
     <Compile Include="Assets\Scripts\SpawnFromChest.cs" />
     <Compile Include="Assets\Scripts\DamageMatrix.cs" />
     <Compile Include="Assets\Scripts\InventoryManager.cs" />
+    <Compile Include="Assets\Scripts\SlideBox.cs" />
     <Compile Include="Assets\Scripts\Singleton.cs" />
     <Compile Include="Assets\Scripts\Enemy.cs" />
     <Compile Include="Assets\Scripts\EnemyBat.cs" />

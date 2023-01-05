@@ -4,13 +4,23 @@ using UnityEngine;
 
 public class SlideBox : MonoBehaviour
 {
+    public float speed = 30f;
+
     private Vector3 from, to;
+    bool moving;
     private Rigidbody rb;
+
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+        moving = false;
+    }
 
     private void Update()
     {
-        rb = GetComponent<Rigidbody>();
+
     }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.layer == 7)
@@ -31,7 +41,8 @@ public class SlideBox : MonoBehaviour
                 if (playerDirection.x > 0) dir = transform.right;
                 else dir = -transform.right;
             }
-            transform.position = Vector3.MoveTowards(transform.position, transform.position + (dir * 16), 3);
+            rb.velocity = dir * speed;
+            moving = true;
         }
     }
 }
