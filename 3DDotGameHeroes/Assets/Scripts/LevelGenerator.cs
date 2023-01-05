@@ -107,6 +107,7 @@ public class LevelGenerator : Singleton<LevelGenerator>
     {
         //Debug.Log("Awake");
         //Debug.Log("" + bossRoomBottomLeft + bossRoomTopRight);
+
         GameObject.Find("OverviewCamera")
             .GetComponent<CameraMover>()
             .SetBossRooms(bossRoomBottomLeft, bossRoomTopRight);
@@ -116,6 +117,13 @@ public class LevelGenerator : Singleton<LevelGenerator>
     {
         //Debug.Log("Start");
         //SetCurrentRoom((int)startingRoom.x, (int)startingRoom.y);
+        Vector2 spawnOffset = new Vector2(8 * 16, 3 * 16);
+        Vector3 playerStartPos = Vector3.zero;
+        playerStartPos.x = startingRoom.x * sizeOfImage.x * 16f + spawnOffset.x;
+        playerStartPos.z = startingRoom.y * sizeOfImage.y * 16f + spawnOffset.y;
+        GameObject.Find("Knight").transform.position = playerStartPos;
+
+
         for (int i = 0; i < 10; ++i)
             for (int j = 0; j < 10; ++j)
                 EnableRoom(i, j);
