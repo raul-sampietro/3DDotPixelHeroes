@@ -474,9 +474,49 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2268951706173618651, guid: c59506e28b2570947997b1709f5e54af, type: 3}
+      propertyPath: m_Name
+      value: StKeys
+      objectReference: {fileID: 0}
     - target: {fileID: 2466952748527065203, guid: c59506e28b2570947997b1709f5e54af, type: 3}
       propertyPath: m_text
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3009632935821798351, guid: c59506e28b2570947997b1709f5e54af, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 1643
+      objectReference: {fileID: 0}
+    - target: {fileID: 3009632935821798351, guid: c59506e28b2570947997b1709f5e54af, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -39
+      objectReference: {fileID: 0}
+    - target: {fileID: 3476592614573802817, guid: c59506e28b2570947997b1709f5e54af, type: 3}
+      propertyPath: m_text
+      value: 0 (Boss)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4019591477377095427, guid: c59506e28b2570947997b1709f5e54af, type: 3}
+      propertyPath: m_text
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4026904786381587050, guid: c59506e28b2570947997b1709f5e54af, type: 3}
+      propertyPath: m_Name
+      value: StKeysB
+      objectReference: {fileID: 0}
+    - target: {fileID: 4297335411907056580, guid: c59506e28b2570947997b1709f5e54af, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 1095
+      objectReference: {fileID: 0}
+    - target: {fileID: 4884269092374205787, guid: c59506e28b2570947997b1709f5e54af, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 1717
+      objectReference: {fileID: 0}
+    - target: {fileID: 5908793648174569077, guid: c59506e28b2570947997b1709f5e54af, type: 3}
+      propertyPath: m_Name
+      value: Keys
+      objectReference: {fileID: 0}
+    - target: {fileID: 5908793648174569079, guid: c59506e28b2570947997b1709f5e54af, type: 3}
+      propertyPath: m_text
+      value: 'Keys:'
       objectReference: {fileID: 0}
     - target: {fileID: 5908793648412579777, guid: c59506e28b2570947997b1709f5e54af, type: 3}
       propertyPath: m_Pivot.x

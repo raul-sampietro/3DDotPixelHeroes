@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class InventoryManager : MonoBehaviour
@@ -34,6 +35,38 @@ public class InventoryManager : MonoBehaviour
         if (items.ContainsKey(itemTag)) items[itemTag] += count;
         else items[itemTag] = count;
         Debug.Log("CollectItem " + itemTag + ": " + items[itemTag]);
+
+        if (itemTag == "Boomerang")
+        {
+            GameObject stbom = GameObject.FindGameObjectWithTag("HUD");
+            stbom = stbom.transform.Find("StBoomerang").gameObject;
+            TextMeshProUGUI textUI = stbom.transform.GetComponent<TextMeshProUGUI>();
+            textUI.text = "Equiped";
+        }
+        else if (itemTag == "Key")
+        {
+            GameObject stkey = GameObject.FindGameObjectWithTag("HUD");
+            stkey = stkey.transform.Find("StKeys").gameObject;
+            TextMeshProUGUI textUI = stkey.transform.GetComponent<TextMeshProUGUI>();
+            textUI.text = GetItemCount("Key").ToString();
+        }
+        else if (itemTag == "KeyBoss")
+        {
+            GameObject stkeyB = GameObject.FindGameObjectWithTag("HUD");
+            stkeyB = stkeyB.transform.Find("StKeysB").gameObject;
+            TextMeshProUGUI textUI = stkeyB.transform.GetComponent<TextMeshProUGUI>();
+            string aux = GetItemCount("KeyBoss").ToString() + " (Boss)";
+            textUI.text = aux;
+        }
+
+        else if (itemTag == "Coin")
+        {
+            GameObject stkeyB = GameObject.FindGameObjectWithTag("HUD");
+            stkeyB = stkeyB.transform.Find("NCoins").gameObject;
+            TextMeshProUGUI textUI = stkeyB.transform.GetComponent<TextMeshProUGUI>();
+            textUI.text = GetItemCount("Coin").ToString();
+        }
+
         return items[itemTag];
     }
 

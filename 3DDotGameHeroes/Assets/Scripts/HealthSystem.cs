@@ -55,7 +55,7 @@ public class HealthSystem : MonoBehaviour
                 }
                 int life = GetHP();
                 TextMeshProUGUI textUI = nlife.transform.GetComponent<TextMeshProUGUI>();
-                textUI.text = life.ToString();                
+                textUI.text = life.ToString();
             }
         }
         return currentHP;
