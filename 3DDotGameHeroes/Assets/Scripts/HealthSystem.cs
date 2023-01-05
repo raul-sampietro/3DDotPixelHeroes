@@ -87,7 +87,7 @@ public class HealthSystem : MonoBehaviour
                     // Life
                     Instantiate(life, pos, Quaternion.identity);
                 }
-                else if (n < 40)
+                else if (n < 70)
                 {
                     // Bronze Coin
                     Instantiate(coin1, pos, Quaternion.identity);
@@ -98,7 +98,7 @@ public class HealthSystem : MonoBehaviour
                     // Silver Coin
                     Instantiate(coin2, pos, Quaternion.identity);
                 }
-                else
+                else if (n < 100)
                 {
                     // Gold Coin
                     Instantiate(coin3, pos, Quaternion.identity);

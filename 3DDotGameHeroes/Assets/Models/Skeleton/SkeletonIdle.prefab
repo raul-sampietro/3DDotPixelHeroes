@@ -743,6 +743,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maximumHP: 30
+  life: {fileID: 8510535129732967176, guid: 826b2115390562046b1e512dd4d57a54, type: 3}
+  coin1: {fileID: 7124462839922788305, guid: 4ccea54d80392f24795e0879f779b88d, type: 3}
+  coin2: {fileID: 1066668722706223262, guid: 3e995b5810ef06a4293e953c3c2700b5, type: 3}
+  coin3: {fileID: 6965341952172472515, guid: dae9e9bf7f1b7054db316b0149c6e9ec, type: 3}
 --- !u!54 &919132148965520085
 Rigidbody:
   m_ObjectHideFlags: 0
