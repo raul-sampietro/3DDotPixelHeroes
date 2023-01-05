@@ -136,7 +136,7 @@ MonoBehaviour:
     dropLife: 0
     torch: {fileID: 0}
     movementPattern: Random
-  - color: {r: 0.23137255, g: 0.23137255, b: 0.23137255, a: 1}
+  - color: {r: 0.5882353, g: 0.5882353, b: 0, a: 1}
     prefab: {fileID: 2232970650883413775, guid: aea7903f4db1e7c428b5c4f3b1fe1262, type: 3}
     dropCoin: 0
     dropLife: 0

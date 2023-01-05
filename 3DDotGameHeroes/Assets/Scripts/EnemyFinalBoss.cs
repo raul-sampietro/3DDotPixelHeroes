@@ -51,7 +51,6 @@ public class EnemyFinalBoss : Enemy
             animator.SetBool("isMoving", false);
             animator.SetBool("isFallen", true);
         }
-        
     }
 
     private void AttackPlayer()
