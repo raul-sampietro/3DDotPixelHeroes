@@ -81,6 +81,7 @@
     <Compile Include="Assets\Scripts\TriggerParticles.cs" />
     <Compile Include="Assets\Scripts\CandleEffect.cs" />
     <Compile Include="Assets\Scripts\GodMode.cs" />
+    <Compile Include="Assets\Scripts\EnemyFinalBoss.cs" />
     <Compile Include="Assets\Scripts\DamagingCollision.cs" />
     <Compile Include="Assets\Scripts\SpawnFromChest.cs" />
     <Compile Include="Assets\Scripts\DamageMatrix.cs" />

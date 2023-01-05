@@ -18,6 +18,7 @@ public class DamageMatrix : Singleton<DamageMatrix>
                 ["Skeleton"] = true,
                 ["Bat"] = true,
                 ["Scorpion"] = true,
+                ["Golem"] = true,
             },
 
             ["Boomerang"] = new Dictionary<string, bool>
@@ -26,6 +27,7 @@ public class DamageMatrix : Singleton<DamageMatrix>
                 ["Skeleton"] = true,
                 ["Bat"] = true,
                 ["Scorpion"] = true,
+                ["Golem"] = true,
             },
 
 
@@ -50,6 +52,11 @@ public class DamageMatrix : Singleton<DamageMatrix>
                 ["Player"] = true,
             },
 
+            ["Golem"] = new Dictionary<string, bool>
+            {
+                ["Player"] = true,
+            },
+
             // Enemy weapons
             ["AnubisShot"] = new Dictionary<string, bool>
             {
@@ -68,6 +75,7 @@ public class DamageMatrix : Singleton<DamageMatrix>
             ["Skeleton"] = 10,
             ["Bat"] = 5,
             ["Scorpion"] = 5,
+            ["Golem"] = 20,
 
             // Enemy Weapons
             ["AnubisShot"] = 10

@@ -24,14 +24,11 @@ public class EnemySkeleton : Enemy
             {
                 DestroyWithParticles();
             }
-            else 
-                movDirection *= -1;
-        }
-        else if (collision.gameObject.CompareTag("Player"))
-        {
-            int damage = damageMatrix.DoesDamage(gameObject.tag, collision.gameObject.tag);
-            if (damage > 0)
-                collision.gameObject.GetComponent<HealthSystem>().Damage(damage);
+            else
+            {
+                Physics.Linecast(transform.position, collision.gameObject.transform.position, out RaycastHit hit);
+                movDirection = hit.normal;
+            }
         }
     }
 

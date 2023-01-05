@@ -30,13 +30,8 @@ public class Enemy : MonoBehaviour
         // 3 is the obstable layer number
         if (collision.gameObject.layer == 3)
         {
-                movDirection *= -1;
-        }
-        else if (collision.gameObject.CompareTag("Player"))
-        {
-            int damage = damageMatrix.DoesDamage(gameObject.tag, collision.gameObject.tag);
-            if (damage > 0)
-                collision.gameObject.GetComponent<HealthSystem>().Damage(damage);
+            Physics.Linecast(transform.position, collision.gameObject.transform.position, out RaycastHit hit);
+            movDirection = hit.normal;
         }
     }
 
@@ -77,7 +72,7 @@ public class Enemy : MonoBehaviour
 
         if (movementPattern == "Random")
         {
-            int randomNumber = (int)Random.Range(0, 200);
+            int randomNumber = (int)Random.Range(0, 500);
 
             // Randomly change direction
             if (randomNumber == 0)
