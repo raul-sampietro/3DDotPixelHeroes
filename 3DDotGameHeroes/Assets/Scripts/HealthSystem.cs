@@ -6,6 +6,11 @@ public class HealthSystem : MonoBehaviour
 {
     public int maximumHP = 50;
 
+    public GameObject life;
+    public GameObject coin1;
+    public GameObject coin2;
+    public GameObject coin3;
+
     int currentHP;
     bool isInvincible = false;
 
@@ -44,7 +49,7 @@ public class HealthSystem : MonoBehaviour
     public int Cure(int hp)
     {
         currentHP = currentHP + hp > maximumHP ? maximumHP : currentHP + hp;
-        Debug.Log("Heal " + tag + " -" + hp + " -> " + currentHP);
+        Debug.Log("Heal " + tag + " +" + hp + " -> " + currentHP);
         return currentHP;
     }
 
@@ -67,14 +72,39 @@ public class HealthSystem : MonoBehaviour
     {
         if (currentHP <= 0)
         {
-            if (!gameObject.CompareTag("Player"))
-            {
-                gameObject.GetComponent<Enemy>().DestroyWithParticles();
-            }
-            else
+            if (gameObject.CompareTag("Player"))
             {
                 //gameObject.GetComponent<TriggerParticles>().TriggerParticleSystem();
                 //Destroy(gameObject);
+            }
+            else
+            {
+                Vector3 pos = transform.position;
+                pos.y = 4;
+                int n = (int)Random.Range(0, 100);
+                if (n < 30)
+                {
+                    // Life
+                    Instantiate(life, pos, Quaternion.identity);
+                }
+                else if (n < 70)
+                {
+                    // Bronze Coin
+                    Instantiate(coin1, pos, Quaternion.identity);
+
+                }
+                else if (n < 90)
+                {
+                    // Silver Coin
+                    Instantiate(coin2, pos, Quaternion.identity);
+                }
+                else if (n < 100)
+                {
+                    // Gold Coin
+                    Instantiate(coin3, pos, Quaternion.identity);
+                }
+
+                gameObject.GetComponent<Enemy>().DestroyWithParticles();
             }
 
         }

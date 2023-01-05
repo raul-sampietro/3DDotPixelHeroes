@@ -26,6 +26,8 @@ TagManager:
   - DoorKey
   - SlideBox
   - Torch
+  - Coin
+  - Life
   layers:
   - Default
   - TransparentFX

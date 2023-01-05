@@ -8,7 +8,7 @@ using UnityEngine;
 /// </summary>
 public class CollectibleObject : MonoBehaviour
 {
-    bool canBeCollected;
+    public bool canBeCollected = false;
 
     public void SetCollectibility(bool value)
     {
